@@ -141,7 +141,7 @@ export default function Lightbox({
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm"
+        className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -159,7 +159,7 @@ export default function Lightbox({
               transition={{ duration: 0.3 }}
             >
               {/* Image Counter */}
-              <div className="px-3 py-2 rounded-full bg-black/20 backdrop-blur-sm text-white text-sm">
+              <div className="px-3 py-2 rounded-full bg-secondary/50 backdrop-blur-sm text-foreground text-sm">
                 {currentIndex + 1} / {images.length}
               </div>
 
@@ -167,7 +167,7 @@ export default function Lightbox({
               <div className="flex items-center gap-2">
                 {/* Slideshow Toggle */}
                 <motion.button
-                  className="p-3 rounded-full bg-black/20 backdrop-blur-sm hover:bg-black/40 text-white transition-all duration-200"
+                  className="p-3 rounded-full bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 text-foreground transition-all duration-200"
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsPlaying(!isPlaying);
@@ -188,7 +188,7 @@ export default function Lightbox({
 
                 {/* Close Button */}
                 <motion.button
-                  className="p-3 rounded-full bg-black/20 backdrop-blur-sm hover:bg-black/40 text-white transition-all duration-200"
+                  className="p-3 rounded-full bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 text-foreground transition-all duration-200"
                   onClick={(e) => {
                     e.stopPropagation();
                     onClose();
@@ -211,7 +211,7 @@ export default function Lightbox({
             <div className="absolute inset-0 flex items-center justify-between p-4 pointer-events-none z-20">
               {/* Previous Button */}
               <motion.button
-                className="pointer-events-auto p-3 rounded-full bg-black/20 backdrop-blur-sm hover:bg-black/40 text-white transition-all duration-200"
+                className="pointer-events-auto p-3 rounded-full bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 text-foreground transition-all duration-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   onPrevious();
@@ -230,7 +230,7 @@ export default function Lightbox({
 
               {/* Next Button */}
               <motion.button
-                className="pointer-events-auto p-3 rounded-full bg-black/20 backdrop-blur-sm hover:bg-black/40 text-white transition-all duration-200"
+                className="pointer-events-auto p-3 rounded-full bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 text-foreground transition-all duration-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   onNext();
@@ -281,7 +281,7 @@ export default function Lightbox({
                 exit={{ y: 100, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="px-4 py-2 rounded-lg bg-black/40 backdrop-blur-sm text-white text-center max-w-md">
+                <div className="px-4 py-2 rounded-lg bg-secondary/70 backdrop-blur-sm text-foreground text-center max-w-md">
                   <p className="text-sm">{currentImageData.caption}</p>
                 </div>
               </motion.div>
@@ -315,7 +315,7 @@ export default function Lightbox({
               exit={{ opacity: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <div className="px-3 py-2 rounded-lg bg-black/20 backdrop-blur-sm text-white text-xs">
+              <div className="px-3 py-2 rounded-lg bg-secondary/50 backdrop-blur-sm text-foreground text-xs">
                 <div className="space-y-1">
                   <div>← → Navigate</div>
                   <div>Space: Play/Pause</div>

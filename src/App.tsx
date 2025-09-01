@@ -8,13 +8,24 @@ import VideographyPage from './components/pages/VideographyPage';
 import ContactPage from './components/pages/ContactPage';
 import GalleryPage from './components/pages/GalleryPage';
 import Footer from './components/Footer';
+import SplashScreen from './components/SplashScreen';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [currentGalleryId, setCurrentGalleryId] = useState<number | null>(null);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Initialize page from URL on load
   useEffect(() => {
+    if (showSplash) return;
     const getPageFromUrl = () => {
       const hash = window.location.hash.slice(1); // Remove #
       const urlParams = new URLSearchParams(window.location.search);
@@ -39,21 +50,23 @@ export default function App() {
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  }, [showSplash]);
 
   // Update URL when page changes
   useEffect(() => {
+    if (showSplash) return;
     if (currentPage === 'gallery' && currentGalleryId) {
       window.history.pushState({}, '', `?gallery=${currentGalleryId}#gallery`);
     } else {
       window.history.pushState({}, '', `#${currentPage}`);
     }
-  }, [currentPage, currentGalleryId]);
+  }, [currentPage, currentGalleryId, showSplash]);
 
   // Scroll to top when page changes
   useEffect(() => {
+    if (showSplash) return;
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage, currentGalleryId]);
+  }, [currentPage, currentGalleryId, showSplash]);
 
   const pageVariants = {
     initial: { 
@@ -120,6 +133,10 @@ export default function App() {
         return <HomePage onNavigateToWork={handleNavigateToWork} />;
     }
   };
+
+  if (showSplash) {
+    return <SplashScreen />;
+  }
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">

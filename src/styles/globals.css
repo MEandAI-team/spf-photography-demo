@@ -5,86 +5,102 @@
 :root {
   --font-size: 14px;
   
-  /* New Color Theme */
-  --forest-green: #1F3A3D;
-  --warm-beige: #E3D5CA;
-  --gold: #C8A951;
-  --soft-white: #FAF9F6;
+  /* Brand Color Palette - Dark Theme */
+  --primary-bg: #1E1E2E;         /* Primary dark background */
+  --secondary-bg: #3B3B58;       /* Secondary surfaces: cards/sections */
+  --accent: #6C63FF;             /* Buttons, links, CTAs */
+  --text-primary: #FFFFFF;       /* Headings, main text */
+  --text-secondary: #B0B0C3;     /* Paragraphs, descriptions */
+  --success: #4CAF50;
+  --warning: #FFC107;
+  --error: #FF5252;
+  --neutral-light-bg: #F5F5F7;   /* Optional for light sections */
   
-  --background: var(--soft-white);
-  --foreground: var(--forest-green);
-  --card: var(--soft-white);
-  --card-foreground: var(--forest-green);
-  --popover: var(--soft-white);
-  --popover-foreground: var(--forest-green);
-  --primary: var(--forest-green);
-  --primary-foreground: var(--soft-white);
-  --secondary: var(--warm-beige);
-  --secondary-foreground: var(--forest-green);
-  --muted: var(--warm-beige);
-  --muted-foreground: var(--forest-green);
-  --accent: var(--gold);
-  --accent-foreground: var(--forest-green);
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: rgba(31, 58, 61, 0.2);
+  /* Theme mapping */
+  --background: var(--primary-bg);
+  --foreground: var(--text-primary);
+  --card: var(--secondary-bg);
+  --card-foreground: var(--text-primary);
+  --popover: var(--secondary-bg);
+  --popover-foreground: var(--text-primary);
+  
+  /* Primary/Secondary surfaces */
+  --primary: var(--primary-bg);
+  --primary-foreground: var(--text-primary);
+  --secondary: var(--secondary-bg);
+  --secondary-foreground: var(--text-primary);
+  
+  /* Accent usage */
+  --accent-foreground: #FFFFFF;
+  
+  /* Text variants */
+  --muted: var(--secondary-bg);
+  --muted-foreground: var(--text-secondary);
+  
+  /* Status */
+  --destructive: var(--error);
+  --destructive-foreground: #FFFFFF;
+  
+  /* UI tokens */
+  --border: rgba(255, 255, 255, 0.12);
   --input: transparent;
-  --input-background: var(--warm-beige);
-  --switch-background: #cbced4;
+  --input-background: var(--secondary-bg);
+  --switch-background: var(--secondary-bg);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: var(--gold);
+  --ring: var(--accent);
+  
+  /* Keep existing charts/radius */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Sidebar */
+  --sidebar: var(--secondary-bg);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--primary-bg);
+  --sidebar-primary-foreground: var(--text-primary);
+  --sidebar-accent: var(--secondary-bg);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: rgba(255, 255, 255, 0.12);
+  --sidebar-ring: var(--accent);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  /* Map dark mode directly to the brand palette */
+  --background: var(--primary-bg);
+  --foreground: var(--text-primary);
+  --card: var(--secondary-bg);
+  --card-foreground: var(--text-primary);
+  --popover: var(--secondary-bg);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--primary-bg);
+  --primary-foreground: var(--text-primary);
+  --secondary: var(--secondary-bg);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--secondary-bg);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--accent);
+  --accent-foreground: #FFFFFF;
+  --destructive: var(--error);
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: transparent;
+  --ring: var(--accent);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* Sidebar */
+  --sidebar: var(--secondary-bg);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--primary-bg);
+  --sidebar-primary-foreground: var(--text-primary);
+  --sidebar-accent: var(--secondary-bg);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: rgba(255, 255, 255, 0.12);
+  --sidebar-ring: var(--accent);
 }
 
 @theme inline {
