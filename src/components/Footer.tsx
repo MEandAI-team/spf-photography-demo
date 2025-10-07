@@ -9,10 +9,8 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="p-2 bg-accent rounded-lg">
-                <Camera className="w-6 h-6 text-accent-foreground" />
-              </div>
-              <h3 className="text-2xl font-bold" style={{ fontFamily: 'Cinzel, serif' }}>SPF Photography</h3>
+              
+              <h3 className="text-2xl font-bold" style={{ fontFamily: 'Cinzel, serif',color: '#FFD700' }}>Shree Production Films</h3>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Capturing life's most precious moments with artistic vision and professional excellence. 

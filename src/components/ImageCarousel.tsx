@@ -19,19 +19,19 @@ const slides: SlideData[] = [
   {
     id: 1,
     title: 'Wedding',
-    image: '/images/h-wedding.webp',
+    image: '/images/home/h-wedding.webp',
     category: 'wedding',
   },
   {
     id: 2,
     title: 'Pre-Wedding',
-    image: '/images/h-pre-wedding.webp',
+    image: '/images/home/h-pre-wedding.webp',
     category: 'pre-wedding',
   },
   {
     id: 3,
     title: 'Celebrity',
-    image: '/images/h-celebrity.webp',
+    image: '/images/home/h-celebrity.webp',
     category: 'Celebrity',
   },
   {
