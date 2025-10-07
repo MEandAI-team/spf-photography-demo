@@ -143,7 +143,7 @@ export default function Footer() {
             </div>
 
             {/* Newsletter Signup */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <h5 className="font-semibold mb-3" style={{ fontFamily: 'Cinzel, serif' }}>Stay Updated</h5>
               <div className="flex">
                 <input
@@ -155,7 +155,7 @@ export default function Footer() {
                   Subscribe
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -184,7 +184,7 @@ export default function Footer() {
           {/* Attribution */}
           <div className="text-center mt-6">
             <p className="text-primary-foreground/40 text-sm">
-              Crafted with passion for capturing timeless moments
+              Website Created by MEandAI solutions.
             </p>
           </div>
         </div>

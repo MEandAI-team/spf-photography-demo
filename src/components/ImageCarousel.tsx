@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
 
@@ -14,43 +14,44 @@ interface ImageCarouselProps {
   onViewMore?: () => void;
 }
 
+// ✅ Slides with local images
 const slides: SlideData[] = [
   {
     id: 1,
     title: 'Wedding',
-    image: '',
-    category: 'wedding'
+    image: '/images/h-wedding.webp',
+    category: 'wedding',
   },
   {
     id: 2,
     title: 'Pre-Wedding',
-    image: '',
-    category: 'pre-wedding'
+    image: '/images/h-pre-wedding.webp',
+    category: 'pre-wedding',
   },
   {
     id: 3,
-    title: 'Modeling',
-    image: '',
-    category: 'modeling'
+    title: 'Celebrity',
+    image: '/images/h-celebrity.webp',
+    category: 'Celebrity',
   },
   {
     id: 4,
-    title: 'Videography',
-    image: '',
-    category: 'videography'
+    title: 'Videographyyyyyyyyy',
+    image: '/images/videography.jpg',
+    category: 'videography',
   },
   {
     id: 5,
     title: 'Baby Shoot',
-    image: '',
-    category: 'babyshoot'
+    image: '/images/babyshoot.jpg',
+    category: 'babyshoot',
   },
   {
     id: 6,
     title: 'Calligraphy',
-    image: '',
-    category: 'calligraphy'
-  }
+    image: '/images/calligraphy.jpg',
+    category: 'calligraphy',
+  },
 ];
 
 export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
@@ -75,13 +76,13 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
         prevSlide();
-        setIsAutoPlaying(false); // Pause auto-play when user interacts
+        setIsAutoPlaying(false);
       } else if (event.key === 'ArrowRight') {
         event.preventDefault();
         nextSlide();
-        setIsAutoPlaying(false); // Pause auto-play when user interacts
+        setIsAutoPlaying(false);
       } else if (event.key === 'Escape') {
-        setIsAutoPlaying(true); // Resume auto-play on escape
+        setIsAutoPlaying(true);
       }
     };
 
@@ -103,34 +104,32 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
 
   return (
     <section className="relative w-full h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] bg-background overflow-hidden">
-      <div 
+      <div
         className="relative w-full h-full flex items-center justify-center"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {/* Image Container */}
         <div className="relative w-full max-w-7xl h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
-          {/* Side Images */}
           <div className="absolute inset-0 flex items-center justify-center">
             {slides.map((slide, index) => {
               const isActive = index === currentSlide;
               const offset = index - currentSlide;
-              
-              // Calculate position and scale for desktop optimization
+
               let transform = '';
               let zIndex = 1;
               let opacity = 0.4;
-              
+
               if (isActive) {
                 transform = 'translateX(0) scale(1)';
                 zIndex = 10;
                 opacity = 1;
               } else if (offset === 1 || (currentSlide === slides.length - 1 && index === 0)) {
-                transform = 'translateX(50%) scale(0.85)'; // Reduced spacing for desktop
+                transform = 'translateX(50%) scale(0.85)';
                 zIndex = 5;
                 opacity = 0.6;
               } else if (offset === -1 || (currentSlide === 0 && index === slides.length - 1)) {
-                transform = 'translateX(-50%) scale(0.85)'; // Reduced spacing for desktop
+                transform = 'translateX(-50%) scale(0.85)';
                 zIndex = 5;
                 opacity = 0.6;
               } else if (offset === 2 || (currentSlide >= slides.length - 2 && index <= 1)) {
@@ -158,7 +157,7 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
                   }}
                   onClick={() => goToSlide(index)}
                 >
-                  <div 
+                  <div
                     className={`relative w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[500px] xl:w-[420px] xl:h-[540px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ${
                       !isActive ? 'blur-sm' : ''
                     } ${isActive ? 'hover:shadow-3xl' : ''}`}
@@ -170,10 +169,13 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
                         isActive ? 'hover:scale-110' : ''
                       }`}
                     />
-                    
+
                     {/* Overlay with title */}
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent p-4 sm:p-6">
-                      <h3 className="text-primary-foreground text-lg sm:text-xl lg:text-2xl font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
+                      <h3
+                        className="text-primary-foreground text-lg sm:text-xl lg:text-2xl font-semibold"
+                        style={{ fontFamily: 'Cinzel, serif' }}
+                      >
                         {slide.title}
                       </h3>
                     </div>
@@ -183,7 +185,7 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
             })}
           </div>
 
-          {/* Navigation Arrows - Much darker and more visible */}
+          {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 bg-primary/80 backdrop-blur-sm hover:bg-primary/90 text-primary-foreground p-3 sm:p-4 rounded-full transition-all duration-200 hover:scale-110 border-2 border-primary-foreground/30 shadow-lg focus:outline-none focus:ring-4 focus:ring-accent/50"
@@ -220,8 +222,6 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-transparent to-secondary/20 pointer-events-none" />
       </div>
-
-
     </section>
   );
 }
