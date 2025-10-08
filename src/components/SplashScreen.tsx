@@ -28,7 +28,7 @@ const SplashScreen: React.FC = () => {
 
   return (
     <div className={`splash-screen ${animationClass}`}>
-      <img src="/images/spf.png" alt="Splash Screen" />
+      <img src="/images/logo/spf.png" alt="Splash Screen" />
     </div>
   );
 };
