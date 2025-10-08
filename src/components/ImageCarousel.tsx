@@ -20,7 +20,7 @@ const slides: SlideData[] = [
     id: 1,
     title: 'Wedding',
     image: '/images/home/wedding.webp',
-    category: 'wedding',
+    category: 'wedding ',
   },
   {
     id: 2,
