@@ -15,8 +15,8 @@ interface WorkPageProps {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    coupleNames: 'Tasha & Aron',
-    image: ''
+    coupleNames: 'Srushti & Piyush',
+    image: '/images/wedding/SRUSHTI & PIYUSH -2025/img10.webp'
   },
   {
     id: 2,

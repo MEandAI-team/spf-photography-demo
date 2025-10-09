@@ -25,7 +25,7 @@ export interface ImageData {
 export const weddingImages: ImageData[] = [
   {
     id: 'wedding-001',
-    src: '',
+    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img8.webp',
     alt: 'Wedding couple romantic moment',
     caption: 'A tender moment between the bride and groom during their sunset photoshoot',
     category: 'wedding',
@@ -44,7 +44,7 @@ export const weddingImages: ImageData[] = [
   },
   {
     id: 'wedding-002',
-    src: '',
+    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img11.webp',
     alt: 'Wedding ceremony exchange of vows',
     caption: 'The sacred moment of exchanging vows, surrounded by loved ones',
     category: 'wedding',
@@ -67,7 +67,7 @@ export const weddingImages: ImageData[] = [
 export const preWeddingImages: ImageData[] = [
   {
     id: 'prewedding-001',
-    src: '',
+    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img2.webp',
     alt: 'Pre-wedding couple photoshoot',
     caption: 'Romantic pre-wedding session capturing the anticipation of the big day',
     category: 'pre-wedding',
