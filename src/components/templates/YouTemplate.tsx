@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import Lightbox from '../Lightbox';
-import { ImageData, getRandomImages } from '../../data/imageData';
+import { ImageData, getPortfolioImages } from '../../data/imageData';
 
 interface YouTemplateProps {
   coupleNames: string;
+  portfolioId?: number;
   images?: ImageData[];
 }
 
-export default function YouTemplate({ coupleNames, images = [] }: YouTemplateProps) {
-  // Use provided images or get random ones from data
-  const galleryImages = images.length > 0 ? images : getRandomImages(6);
+export default function YouTemplate({ coupleNames, portfolioId, images = [] }: YouTemplateProps) {
+  // Use provided images, or get portfolio-specific images, or fallback to empty array
+  const galleryImages = images.length > 0 
+    ? images 
+    : portfolioId 
+      ? getPortfolioImages(portfolioId) 
+      : [];
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

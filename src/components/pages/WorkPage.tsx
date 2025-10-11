@@ -20,23 +20,23 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 2,
-    coupleNames: 'Maria & George',
-    image: ''
+    coupleNames: 'Onkar & Aishwarya',
+    image: '/images/prewedding/ONKAR & AISHWARYA/main.jpg'
   },
   {
     id: 3,
-    coupleNames: 'Emma & James',
-    image: ''
+    coupleNames: 'Rana & Anajali',
+    image: '/images/Celebrity/RANA - ANJALI/main.jpg'
   },
   {
     id: 4,
-    coupleNames: 'Sarah & Michael',
-    image: ''
+    coupleNames: 'Ashish & Anjuna',
+    image: '/images/Maternity/ASHISH & ANUJA/main.jpg'
   },
   {
     id: 5,
-    coupleNames: 'Rachel & David',
-    image: ''
+    coupleNames: 'Anushree Mane',
+    image: '/images/modeling/ANUSHRI MANE/main.jpg'
   },
   {
     id: 6,

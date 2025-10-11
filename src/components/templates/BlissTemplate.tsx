@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import Lightbox from '../Lightbox';
-import { ImageData, getRandomImages } from '../../data/imageData';
+import { ImageData, getPortfolioImages } from '../../data/imageData';
 
 interface BlissTemplateProps {
   coupleNames: string;
+  portfolioId?: number;
   images?: ImageData[];
 }
 
-export default function BlissTemplate({ coupleNames, images = [] }: BlissTemplateProps) {
-  // Use provided images or get random ones from data
-  const galleryImages = images.length > 0 ? images : getRandomImages(5);
+export default function BlissTemplate({ coupleNames, portfolioId, images = [] }: BlissTemplateProps) {
+  // Use provided images, or get portfolio-specific images, or fallback to empty array
+  const galleryImages = images.length > 0 
+    ? images 
+    : portfolioId 
+      ? getPortfolioImages(portfolioId) 
+      : [];
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

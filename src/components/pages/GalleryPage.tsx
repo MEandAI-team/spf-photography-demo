@@ -124,13 +124,13 @@ export default function GalleryPage({ portfolioId, onBackToWork }: GalleryPagePr
   const renderTemplate = () => {
     switch (selectedTemplate) {
       case 'bliss':
-        return <BlissTemplate coupleNames={portfolioItem.coupleNames} />;
+        return <BlissTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
       case 'you':
-        return <YouTemplate coupleNames={portfolioItem.coupleNames} />;
+        return <YouTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
       case 'astha':
-        return <AsthaTemplate coupleNames={portfolioItem.coupleNames} />;
+        return <AsthaTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
       default:
-        return <BlissTemplate coupleNames={portfolioItem.coupleNames} />;
+        return <BlissTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
     }
   };
 
