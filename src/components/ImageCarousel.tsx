@@ -37,7 +37,7 @@ const slides: SlideData[] = [
   {
     id: 4,
     title: 'Modeling',
-    image: '/images/home/new.webp',
+    image: '/images/home/modeling.jpg',
     category: 'Modeling',
   },
   {
