@@ -40,38 +40,38 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 6,
-    coupleNames: 'Lisa & Ryan',
-    image: ''
+    coupleNames: 'Aishwarya',
+    image: '/images/wedding/AISHWARYA/main.JPG'
   },
   {
     id: 7,
-    coupleNames: 'Anna & Chris',
-    image: ''
+    coupleNames: 'Priyanka & Abhishek',
+    image: '/images/prewedding/PRIYANKA & ABHISHEK/main.jpg'
   },
   {
     id: 8,
-    coupleNames: 'Kate & Tom',
-    image: ''
+    coupleNames: 'Swarupa',
+    image: '/images/portrait/SWARUPA/main.jpg'
   },
   {
     id: 9,
-    coupleNames: 'Sophie & Jake',
-    image: ''
+    coupleNames: 'Vidija & Gurunath',
+    image: '/images/prewedding/VIDIJA & GURUNATH/main.jpg'
   },
   {
     id: 10,
-    coupleNames: 'Megan & Alex',
-    image: ''
+    coupleNames: 'Akshay',
+    image: '/images/wedding/AKSHAY SIR/main.jpg'
   },
   {
     id: 11,
-    coupleNames: 'Elena & Daniel',
-    image: ''
+    coupleNames: 'Ratnesha',
+    image: '/images/portrait/RATNESHA/main.jpg'
   },
   {
     id: 12,
-    coupleNames: 'Grace & Oliver',
-    image: ''
+    coupleNames: 'Sports',
+    image: '/images/SPORTS /main.jpg'
   }
 ];
 
