@@ -110,16 +110,25 @@ export default function App() {
     setCurrentPage('work');
   };
 
+  const handleNavigateToContact = () => {
+    setCurrentPage('contact');
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigateToWork={handleNavigateToWork} />;
       case 'about':
-        return <AboutPage />;
+        return <AboutPage onNavigateToContact={handleNavigateToContact} />;
       case 'work':
-        return <WorkPage onGalleryOpen={handleGalleryOpen} />;
+        return (
+          <WorkPage
+            onGalleryOpen={handleGalleryOpen}
+            onNavigateToContact={handleNavigateToContact}
+          />
+        );
       case 'videography':
-        return <VideographyPage />;
+        return <VideographyPage onNavigateToContact={handleNavigateToContact} />;
       case 'contact':
         return <ContactPage />;
       case 'gallery':
@@ -128,7 +137,12 @@ export default function App() {
             portfolioId={currentGalleryId} 
             onBackToWork={handleBackToWork}
           />
-        ) : <WorkPage onGalleryOpen={handleGalleryOpen} />;
+        ) : (
+          <WorkPage
+            onGalleryOpen={handleGalleryOpen}
+            onNavigateToContact={handleNavigateToContact}
+          />
+        );
       default:
         return <HomePage onNavigateToWork={handleNavigateToWork} />;
     }

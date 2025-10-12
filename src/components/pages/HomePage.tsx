@@ -12,7 +12,7 @@ interface HomePageProps {
 export default function HomePage({ onNavigateToWork }: HomePageProps) {
   return (
     <div className="pt-16 lg:pt-20">
-      <ImageCarousel />
+      <ImageCarousel onViewMore={onNavigateToWork} />
       
       {/* View Our Work Button Section */}
       <motion.section 
@@ -49,7 +49,7 @@ export default function HomePage({ onNavigateToWork }: HomePageProps) {
       </motion.section>
 
       <TextImageSection />
-      <ImageTextSection />
+      <ImageTextSection onNavigateToWork={onNavigateToWork} />
     </div>
   );
 }

@@ -10,6 +10,7 @@ interface PortfolioItem {
 
 interface WorkPageProps {
   onGalleryOpen?: (portfolioId: number) => void;
+  onNavigateToContact?: () => void;
 }
 
 const portfolioItems: PortfolioItem[] = [
@@ -75,10 +76,16 @@ const portfolioItems: PortfolioItem[] = [
   }
 ];
 
-export default function WorkPage({ onGalleryOpen }: WorkPageProps) {
+export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPageProps) {
   const handleImageClick = (item: PortfolioItem) => {
     if (onGalleryOpen) {
       onGalleryOpen(item.id);
+    }
+  };
+
+  const handleNavigateToContact = () => {
+    if (onNavigateToContact) {
+      onNavigateToContact();
     }
   };
 
@@ -223,6 +230,7 @@ export default function WorkPage({ onGalleryOpen }: WorkPageProps) {
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 transition-colors duration-200 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleNavigateToContact}
             >
               Book a Session
             </motion.button>
@@ -230,6 +238,7 @@ export default function WorkPage({ onGalleryOpen }: WorkPageProps) {
               className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 transition-colors duration-200 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleNavigateToContact}
             >
               View Packages
             </motion.button>

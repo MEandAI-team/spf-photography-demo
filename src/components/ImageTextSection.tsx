@@ -2,7 +2,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-export default function ImageTextSection() {
+interface ImageTextSectionProps {
+  onNavigateToWork?: () => void;
+}
+
+export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionProps) {
   return (
     <motion.section 
       className="w-full min-h-screen bg-secondary/30 py-16 lg:py-24"
@@ -138,10 +142,20 @@ export default function ImageTextSection() {
                 className="bg-primary text-primary-foreground px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm lg:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={onNavigateToWork}
               >
                 View Portfolio
               </motion.button>
-              
+
+              <motion.button
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 lg:px-8 py-3 lg:py-4 rounded-lg transition-colors duration-200 text-sm lg:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={onNavigateToWork}
+              >
+                View Portfolio
+              </motion.button>
+
             </motion.div>
           </motion.div>
         </div>

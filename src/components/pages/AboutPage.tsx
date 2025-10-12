@@ -2,7 +2,11 @@ import React from 'react';
 import { Award, Camera, Heart, Star, Users, Zap } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
-export default function AboutPage() {
+interface AboutPageProps {
+  onNavigateToContact?: () => void;
+}
+
+export default function AboutPage({ onNavigateToContact }: AboutPageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -207,7 +211,10 @@ export default function AboutPage() {
           </div>
           
           <div className="mt-12">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200">
+            <button
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200"
+              onClick={onNavigateToContact}
+            >
               Let's Create Something Beautiful Together
             </button>
           </div>
