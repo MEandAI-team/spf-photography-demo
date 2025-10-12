@@ -106,7 +106,7 @@ export default function TextImageSection() {
               transition={{ duration: 0.3 }}
             >
               <ImageWithFallback
-                src=""
+                src="/images/home/celebrity.jpg"
                 alt="Wedding Photography"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-110"
               />

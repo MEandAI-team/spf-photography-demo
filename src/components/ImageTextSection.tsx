@@ -27,7 +27,7 @@ export default function ImageTextSection() {
               transition={{ duration: 0.3 }}
             >
               <ImageWithFallback
-                src="/images/home/celebrity1.webp"
+                src="/images/logo/spf3d3.png"
                 alt="Wedding Celebration"
                 className="w-full h-full object-cover"
               />

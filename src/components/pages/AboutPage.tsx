@@ -13,7 +13,7 @@ export default function AboutPage() {
             <div className="relative order-2 lg:order-1">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src=""
+                  src="/images/About/akshay-potdar.JPG"
                   alt="SPF - Professional Photographer"
                   className="w-full h-full object-cover"
                 />
