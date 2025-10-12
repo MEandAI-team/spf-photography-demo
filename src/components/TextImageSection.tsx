@@ -63,8 +63,11 @@ export default function TextImageSection() {
               <ul className="space-y-2 lg:space-y-3">
                 {[
                   'Wedding Photography & Videography',
+                  'Bride and Groom Portraits',
                   'Pre-Wedding & Engagement Sessions',
                   'Portrait & Family Photography',
+                  'Maternity & Baby Photography',
+                  'Special Events',
                   'Event Documentation'
                 ].map((service, index) => (
                   <motion.li 
@@ -86,21 +89,7 @@ export default function TextImageSection() {
               </ul>
             </motion.div>
 
-            <motion.div 
-              className="pt-2 lg:pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-              viewport={{ once: true }}
-            >
-              <motion.button 
-                className="bg-primary text-primary-foreground px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm lg:text-base"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn More About Our Work
-              </motion.button>
-            </motion.div>
+            
           </motion.div>
 
           {/* Image */}

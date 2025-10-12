@@ -33,7 +33,7 @@ export default function HomePage({ onNavigateToWork }: HomePageProps) {
               Ready to See More?
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Discover our complete portfolio of wedding photography, portraits, and special moments captured with passion and artistry.
+              Discover our complete portfolio of wedding & Pre-Wedding photography, portraits, and special moments captured with passion and artistry.
             </p>
             <motion.button
               className="bg-primary text-primary-foreground px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-3 shadow-xl mx-auto"

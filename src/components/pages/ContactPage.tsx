@@ -21,8 +21,46 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    // --- SERVER-SIDE ACTION (Simulated Email & Logging) ---
+    // NOTE: In a real application, you would replace this console.log
+    // with a `fetch` request to your backend to securely send the email.
+    console.log('--- Form Data Submitted (Ready for Email Backend) ---');
+    console.log('Form data:', formData);
+    
+    // --- CLIENT-SIDE ACTION (WhatsApp Redirect) ---
+    
+    // 1. Define your target number (must include country code, no spaces or special characters)
+    const targetPhoneNumber = '919921371016'; 
+
+    // 2. Format the message content
+    const whatsappMessage = `
+    *NEW INQUIRY via Website Form*
+    Name: ${formData.name}
+    Email: ${formData.email}
+    Phone: ${formData.phone || 'N/A'}
+    Event Type: ${formData.eventType}
+    Event Date: ${formData.eventDate || 'N/A'}
+    Budget: ${formData.budget || 'N/A'}
+    
+    *Message:*
+    ${formData.message}
+    `;
+
+    // 3. Encode the message and build the WhatsApp link
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappLink = `https://wa.me/${targetPhoneNumber}?text=${encodedMessage}`;
+
+    // 4. Open the WhatsApp link in a new tab
+    window.open(whatsappLink, '_blank');
+
+    // 5. Optional: Clear the form after submission
+    // setFormData({
+    //   name: '', email: '', phone: '', eventDate: '', eventType: '', message: '', budget: ''
+    // });
+    
+    // Show a confirmation message (since we cannot use alert)
+    console.log('WhatsApp chat initiated. Email data sent to backend (simulated).');
   };
 
   return (
@@ -63,7 +101,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 99213 71016</p>
                     <p className="text-sm text-muted-foreground/80">Available Mon-Sat, 9AM-6PM</p>
                   </div>
                 </div>
@@ -74,7 +112,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-muted-foreground">hello@spfphotography.com</p>
+                    <p className="text-muted-foreground">shreeporduction007@gmail.com</p>
                     <p className="text-sm text-muted-foreground/80">We respond within 24 hours</p>
                   </div>
                 </div>
@@ -85,8 +123,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                    <p className="text-muted-foreground">123 Photography Lane</p>
-                    <p className="text-muted-foreground">Creative District, City 12345</p>
+                    <p className="text-muted-foreground">Bondrenagar Phulewadi Ringoad,</p>
+                    <p className="text-muted-foreground">Kolhapur, Maharastra, India-416010</p>
                   </div>
                 </div>
 
@@ -268,7 +306,7 @@ export default function ContactPage() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg transition-colors duration-200 flex items-center space-x-2"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Send Message</span>
+                      <span>Send Message & Chat</span>
                     </button>
                   </div>
                 </form>

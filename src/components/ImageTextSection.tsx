@@ -27,7 +27,7 @@ export default function ImageTextSection() {
               transition={{ duration: 0.3 }}
             >
               <ImageWithFallback
-                src=""
+                src="/images/home/celebrity1.webp"
                 alt="Wedding Celebration"
                 className="w-full h-full object-cover"
               />
@@ -141,13 +141,7 @@ export default function ImageTextSection() {
               >
                 View Portfolio
               </motion.button>
-              <motion.button 
-                className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 lg:px-8 py-3 lg:py-4 rounded-lg transition-colors duration-200 text-sm lg:text-base"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Quote
-              </motion.button>
+              
             </motion.div>
           </motion.div>
         </div>

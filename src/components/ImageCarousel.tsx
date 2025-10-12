@@ -25,19 +25,19 @@ const slides: SlideData[] = [
   {
     id: 2,
     title: 'Pre-Wedding',
-    image: '/images/home/h-pre-wedding.webp',
+    image: '/images/home/prewedding.webp',
     category: 'pre-wedding',
   },
   {
     id: 3,
     title: 'Celebrity',
-    image: '/images/home/h-celebrity.webp',
+    image: '/images/home/celebrity1.webp',
     category: 'Celebrity',
   },
   {
     id: 4,
-    title: 'Modeling',
-    image: '/images/home/modeling.jpg',
+    title: 'Portrait',
+    image: '/images/home/protraits.webp',
     category: 'Modeling',
   },
   {
@@ -48,9 +48,9 @@ const slides: SlideData[] = [
   },
   {
     id: 6,
-    title: 'Calligraphy',
-    image: '/images/calligraphy.jpg',
-    category: 'calligraphy',
+    title: 'Bride Shoot',
+    image: '/images/home/brideshoot.webp',
+    category: 'Bride Shoot',
   },
 ];
 
