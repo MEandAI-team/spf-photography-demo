@@ -37,7 +37,7 @@ const slides: SlideData[] = [
   {
     id: 4,
     title: 'Portrait',
-    image: '/images/home/protraits.webp',
+    image: '/images/home/portraits.webp',
     category: 'Modeling',
   },
   {
@@ -49,7 +49,7 @@ const slides: SlideData[] = [
   {
     id: 6,
     title: 'Bride Shoot',
-    image: '/images/home/brideshoot.webp',
+    image: 'public/images/home/brideshoot.JPG',
     category: 'Bride Shoot',
   },
 ];

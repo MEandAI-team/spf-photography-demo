@@ -71,7 +71,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 12,
     coupleNames: 'Sports',
-    image: '/images/SPORTS /main.jpg'
+    image: 'public/images/sports/main.jpg'
   }
 ];
 

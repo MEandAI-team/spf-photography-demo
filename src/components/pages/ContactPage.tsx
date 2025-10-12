@@ -63,6 +63,16 @@ export default function ContactPage() {
     console.log('WhatsApp chat initiated. Email data sent to backend (simulated).');
   };
 
+  // --- NEW FUNCTION: Smooth scroll implementation ---
+  const handleScrollToForm = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const formElement = document.getElementById('contact-form');
+    if (formElement) {
+      // scrollIntoView with smooth behavior guarantees a scroll on the current page
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -79,7 +89,8 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="pb-16 lg:pb-24">
+      {/* ID remains the scroll target */}
+      <section id="contact-form" className="pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Information */}
@@ -377,12 +388,21 @@ export default function ContactPage() {
             Let's schedule a consultation to discuss your vision and create something beautiful together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200">
+            {/* Schedule Consultation button uses onClick for guaranteed smooth scroll on the same page */}
+            <a 
+              href="#contact-form"
+              onClick={handleScrollToForm}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200"
+            >
               Schedule Consultation
-            </button>
-            <button className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200">
+            </a>
+            {/* Call Us Now button uses the tel: protocol for calling */}
+            <a 
+              href="tel:+919921371016"
+              className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200"
+            >
               Call Us Now
-            </button>
+            </a>
           </div>
         </div>
       </section>
