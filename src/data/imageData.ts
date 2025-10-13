@@ -87,7 +87,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-004',
-    src: '',
+    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img12.webp',
     alt: 'Srushti & Piyush - Reception celebration',
     caption: 'Joyful celebration at the reception',
     category: 'wedding',
@@ -99,7 +99,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-005',
-    src: '',
+    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img7.webp',
     alt: 'Srushti & Piyush - First dance',
     caption: 'The couple\'s first dance',
     category: 'wedding',
@@ -111,7 +111,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-006',
-    src: '',
+    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img9.webp',
     alt: 'Srushti & Piyush - Couple portrait',
     caption: 'Beautiful couple portrait',
     category: 'wedding',
@@ -137,7 +137,7 @@ export const portfolio1Images: ImageData[] = [
     id: 'portfolio1-008',
     src: '',
     alt: 'Srushti & Piyush - Candid moment',
-    caption: 'Candid moment of joy',
+    caption: 'Candid moment of joy', 
     category: 'wedding',
     title: 'Pure Happiness',
     description: 'A candid moment capturing genuine happiness.',
@@ -254,11 +254,11 @@ export const portfolio2Images: ImageData[] = [
   }
 ];
 
-// Portfolio 3: Emma & James
+// Portfolio 3: Rana & Anjali
 export const portfolio3Images: ImageData[] = [
   {
     id: 'portfolio3-001',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/014_resize.jpg',
     alt: 'Emma & James - Outdoor wedding',
     caption: 'Stunning outdoor wedding ceremony',
     category: 'wedding',
@@ -277,7 +277,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-002',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/003_resize.jpg',
     alt: 'Emma & James - Reception dance',
     caption: 'First dance under the stars',
     category: 'wedding',
@@ -289,7 +289,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-003',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/012_resize.jpg',
     alt: 'Emma & James - Ceremony vows',
     caption: 'Exchanging heartfelt vows',
     category: 'wedding',
@@ -301,7 +301,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-004',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/006_resize.jpg',
     alt: 'Emma & James - Garden portrait',
     caption: 'Romantic garden portrait',
     category: 'wedding',
@@ -313,7 +313,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-005',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/002_resize.jpg',
     alt: 'Emma & James - Wedding party',
     caption: 'Celebrating with loved ones',
     category: 'wedding',
@@ -325,7 +325,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-006',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/008_resize.jpg',
     alt: 'Emma & James - Floral details',
     caption: 'Beautiful floral arrangements',
     category: 'wedding',
@@ -337,7 +337,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-007',
-    src: '',
+    src: '/images/Celebrity/RANA - ANJALI/Gudhipasssdwa_resize.jpg',
     alt: 'Emma & James - Candid laughter',
     caption: 'Moments of pure joy',
     category: 'wedding',
@@ -365,7 +365,7 @@ export const portfolio3Images: ImageData[] = [
 export const portfolio4Images: ImageData[] = [
   {
     id: 'portfolio4-001',
-    src: '',
+    src: '/images/Maternity/ASHISH & ANUJA/img1.jpg',
     alt: 'Sarah & Michael - Beach wedding',
     caption: 'Romantic beach wedding ceremony',
     category: 'wedding',
@@ -384,7 +384,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-002',
-    src: '',
+    src: '/images/Maternity/ASHISH & ANUJA/img5.jpg',
     alt: 'Sarah & Michael - Sunset portrait',
     caption: 'Golden hour beach portrait',
     category: 'wedding',
@@ -396,7 +396,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-003',
-    src: '',
+    src: '/images/Maternity/ASHISH & ANUJA/img6.jpg',
     alt: 'Sarah & Michael - Beach ceremony',
     caption: 'Ceremony by the ocean',
     category: 'wedding',
@@ -408,7 +408,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-004',
-    src: '',
+    src: '/images/Maternity/ASHISH & ANUJA/img4.jpg',
     alt: 'Sarah & Michael - Walking on beach',
     caption: 'Romantic beach walk',
     category: 'wedding',
@@ -420,7 +420,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-005',
-    src: '',
+    src: '/images/Maternity/ASHISH & ANUJA/img10.jpg',
     alt: 'Sarah & Michael - Beach reception',
     caption: 'Beachside celebration',
     category: 'wedding',
@@ -432,7 +432,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-006',
-    src: '',
+    src: '/images/Maternity/ASHISH & ANUJA/img3.jpg',
     alt: 'Sarah & Michael - Couple embrace',
     caption: 'Tender beach embrace',
     category: 'wedding',
@@ -575,11 +575,11 @@ export const portfolio5Images: ImageData[] = [
   }
 ];
 
-// Portfolio 6: Lisa & Ryan
+// Portfolio 6: Aishwarya
 export const portfolio6Images: ImageData[] = [
   {
     id: 'portfolio6-001',
-    src: '',
+    src: '/images/wedding/AISHWARYA/img2.JPG',
     alt: 'Lisa & Ryan - Mountain wedding',
     caption: 'Breathtaking mountain wedding',
     category: 'wedding',
@@ -598,7 +598,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-002',
-    src: '',
+    src: '/images/wedding/AISHWARYA/img7.JPG',
     alt: 'Lisa & Ryan - Adventure portraits',
     caption: 'Adventurous couple portraits',
     category: 'wedding',
@@ -610,7 +610,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-003',
-    src: '',
+    src: '/images/wedding/AISHWARYA/img4.JPG',
     alt: 'Lisa & Ryan - Mountain ceremony',
     caption: 'Ceremony with mountain views',
     category: 'wedding',
@@ -622,7 +622,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-004',
-    src: '',
+    src: '/images/wedding/AISHWARYA/img8.JPG',
     alt: 'Lisa & Ryan - Hiking portraits',
     caption: 'Adventurous hiking portraits',
     category: 'wedding',
@@ -634,7 +634,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-005',
-    src: '',
+    src: '/images/wedding/AISHWARYA/img3.JPG',
     alt: 'Lisa & Ryan - Scenic overlook',
     caption: 'Portrait at scenic overlook',
     category: 'wedding',
@@ -646,7 +646,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-006',
-    src: '',
+    src: '/images/wedding/AISHWARYA/img9.JPG',
     alt: 'Lisa & Ryan - Mountain reception',
     caption: 'Mountain resort reception',
     category: 'wedding',
@@ -1507,4 +1507,4 @@ export const getRandomPortfolioImages = (portfolioId: number, count: number): Im
   
   const shuffled = [...portfolioImages].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, Math.min(count, portfolioImages.length));
-};
+};                                                                                                                                                                                                                                                         

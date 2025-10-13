@@ -31,7 +31,7 @@ const slides: SlideData[] = [
   {
     id: 3,
     title: 'Celebrity',
-    image: '/images/home/celebrity1.webp',
+    image: '/images/home/celebrity.webp',
     category: 'Celebrity',
   },
   {
