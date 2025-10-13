@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Camera, Menu, X } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface NavigationProps {
   currentPage: string;
@@ -76,7 +77,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <img src="/images/logo/cropped_logo.png" alt="SPF Logo" className="w-6 h-6 object-contain" />
+                <ImageWithFallback src="/images/logo/cropped_logo.png" alt="SPF Logo" className="w-6 h-6 object-contain" />
               </motion.div>
               <h1 
                 className="text-lg lg:text-2xl font-bold text-foreground hidden sm:block" 

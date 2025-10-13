@@ -147,14 +147,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
                 View Portfolio
               </motion.button>
 
-              <motion.button
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 lg:px-8 py-3 lg:py-4 rounded-lg transition-colors duration-200 text-sm lg:text-base"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={onNavigateToWork}
-              >
-                View Portfolio
-              </motion.button>
+              
 
             </motion.div>
           </motion.div>

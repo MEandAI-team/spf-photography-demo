@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './SplashScreen.css';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const SplashScreen: React.FC = () => {
   const [visible, setVisible] = useState(true);
@@ -28,7 +29,7 @@ const SplashScreen: React.FC = () => {
 
   return (
     <div className={`splash-screen ${animationClass}`}>
-      <img src="/images/logo/spf.png" alt="Splash Screen" />
+      <ImageWithFallback src="/images/logo/spf.png" alt="Splash Screen" className="w-full h-auto" />
     </div>
   );
 };

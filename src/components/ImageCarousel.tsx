@@ -36,7 +36,7 @@ const slides: SlideData[] = [
   },
   {
     id: 4,
-    title: 'Portrait',
+    title: 'Portraits',
     image: '/images/home/portraits.webp',
     category: 'Modeling',
   },

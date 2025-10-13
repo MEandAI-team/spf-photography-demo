@@ -104,7 +104,11 @@ const videographyTypes: VideographyType[] = [
   }
 ];
 
-export default function VideographyPage() {
+interface VideographyPageProps {
+  onNavigateToContact?: () => void;
+}
+
+export default function VideographyPage({ onNavigateToContact }: VideographyPageProps) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isMainVideoOpen, setIsMainVideoOpen] = useState(false);
   const [isTypeVideoOpen, setIsTypeVideoOpen] = useState(false);
@@ -143,6 +147,12 @@ export default function VideographyPage() {
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
+  };
+
+  const handleNavigateToContact = () => {
+    if (onNavigateToContact) {
+      onNavigateToContact();
+    }
   };
 
   return (
@@ -220,6 +230,9 @@ export default function VideographyPage() {
           >
             <Play className="w-8 h-8 lg:w-10 lg:h-10 ml-1" fill="currentColor" />
           </motion.button>
+
+
+
         </div>
 
         {/* Video Indicators */}
@@ -324,7 +337,24 @@ export default function VideographyPage() {
                     </p>
 
                     {/* Play Button */}
-                    <motion.div
+        
+
+        <motion.div
+          className="mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={handleNavigateToContact}
+            className="px-8 py-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Hire Me
+          </motion.button>
+        </motion.div>            <motion.div
                       className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
@@ -337,6 +367,23 @@ export default function VideographyPage() {
             ))}
           </div>
         </div>
+
+        <motion.div
+          className="mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={handleNavigateToContact}
+            className="px-8 py-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Hire Me
+          </motion.button>
+        </motion.div>
       </motion.section>
 
       {/* Main Video Fullscreen Modal */}
