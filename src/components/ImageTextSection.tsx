@@ -31,7 +31,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
               transition={{ duration: 0.3 }}
             >
               <ImageWithFallback
-                src="/images/logo/spf3d3.png"
+                src="/images/home/spf3d3.png"
                 alt="Wedding Celebration"
                 className="w-full h-full object-cover"
               />

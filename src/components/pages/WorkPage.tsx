@@ -16,43 +16,43 @@ interface WorkPageProps {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    coupleNames: 'Srushti & Piyush',
-    image: '/images/wedding/SRUSHTI & PIYUSH -2025/img10.webp'
+    coupleNames: 'Riya & Ashish',
+    image: '/images/wedding/RIYA & ASHISH/main.jpg'
   },
   {
     id: 2,
-    coupleNames: 'Onkar & Aishwarya',
-    image: '/images/prewedding/ONKAR & AISHWARYA/main.jpg'
+    coupleNames: 'Mandar & Ashwini',
+    image: '/images/prewedding/MANDAR & ASHWINI/main.jpg'
   },
   {
     id: 3,
     coupleNames: 'Rana & Anajali',
-    image: '/images/Celebrity/RANA - ANJALI/main.jpg'
+    image: '/images/celebrity/RANA - ANJALI/main.jpg'
   },
   {
     id: 4,
     coupleNames: 'Ashish & Anjuna',
-    image: '/images/Maternity/ASHISH & ANUJA/main.jpg'
+    image: '/images/maternity/ASHISH & ANUJA/main.jpg'
   },
   {
     id: 5,
-    coupleNames: 'Anushree Mane',
-    image: '/images/modeling/ANUSHRI MANE/main.jpg'
+    coupleNames: 'Swati Limaye',
+    image: '/images/celebrity/SWATI LIMAYE/main.jpg'
   },
   {
     id: 6,
-    coupleNames: 'Aishwarya',
-    image: '/images/wedding/AISHWARYA/main.JPG'
+    coupleNames: 'Samruddhi & Rohit',
+    image: '/images/wedding/SAMRUDDHI & ROHIT/main.jpg'
   },
   {
     id: 7,
-    coupleNames: 'Priyanka & Abhishek',
-    image: '/images/prewedding/PRIYANKA & ABHISHEK/main.jpg'
+    coupleNames: 'Harsh & Nishigandha',
+    image: '/images/prewedding/HARSH & NISHIGANDHA/main.jpg'
   },
   {
     id: 8,
-    coupleNames: 'Swarupa',
-    image: '/images/portrait/SWARUPA/main.jpg'
+    coupleNames: 'Ratnesha',
+    image: '/images/portrait/RATNESHA/main.jpg'
   },
   {
     id: 9,
@@ -61,13 +61,13 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 10,
-    coupleNames: 'Akshay',
-    image: '/images/wedding/AKSHAY SIR/main.jpg'
+    coupleNames: 'Sushant & Radhika',
+    image: '/images/wedding/SUSHANT & RADHIKA/main.jpg'
   },
   {                                                                                                                                                                                                                                                                                                                                                                                                                   
     id: 11,
-    coupleNames: 'Ratnesha',
-    image: '/images/portrait/RATNESHA/main.jpg'
+    coupleNames: 'Shruti',
+    image: '/images/portrait/SHRUTI/main.jpg'
   },
   {
     id: 12,
@@ -191,7 +191,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
 
           <div className="mt-12 flex justify-center">
             <a
-              href="https://www.google.com"
+              href="https://shree-production-films-f13xvgx.gamma.site/?fbclid=PAdGRleANPexhleHRuA2FlbQIxMQABpz2dpgjhluJdMUfJx_Km2ryB1k5vhGd5m_zAeklfJhZQ_2NWcbvwQwmpmtbC_aem_fHhMdBzMdzIfsrA_-iZlwg"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors duration-200"

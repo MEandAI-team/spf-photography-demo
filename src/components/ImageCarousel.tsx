@@ -19,37 +19,37 @@ const slides: SlideData[] = [
   {
     id: 1,
     title: 'Wedding',
-    image: '/images/home/wedding.webp',
+    image: '/images/slideshow/wedding.webp',
     category: 'wedding ',
   },
   {
     id: 2,
     title: 'Pre-Wedding',
-    image: '/images/home/prewedding.webp',
+    image: '/images/slideshow/prewedding.webp',
     category: 'pre-wedding',
   },
   {
     id: 3,
     title: 'Celebrity',
-    image: '/images/home/celebrity.webp',
+    image: '/images/slideshow/celebrity.webp',
     category: 'Celebrity',
   },
   {
     id: 4,
     title: 'Portraits',
-    image: '/images/home/portraits.webp',
+    image: '/images/slideshow/portraits.webp',
     category: 'Modeling',
   },
   {
     id: 5,
     title: 'Baby Shoot',
-    image: '/images/home/babyshoot.webp',
+    image: '/images/slideshow/babyshoot.webp',
     category: 'babyshoot',
   },
   {
     id: 6,
     title: 'Bride Shoot',
-    image: '/images/home/brideshoot.JPG',
+    image: '/images/slideshow/brideshoot.JPG',
     category: 'Bride Shoot',
   },
 ];

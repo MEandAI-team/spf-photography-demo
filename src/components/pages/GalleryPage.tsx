@@ -1,8 +1,17 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import BlissTemplate from '../templates/BlissTemplate';
 import YouTemplate from '../templates/YouTemplate';
-import AsthaTemplate from '../templates/AsthaTemplate';
+import CelestialEleganceTemplate from '../templates/CelestialEleganceTemplate';
+import CrystalHarborTemplate from '../templates/CrystalHarborTemplate';
+import DesertEmbraceTemplate from '../templates/DesertEmbraceTemplate';
+import EtherealBloomTemplate from '../templates/EtherealBloomTemplate';
+import LuminousWhisperTemplate from '../templates/LuminousWhisperTemplate';
+import MonochromeMuseTemplate from '../templates/MonochromeMuseTemplate';
+import OceanicOathTemplate from '../templates/OceanicOathTemplate';
+import RusticReverieTemplate from '../templates/RusticReverieTemplate';
+import UrbanEclipseTemplate from '../templates/UrbanEclipseTemplate';
+import VelvetVowsTemplate from '../templates/VelvetVowsTemplate';
 
 interface GalleryPageProps {
   portfolioId: number;
@@ -13,8 +22,8 @@ interface GalleryPageProps {
 const portfolioItems = [
   {
     id: 1,
-    coupleNames: 'Tasha & Aron',
-    image: 'https://images.unsplash.com/photo-1730116309939-10a01fdf1edb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBjb3VwbGV8ZW58MXx8fHwxNzU2MzAzNTMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    coupleNames: 'Riya & Ashish',
+    image: '/images/wedding/RIYA & ASHISH/main.jpg'
   },
   {
     id: 2,
@@ -73,17 +82,28 @@ const portfolioItems = [
   }
 ];
 
-const templates = ['bliss', 'you', 'astha'] as const;
-type TemplateType = typeof templates[number];
+type TemplateProps = {
+  coupleNames: string;
+  portfolioId: number;
+};
+
+const templateComponents: Record<number, React.ComponentType<TemplateProps>> = {
+  1: BlissTemplate,
+  2: YouTemplate,
+  3: CelestialEleganceTemplate,
+  4: CrystalHarborTemplate,
+  5: DesertEmbraceTemplate,
+  6: EtherealBloomTemplate,
+  7: LuminousWhisperTemplate,
+  8: MonochromeMuseTemplate,
+  9: OceanicOathTemplate,
+  10: RusticReverieTemplate,
+  11: UrbanEclipseTemplate,
+  12: VelvetVowsTemplate
+};
 
 export default function GalleryPage({ portfolioId, onBackToWork }: GalleryPageProps) {
   const portfolioItem = portfolioItems.find(item => item.id === portfolioId);
-
-  // Randomly select a template based on portfolioId for consistency
-  const selectedTemplate = useMemo(() => {
-    const templateIndex = portfolioId % templates.length;
-    return templates[templateIndex];
-  }, [portfolioId]);
 
   if (!portfolioItem) {
     return (
@@ -120,24 +140,12 @@ export default function GalleryPage({ portfolioId, onBackToWork }: GalleryPagePr
     </motion.button>
   );
 
-  // Render the appropriate template
-  const renderTemplate = () => {
-    switch (selectedTemplate) {
-      case 'bliss':
-        return <BlissTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
-      case 'you':
-        return <YouTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
-      case 'astha':
-        return <AsthaTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
-      default:
-        return <BlissTemplate coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />;
-    }
-  };
+  const TemplateComponent = templateComponents[portfolioId] ?? BlissTemplate;
 
   return (
     <div className="relative">
       <BackButton />
-      {renderTemplate()}
+      <TemplateComponent coupleNames={portfolioItem.coupleNames} portfolioId={portfolioId} />
     </div>
   );
 }
