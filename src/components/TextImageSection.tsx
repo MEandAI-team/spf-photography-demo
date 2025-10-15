@@ -39,7 +39,7 @@ export default function TextImageSection() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                Every wedding tells a unique story, and we're here to preserve those precious moments that make your day extraordinary. Our passionate approach to photography ensures that every smile, every tear of joy, and every heartfelt embrace is captured with artistic precision and emotional depth.
+                Every event tells a unique story, and we’re here to preserve those unforgettable moments that make your occasion truly special. Our passionate approach to photography ensures that every smile, every spark of excitement, and every heartfelt connection is captured with artistic precision and emotional depth.
               </motion.p>
               <motion.p 
                 className="text-base lg:text-lg text-muted-foreground leading-relaxed"

@@ -284,10 +284,10 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       >
                         <option value="">Select budget range</option>
-                        <option value="under-2k">Under $2,000</option>
-                        <option value="2k-5k">$2,000 - $5,000</option>
-                        <option value="5k-10k">$5,000 - $10,000</option>
-                        <option value="10k-plus">$10,000+</option>
+                        <option value="under-2k">Rs. 80k</option>
+                        <option value="2k-5k">Rs.80k - Rs.1L</option>
+                        <option value="5k-10k">Rs.1L - Rs.1.5L</option>
+                        <option value="10k-plus">Rs.2L</option>
                         <option value="custom">Custom Package</option>
                       </select>
                     </div>
@@ -343,7 +343,7 @@ export default function ContactPage() {
             <div className="bg-card rounded-lg p-6 shadow-sm">
               <h3 className="font-semibold text-foreground mb-2">How far in advance should we book?</h3>
               <p className="text-muted-foreground">
-                We recommend booking 6-12 months in advance for weddings, especially during peak season (May-October). 
+                We recommend booking 6-12 months in advance for weddings, especially during peak season (May-December). 
                 For other sessions, 4-6 weeks notice is usually sufficient.
               </p>
             </div>

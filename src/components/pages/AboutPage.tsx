@@ -78,7 +78,7 @@ export default function AboutPage({ onNavigateToContact }: AboutPageProps) {
             </div>
             <div className="text-center">
               <div className="text-4xl lg:text-5xl font-bold text-primary mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
-                8+
+                10+
               </div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>

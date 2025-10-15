@@ -26,11 +26,11 @@ export interface ImageData {
 // Each portfolio item (1-12) has its own unique gallery
 // ============================================
 
-// Portfolio 1: Srushti & Piyush
+// Portfolio 1: Riya & Ashish
 export const portfolio1Images: ImageData[] = [
   {
     id: 'portfolio1-001',
-    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img8.webp',
+    src: '/images/wedding/RIYA & ASHISH/img1.jpg',
     alt: 'Srushti & Piyush - Romantic moment',
     caption: 'A tender moment between the bride and groom during their sunset photoshoot',
     category: 'wedding',
@@ -49,7 +49,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-002',
-    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img11.webp',
+    src: '/images/wedding/RIYA & ASHISH/img2.jpg',
     alt: 'Srushti & Piyush - Wedding ceremony',
     caption: 'The sacred moment of exchanging vows, surrounded by loved ones',
     category: 'wedding',
@@ -68,7 +68,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-003',
-    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img2.webp',
+    src: '/images/wedding/RIYA & ASHISH/img3.jpg',
     alt: 'Srushti & Piyush - Pre-wedding moment',
     caption: 'Romantic pre-wedding session capturing the anticipation of the big day',
     category: 'wedding',
@@ -87,7 +87,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-004',
-    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img12.webp',
+    src: '/images/wedding/RIYA & ASHISH/img4.jpg',
     alt: 'Srushti & Piyush - Reception celebration',
     caption: 'Joyful celebration at the reception',
     category: 'wedding',
@@ -99,7 +99,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-005',
-    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img7.webp',
+    src: '/images/wedding/RIYA & ASHISH/img5.jpg',
     alt: 'Srushti & Piyush - First dance',
     caption: 'The couple\'s first dance',
     category: 'wedding',
@@ -111,7 +111,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-006',
-    src: '/images/wedding/SRUSHTI & PIYUSH -2025/img9.webp',
+    src: '/images/wedding/RIYA & ASHISH/img6.jpg',
     alt: 'Srushti & Piyush - Couple portrait',
     caption: 'Beautiful couple portrait',
     category: 'wedding',
@@ -124,7 +124,7 @@ export const portfolio1Images: ImageData[] = [
   {
     id: 'portfolio1-007',
     src: '',
-    alt: 'Srushti & Piyush - Wedding details',
+    alt: '/images/wedding/RIYA & ASHISH/img7.jpg',
     caption: 'Beautiful wedding details',
     category: 'wedding',
     title: 'Details Matter',
@@ -135,7 +135,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-008',
-    src: '',
+    src: '/images/wedding/RIYA & ASHISH/img8.jpg',
     alt: 'Srushti & Piyush - Candid moment',
     caption: 'Candid moment of joy', 
     category: 'wedding',
@@ -145,6 +145,7 @@ export const portfolio1Images: ImageData[] = [
     date: '2025-01-15',
     photographer: 'SPF Photography'
   }
+  
 ];
 
 // Portfolio 2: Maria & George
