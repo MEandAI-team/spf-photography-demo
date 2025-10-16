@@ -39,22 +39,30 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#eaf7ff] via-[#dff1ff] to-[#c7e7ff] text-[#1d3b53]">
-      <div className="max-w-6xl mx-auto px-6 lg:px-16 py-20 space-y-16">
+
+      {/* Top Spacer */}
+      <div className="h-32 md:h-40 lg:h-48"></div>
+
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-16">
+        {/* Header Section - One Word + Couple Name */}
         <motion.header
-          className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div>
-            <p className="uppercase tracking-[0.45em] text-xs text-[#3f7fb6]">{coupleNames}</p>
-            <h1 className="text-5xl lg:text-6xl tracking-[0.3em]" style={{ fontFamily: 'Cinzel, serif' }}>
-              *
-            </h1>
-          </div>
-         
+          {/* One Word Caption */}
+          <p className="text-3xl lg:text-5xl tracking-[0.4em] text-[#3f7fb6] mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
+            Nurture 🤍
+          </p>
+
+          {/* Couple Name */}
+          <h1 className="text-5xl lg:text-6xl tracking-[0.3em] font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
+            {coupleNames}
+          </h1>
         </motion.header>
 
+        {/* Image Grid */}
         <motion.section
           className="grid grid-cols-1 lg:grid-cols-4 gap-6"
           initial={{ opacity: 0 }}
@@ -125,9 +133,26 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          
-          
         </motion.section>
+
+        {/* Sentence Caption Block */}
+        <motion.div
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/30 rounded-3xl p-10 max-w-lg"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-[#3f7fb6]">
+            <span>Softness 🕊️</span>
+            <span>•</span>
+            <span>Waiting ⏳</span>
+            <span>•</span>
+            <span>Sacred 🙏</span>
+          </div>
+          <p className="text-[#1d3b53] text-sm max-w-md">
+            “Patience is a mother's first lesson, written in soft light. 💖”
+          </p>
+        </motion.div>
       </div>
 
       <Lightbox

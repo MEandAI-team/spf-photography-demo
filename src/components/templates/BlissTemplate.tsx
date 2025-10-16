@@ -11,7 +11,6 @@ interface BlissTemplateProps {
 }
 
 export default function BlissTemplate({ coupleNames, portfolioId, images = [] }: BlissTemplateProps) {
-  // Use provided images, or get portfolio-specific images, or fallback to empty array
   const galleryImages = images.length > 0 
     ? images 
     : portfolioId 
@@ -22,7 +21,6 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    // Only open if the image index is within the actual number of images available
     if (index < galleryImages.length) {
       setCurrentImageIndex(index);
       setLightboxOpen(true);
@@ -41,7 +39,6 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
   
-  // Helper component for repeated image divs
   const GalleryTile = ({ index, aspectRatio, spanClasses = '' }: { index: number, aspectRatio: string, spanClasses?: string }) => (
     <div 
       className={`${aspectRatio} bg-white/90 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 ${spanClasses}`}
@@ -64,12 +61,12 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
         </div>
       </div>
       
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-white" />
       
       {/* Content Container */}
       <div className="relative z-10 min-h-screen flex flex-col">
-        {/* Header - BLISS Text */}
+        {/* Header */}
         <motion.div 
           className="pt-24 pb-8 text-center"
           initial={{ opacity: 0, y: -30 }}
@@ -80,11 +77,17 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
             className="text-6xl lg:text-8xl text-black tracking-[0.3em]" 
             style={{ fontFamily: 'Cinzel, serif' }}
           >
-            Perfection
+            Eternal
           </h1>
+          {/* Decorative line */}
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
+          {/* 🔥 Updated couple name styling */}
+          <p className="uppercase tracking-[0.4em] text-sm sm:text-base md:text-lg lg:text-xl text-violet-700 mt-2">
+            {coupleNames}
+          </p>
         </motion.div>
 
-        {/* Main Photo Grid - Redesigned for 2 Landscape and 8 Vertical images */}
+        {/* Image Grid */}
         <div className="flex-1 flex items-center justify-center px-4 sm:px-8 py-8">
           <motion.div 
             className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 lg:gap-4 max-w-6xl w-full"
@@ -92,98 +95,35 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            
-            {/* 1. Landscape (Index 0) - Using 5:4 ratio (960x768) */}
-            <GalleryTile 
-              index={0} 
-              aspectRatio="aspect-[5/4]" 
-              spanClasses="col-span-2 md:col-span-4 lg:col-span-4" 
-            />
-
-            {/* 2. Vertical (Index 1) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={1} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-            
-            {/* 3. Vertical (Index 2) - Using 2:3 ratio (768x1154), Tall, spans 2 rows */}
-            <GalleryTile 
-              index={2} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 row-span-2 md:col-span-1"
-            />
-
-            {/* 4. Vertical (Index 3) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={3} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-
-            {/* 5. Vertical (Index 4) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={4} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-            
-            {/* Middle Row - Ewww Text Block (Index 5 placeholder) - Spans 4 columns*/}
-            
-
-            {/* 6. Vertical (Index 5) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={5} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-
-            {/* 7. Vertical (Index 6) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={6} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-
-            {/* 8. Vertical (Index 7) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={7} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-
-            {/* 9. Vertical (Index 8) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={8} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-            {/* 9. Vertical (Index 9) - Using 2:3 ratio (768x1154) */}
-            <GalleryTile 
-              index={9} 
-              aspectRatio="aspect-[2/3]" 
-              spanClasses="col-span-1 md:col-span-1"
-            />
-            
-            {/* 10. Landscape (Index 9) - Using 5:4 ratio (960x768) */}
-            <GalleryTile 
-              index={10} 
-              aspectRatio="aspect-[5/4]" 
-              spanClasses="col-span-2 md:col-span-4 lg:col-span-6" 
-            />
-
+            <GalleryTile index={0} aspectRatio="aspect-[5/4]" spanClasses="col-span-2 md:col-span-4 lg:col-span-4" />
+            <GalleryTile index={1} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={2} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 row-span-2 md:col-span-1" />
+            <GalleryTile index={3} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={4} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={5} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={6} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={7} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={8} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
+            <GalleryTile index={9} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-span-1" />
           </motion.div>
         </div>
 
-        {/* Footer */}
+        {/* Center Quote Block */}
         <motion.div 
-          className="pb-8 text-center"
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/5 rounded-3xl p-10 mt-10 mb-16 max-w-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <p className="text-white text-lg tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
-            {coupleNames}
+          <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-zinc-400">
+            <span>Love ❤️</span>
+            <span>•</span>
+            <span>Laughter 😄</span>
+            <span>•</span>
+            <span>Legacy 🌿</span>
+          </div>
+          <p className="text-zinc-300 text-sm max-w-md">
+            Where forever begins 💍 in a single frame 📸.
           </p>
         </motion.div>
       </div>
@@ -200,4 +140,3 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
     </div>
   );
 }
-                                                                                              

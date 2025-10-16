@@ -39,29 +39,32 @@ export default function CelestialEleganceTemplate({ coupleNames, portfolioId, im
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-slate-800 to-zinc-900 text-black">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-24">
+      {/* Top Spacer to avoid navbar overlap */}
+      <div className="h-32 md:h-40 lg:h-48"></div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+        {/* Header Section - Couple Name & One Word Caption */}
         <motion.div
-          className="mb-16"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="uppercase tracking-[0.4em] text-zinc-300 text-sm mb-6">
-            {coupleNames}
+          {/* One Word Caption */}
+          <p className="text-2xl lg:text-4xl text-zinc-300 tracking-[0.4em]">
+            Shubh (Auspicious) 🙏
           </p>
-          <h1
-            className="text-4xl lg:text-7xl font-light tracking-[0.3em]"
-            style={{ fontFamily: 'Cinzel, serif' }}
-          >
-            
-            <span className="block text-2xl text-black lg:text-4xl tracking-[0.6em] mt-6 text-zinc-400">
-              Passion
-            </span>
+          {/* Couple Name */}
+          <h1 className="text-5xl lg:text-7xl font-semibold text-black tracking-[0.2em] mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
+            {coupleNames}
           </h1>
+
+      
         </motion.div>
 
+        {/* Image Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 mb-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -88,16 +91,18 @@ export default function CelestialEleganceTemplate({ coupleNames, portfolioId, im
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
+
+            {/* Sentence Caption Block */}
             <div className="bg-white/5 rounded-3xl p-10 flex flex-col items-center justify-center text-center space-y-4">
               <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-zinc-400">
-                <span>love</span>
+                <span>Tradition 🥻</span>
                 <span>•</span>
-                <span>light</span>
+                <span>Blessings 🙌</span>
                 <span>•</span>
-                <span>legacy</span>
+                <span>New Beginnings 🌅</span>
               </div>
               <p className="text-zinc-300 text-sm max-w-md">
-                Each frame captures the quiet intimacy and cosmic wonder of a love story written in the night sky.
+                "The saffron sunrise of Gudi Padwa, framed by tradition and light. 💛"
               </p>
             </div>
           </div>
@@ -134,7 +139,8 @@ export default function CelestialEleganceTemplate({ coupleNames, portfolioId, im
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <div className="flex-1 bg-white/5 rounded-3xl overflow-hidden cursor-pointer group hidden lg:block"
+            <div
+              className="flex-1 bg-white/5 rounded-3xl overflow-hidden cursor-pointer group hidden lg:block"
               onClick={() => openLightbox(5)}
             >
               <ImageWithFallback

@@ -21,7 +21,6 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    // Check for a valid index
     if (index < galleryImages.length) {
       setCurrentImageIndex(index);
       setLightboxOpen(true);
@@ -40,12 +39,8 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
-  // Helper component for image tiles
   const GalleryTile = ({ index, isVertical, spanClasses = '' }: { index: number, isVertical: boolean, spanClasses?: string }) => {
-    // Aspect Ratios: Landscape (3:2) or Vertical (2:3)
     const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
-    
-    // Check if image data exists before rendering
     if (!galleryImages[index]) return null;
 
     return (
@@ -61,18 +56,18 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
       </div>
     );
   };
-  
-  // Array for 10 Landscape images (Indices 1 to 10)
+
   const landscapeIndices = Array.from({ length: 10 }, (_, i) => i + 1);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 via-stone-100 to-rose-50 text-stone-700">
-      {/* Container reverted to py-20 and includes the empty spacer div */}
+
+      {/* Top Spacer */}
+      <div className="h-20 lg:h-24" aria-hidden="true" />
+
       <div className="max-w-6xl mx-auto px-6 lg:px-14 py-20 space-y-16">
-        
-        {/* SPACER DIV ADDED HERE to push content below the fixed navbar */}
-        <div className="h-20 lg:h-24" aria-hidden="true" />
-        
+
+        {/* Header */}
         <motion.header
           className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10"
           initial={{ opacity: 0, y: -20 }}
@@ -82,56 +77,49 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
           <div>
             <p className="uppercase tracking-[0.45em] text-xs text-amber-500">.</p>
             <h1 className="text-5xl lg:text-6xl tracking-[0.3em]" style={{ fontFamily: 'Cinzel, serif' }}>
-              Sushant and Radhika
+              {coupleNames}
             </h1>
           </div>
-         
         </motion.header>
 
-        {/* --- IMAGE GRID: 1 Vertical (Centered) + 10 Horizontal --- */}
+        {/* Image Grid */}
         <motion.section
-          // Using a 6-column grid on large screens for flexible centering
-          className="grid grid-cols-2 lg:grid-cols-6 gap-6" 
+          className="grid grid-cols-2 lg:grid-cols-6 gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* 1. Vertical Image (Index 0) - Centered on desktop */}
-          <GalleryTile 
-            index={0} 
-            isVertical={true} 
-            spanClasses="col-span-2 lg:col-span-2 lg:col-start-3" // Span 2 cols, Start at col 3 (out of 6) to center
-          /> 
+          {/* Vertical Image */}
+          <GalleryTile index={0} isVertical={true} spanClasses="col-span-2 lg:col-span-2 lg:col-start-3" />
           
-          {/* 2. Horizontal Images (Indices 1 to 10) - 5 rows of 2 images (L-R) */}
-          {landscapeIndices.map((index, i) => (
-            <GalleryTile 
-              key={index}
-              index={index} 
-              isVertical={false} 
-              // Span 2 columns on mobile, 3 columns on desktop (2 per row)
-              spanClasses="col-span-2 lg:col-span-3" 
-            />
+          {/* Landscape Images */}
+          {landscapeIndices.map((index) => (
+            <GalleryTile key={index} index={index} isVertical={false} spanClasses="col-span-2 lg:col-span-3" />
           ))}
-
         </motion.section>
 
-        {/* --- Text Section --- */}
+        {/* Caption Section */}
         <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6" // Added pt-6 for separation from image grid
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {/* Image 11 (If we need a place for a text-based element, we can reuse index 11 as a placeholder if 11 images are expected) */}
-          <GalleryTile 
-            index={11} // Placeholder index if you have an 11th image
-            isVertical={false} 
-            spanClasses="hidden lg:block rounded-[2rem] bg-white shadow-xl"
-          />
-
-          
+          <div className="lg:col-span-3 text-center space-y-2">
+            <p className="text-lg tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
+              Every stolen glance, every happy tear—perfectly preserved. 🤍
+            </p>
+            <div className="flex justify-center items-center space-x-3 uppercase text-sm tracking-[0.4em] text-stone-600">
+              <span>Joyful 😄</span>
+              <span>·</span>
+              <span>Intimate 🤫</span>
+              <span>·</span>
+              <span>Timeless 🕰️</span>
+            </div>
+            <p className="text-2xl font-semibold tracking-wide mt-2">Vows 🙏</p>
+          </div>
         </motion.section>
+
       </div>
 
       <Lightbox

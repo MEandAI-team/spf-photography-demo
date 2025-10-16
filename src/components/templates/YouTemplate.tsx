@@ -11,7 +11,6 @@ interface YouTemplateProps {
 }
 
 export default function YouTemplate({ coupleNames, portfolioId, images = [] }: YouTemplateProps) {
-  // Use provided images, or get portfolio-specific images, or fallback to empty array
   const galleryImages = images.length > 0 
     ? images 
     : portfolioId 
@@ -22,7 +21,6 @@ export default function YouTemplate({ coupleNames, portfolioId, images = [] }: Y
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    // Only open if the image index is within the actual number of images available (0 to 7 for 8 images)
     if (index < galleryImages.length) {
       setCurrentImageIndex(index);
       setLightboxOpen(true);
@@ -41,9 +39,6 @@ export default function YouTemplate({ coupleNames, portfolioId, images = [] }: Y
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
-  // Helper component for repeated image divs
-  // Vertical: 2:3 ratio (2800x4200)
-  // Landscape: 16:9 ratio (4096x2304)
   const GalleryTile = ({ index, aspectRatio, spanClasses = '' }: { index: number, aspectRatio: string, spanClasses?: string }) => (
     <div 
       className={`bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 ${aspectRatio} ${spanClasses}`}
@@ -56,103 +51,72 @@ export default function YouTemplate({ coupleNames, portfolioId, images = [] }: Y
       />
     </div>
   );
-  
-  // Image indices mapping for 6 Vertical (V: 0-5) and 2 Landscape (L: 6-7)
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Top Spacer to avoid navbar overlap */}
+      <div className="h-32 md:h-40 lg:h-48"></div>  {/* ✅ This pushes the header down */}
+
       {/* Content Container */}
-      {/* Increased py-16 to py-24 to push the content (and header) down */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-24">
-        {/* Header - YOU Text */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-24">
+        
+        {/* Header Section - One Word Caption + Couple Name */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* One Word Caption */}
           <h1 
-            className="text-6xl lg:text-8xl text-gray-800 tracking-[0.1em]" 
+            className="text-6xl lg:text-8xl text-gray-800 tracking-[0.2em]" 
             style={{ fontFamily: 'Cinzel, serif' }}
           >
-            *
+            Chemistry
           </h1>
+
+          {/* Decorative line */}
           <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
+
+          {/* Couple Name */}
+          <p className="uppercase tracking-[0.4em] text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 mt-4">
+            {coupleNames}
+          </p>
         </motion.div>
 
-        {/* Photo Grid - REDESIGNED for 6 Vertical (2:3) and 2 Landscape (16:9) */}
+        {/* Photo Grid */}
         <motion.div 
           className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {/* Row 1: V | V | L (L spans 2 rows) */}
-          {/* 1. Vertical (Index 0) - 2:3 ratio */}
           <GalleryTile index={0} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
-
-          {/* 2. Vertical (Index 1) - 2:3 ratio */}
           <GalleryTile index={1} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
-
-          {/* 3. Landscape (Index 6) - 16:9 ratio, spans 1 column but 2 rows */}
-          <GalleryTile 
-            index={6} 
-            aspectRatio="aspect-[9/16]" // Used inverse ratio for vertical space-filling 
-            spanClasses="col-span-1 row-span-2" 
-          />
-
-          {/* Row 2: V | V (L is spanning down from Row 1) */}
-          {/* 4. Vertical (Index 2) - 2:3 ratio */}
+          <GalleryTile index={6} aspectRatio="aspect-[9/16]" spanClasses="col-span-1 row-span-2" />
           <GalleryTile index={2} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
-
-          {/* 5. Vertical (Index 3) - 2:3 ratio */}
           <GalleryTile index={3} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
-
-          {/* Row 3: L | V | V (L spans 2 columns) */}
-          {/* 6. Landscape (Index 7) - 16:9 ratio, spans 2 columns */}
-          <GalleryTile 
-            index={7} 
-            aspectRatio="aspect-[16/9]" 
-            spanClasses="col-span-2" 
-          />
-          
-          {/* 7. Vertical (Index 4) - 2:3 ratio */}
+          <GalleryTile index={7} aspectRatio="aspect-[16/9]" spanClasses="col-span-2" />
           <GalleryTile index={4} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
-
-          {/* Row 4: V (single item for flow) */}
-          {/* 8. Vertical (Index 5) - 2:3 ratio */}
           <GalleryTile index={5} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-start-2" />
-
         </motion.div>
 
-        {/* Decorative Element */}
+        {/* Sentence Caption - Centered Block */}
         <motion.div 
-          className="text-center mb-8"
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-gray-50 rounded-3xl p-8 mb-12 max-w-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+          <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-gray-400">
+            <span>Dream ☁️</span>
+            <span>•</span>
+            <span>Emotion 💖</span>
+            <span>•</span>
+            <span>Forever ⏳</span>
           </div>
-          <svg className="w-8 h-8 mx-auto text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </motion.div>
-
-        {/* Footer */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <p className="text-gray-600 tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
-            {coupleNames}
+          <p className="text-gray-600 text-sm max-w-md">
+            “Before the vows, there’s magic ✨ in every glance 👀.”
           </p>
         </motion.div>
       </div>

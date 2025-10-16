@@ -10,16 +10,14 @@ interface VelvetVowsTemplateProps {
   images?: ImageData[];
 }
 
-// Helper component for image tiles, adapted for this structure
+// Helper component for image tiles
 const GalleryTile = ({ index, isVertical, spanClasses = '', galleryImages, openLightbox }: { index: number, isVertical: boolean, spanClasses?: string, galleryImages: ImageData[], openLightbox: (index: number) => void }) => {
-    // Aspect Ratios: Landscape (3:2) or Vertical (2:3)
     const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
     
     if (index >= galleryImages.length) return null;
 
     return (
       <div
-        // Changed bg-white/10 to bg-white shadow-lg for light theme
         className={`${aspectRatio} ${spanClasses} rounded-3xl bg-white shadow-lg overflow-hidden cursor-pointer group`}
         onClick={() => openLightbox(index)}
       >
@@ -32,7 +30,6 @@ const GalleryTile = ({ index, isVertical, spanClasses = '', galleryImages, openL
     );
 };
 
-
 export default function VelvetVowsTemplate({ coupleNames, portfolioId, images = [] }: VelvetVowsTemplateProps) {
   const galleryImages = images.length > 0
     ? images
@@ -44,7 +41,6 @@ export default function VelvetVowsTemplate({ coupleNames, portfolioId, images = 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    // Check for valid index before opening lightbox
     if (index < galleryImages.length) {
       setCurrentImageIndex(index);
       setLightboxOpen(true);
@@ -64,70 +60,66 @@ export default function VelvetVowsTemplate({ coupleNames, portfolioId, images = 
   };
 
   return (
-    // Outer container: Sets light gradient background and default black text color
     <div className="min-h-screen bg-white text-black relative overflow-hidden">
-      
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 py-20 space-y-16">
-        
-        {/* Empty Div Spacer: Pushes content down to clear a fixed navigation bar */}
         <div className="h-20 lg:h-24" aria-hidden="true" />
-        
+
         <motion.header
           className="flex flex-col items-center text-center space-y-4"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Text colors changed to dark neutrals */}
           <p className="uppercase tracking-[0.6em] text-xs text-violet-700">.</p>
           <h1 className="text-5xl lg:text-6xl tracking-[0.35em] text-violet-900" style={{ fontFamily: 'Cinzel, serif' }}>
-            Sports
+            {coupleNames}
           </h1>
-          {/* ⭐ FIX APPLIED: Added mb-8 (margin-bottom) to create space above the images ⭐ */}
-          <p className="text-violet-800 tracking-[0.35em] uppercase text-xs mb-8">Eat dust and mud, leave none behind. 💨</p>
+          <p className="text-violet-800 tracking-[0.35em] uppercase text-xs mb-8">
+            Where the limit is just the next crest. 🚧
+          </p>
         </motion.header>
 
-        {/* --- IMAGE GRID: 3V, 2L, 3V Structure (Indices 0-7) --- */}
+        {/* Image Grid */}
         <motion.section
-          className="grid grid-cols-2 lg:grid-cols-12 gap-6" // Using 12-col desktop grid for 3V side-by-side
+          className="grid grid-cols-2 lg:grid-cols-12 gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* 1. START: 3 Vertical Images (Indices 0, 1, 2) - 4 columns each */}
-          <GalleryTile index={0} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={1} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={2} isVertical={true} spanClasses="col-span-2 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          
-          {/* 2. MIDDLE: 2 Landscape Images (Indices 3, 4) - 6 columns each */}
-          <GalleryTile index={3} isVertical={false} spanClasses="col-span-2 lg:col-span-6" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={4} isVertical={false} spanClasses="col-span-2 lg:col-span-6" galleryImages={galleryImages} openLightbox={openLightbox} />
-          
-          {/* 3. END: 3 Vertical Images (Indices 5, 6, 7) - 4 columns each */}
-          <GalleryTile index={5} isVertical={true} spanClasses="col-span-2 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={6} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={7} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={8} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          <GalleryTile index={9} isVertical={false} spanClasses="col-span-2 lg:col-span-6" galleryImages={galleryImages} openLightbox={openLightbox} />
-
+          {[0,1,2].map(i => (
+            <GalleryTile key={i} index={i} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
+          ))}
+          {[3,4].map(i => (
+            <GalleryTile key={i} index={i} isVertical={false} spanClasses="col-span-2 lg:col-span-6" galleryImages={galleryImages} openLightbox={openLightbox} />
+          ))}
+          {[5,6,7,8,9].map(i => (
+            <GalleryTile key={i} index={i} isVertical={true} spanClasses="col-span-1 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
+          ))}
         </motion.section>
 
-        {/* This section remains empty, but needs spacing below it */}
+        {/* Caption Section */}
         <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {/* Content that was previously here has been removed */}
-          
+          <div className="lg:col-span-3 text-center space-y-2">
+            <p className="text-lg tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
+              Where the limit is just the next crest. 🚧
+            </p>
+            <div className="flex justify-center items-center space-x-3 uppercase text-sm tracking-[0.4em] text-stone-600">
+              <span>Grit 💯</span>
+              <span>·</span>
+              <span>Speed ⚡</span>
+              <span>·</span>
+              <span>Thrill 🤩</span>
+            </div>
+            <p className="text-2xl font-semibold tracking-wide mt-2">Adrenaline 💥</p>
+          </div>
         </motion.section>
-        
-        {/* FINAL FIX: LARGE BOTTOM SPACER DIV 
-           Guarantees generous padding below the last visible content.
-        */}
+
         <div className="h-24 lg:h-32" aria-hidden="true" />
-        
       </div>
 
       <Lightbox

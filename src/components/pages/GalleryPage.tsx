@@ -27,57 +27,57 @@ const portfolioItems = [
   },
   {
     id: 2,
-    coupleNames: 'Maria & George',
+    coupleNames: 'Mandar & Ashwini',
     image: 'https://images.unsplash.com/photo-1739249949375-ea78616571fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmdhZ2VtZW50JTIwcGhvdG9ncmFwaHklMjBvdXRkb29yfGVufDF8fHx8MTc1NjMyMjgzNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 3,
-    coupleNames: 'Emma & James',
+    coupleNames: 'Rana & Anjali',
     image: 'https://images.unsplash.com/photo-1588849538263-fbc2b7b8965f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY2VyZW1vbnklMjBicmlkZSUyMGdyb29tfGVufDF8fHx8MTc1NjMyMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 4,
-    coupleNames: 'Sarah & Michael',
+    coupleNames: 'Ashish & Anjuna',
     image: 'https://images.unsplash.com/photo-1682459337036-e7bbc3986d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBwb3J0cmFpdCUyMHJvbWFudGljfGVufDF8fHx8MTc1NjMyMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 5,
-    coupleNames: 'Rachel & David',
+    coupleNames: 'Swati Limaye',
     image: 'https://images.unsplash.com/photo-1738669469338-801b4e9dbccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwcmVjZXB0aW9uJTIwY2VsZWJyYXRpb258ZW58MXx8fHwxNzU2Mjg1MzM4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 6,
-    coupleNames: 'Lisa & Ryan',
+    coupleNames: 'Samruddhi & Rohit',
     image: 'https://images.unsplash.com/photo-1742980772407-683eda14c08e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHkxfHxwcmUlMjB3ZWRkaW5nJTIwcGhvdG9zaG9vdHxlbnwxfHx8fDE3NTYzMjI4MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 7,
-    coupleNames: 'Anna & Chris',
+    coupleNames: 'Harsh & Nishiganda',
     image: 'https://images.unsplash.com/photo-1701488648211-6be60979fedc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicmlkZSUyMHBvcnRyYWl0JTIwd2VkZGluZyUyMGRyZXNzfGVufDF8fHx8MTc1NjMyMjgzN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 8,
-    coupleNames: 'Kate & Tom',
+    coupleNames: 'Ratnesha',
     image: 'https://images.unsplash.com/photo-1622580627463-b03d48e305d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm9vbSUyMHBvcnRyYWl0JTIwd2VkZGluZ3xlbnwxfHx8fDE3NTYzMjI4Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 9,
-    coupleNames: 'Sophie & Jake',
+    coupleNames: 'Vidija & Gurunath',
     image: 'https://images.unsplash.com/photo-1555475809-0cc59e0f1a6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwcmluZyUyMGNlcmVtb255fGVufDF8fHx8MTc1NjMyMjgzOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 10,
-    coupleNames: 'Megan & Alex',
+    coupleNames: 'Sushant & Radhika',
     image: 'https://images.unsplash.com/photo-1617788472008-1e524a74cf25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGVzJTIwcGhvdG9ncmFwaHklMjBiZWFjaHxlbnwxfHx8fDE3NTYzMjI4Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 11,
-    coupleNames: 'Elena & Daniel',
+    coupleNames: 'Shruti',
     image: 'https://images.unsplash.com/photo-1664312696723-173130983e27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwYm91cXVldCUyMGZsb3dlcnN8ZW58MXx8fHwxNzU2MjQzODA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   },
   {
     id: 12,
-    coupleNames: 'Grace & Oliver',
+    coupleNames: 'Sports',
     image: 'https://images.unsplash.com/photo-1714972383570-44ddc9738355?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBkYW5jaW5nJTIwd2VkZGluZ3xlbnwxfHx8fDE3NTYyODM5MDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
   }
 ];
