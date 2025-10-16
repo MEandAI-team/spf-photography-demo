@@ -123,8 +123,8 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-007',
-    src: '',
-    alt: '/images/wedding/RIYA & ASHISH/img7.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img7.jpg',
+    alt: 'Srushti & Piyush - Wedding details',
     caption: 'Beautiful wedding details',
     category: 'wedding',
     title: 'Details Matter',
@@ -137,15 +137,38 @@ export const portfolio1Images: ImageData[] = [
     id: 'portfolio1-008',
     src: '/images/wedding/RIYA & ASHISH/img8.jpg',
     alt: 'Srushti & Piyush - Candid moment',
-    caption: 'Candid moment of joy', 
+    caption: 'Candid moment of joy',
     category: 'wedding',
     title: 'Pure Happiness',
     description: 'A candid moment capturing genuine happiness.',
     location: 'Garden Valley Resort',
     date: '2025-01-15',
     photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio1-009',
+    src: '/images/wedding/RIYA & ASHISH/img9.jpg',
+    alt: 'Srushti & Piyush - Family celebration',
+    caption: 'Celebrating with family and friends',
+    category: 'wedding',
+    title: 'Togetherness',
+    description: 'A joyful moment surrounded by loved ones.',
+    location: 'Garden Valley Resort',
+    date: '2025-01-15',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio1-010',
+    src: '/images/wedding/RIYA & ASHISH/main.jpg',
+    alt: 'Srushti & Piyush - Wedding highlight',
+    caption: 'Signature highlight from the celebration',
+    category: 'wedding',
+    title: 'Wedding Highlight',
+    description: 'A defining moment that captures the spirit of the day.',
+    location: 'Garden Valley Resort',
+    date: '2025-01-15',
+    photographer: 'SPF Photography'
   }
-  
 ];
 
 // Portfolio 2: Mandar & Ashwini
@@ -207,7 +230,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-005',
-    src: '/images/prewedding/MANDAR & ASHWINI/im5.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img5.jpg',
     alt: 'Maria & George - Couple portrait',
     caption: 'Stunning couple portrait',
     category: 'wedding',
@@ -244,11 +267,11 @@ export const portfolio2Images: ImageData[] = [
   {
     id: 'portfolio2-008',
     src: '/images/prewedding/MANDAR & ASHWINI/main.jpg',
-    alt: 'Maria & George - Sunset portrait',
-    caption: 'Golden hour portrait',
+    alt: 'Maria & George - Signature prewedding portrait',
+    caption: 'Signature portrait capturing their story',
     category: 'wedding',
-    title: 'Golden Glow',
-    description: 'A stunning portrait during golden hour.',
+    title: 'Signature Moment',
+    description: 'The defining portrait of their riverside celebration.',
     location: 'Riverside Gardens',
     date: '2024-12-10',
     photographer: 'SPF Photography'
@@ -359,6 +382,18 @@ export const portfolio3Images: ImageData[] = [
     location: 'Botanical Gardens',
     date: '2024-11-20',
     photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio3-009',
+    src: '/images/celebrity/RANA - ANJALI/main.jpg',
+    alt: 'Emma & James - Signature moment',
+    caption: 'Highlight of their grand celebration',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'A defining moment from their unforgettable day.',
+    location: 'Botanical Gardens',
+    date: '2024-11-20',
+    photographer: 'SPF Photography'
   }
 ];
 
@@ -463,6 +498,42 @@ export const portfolio4Images: ImageData[] = [
     category: 'wedding',
     title: 'Sunset Joy',
     description: 'Joyful celebration as the sun sets.',
+    location: 'Sunset Beach',
+    date: '2024-10-15',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio4-009',
+    src: '/images/maternity/ASHISH & ANUJA/img8.jpg',
+    alt: 'Sarah & Michael - Beach portraits',
+    caption: 'Playful portraits along the shoreline',
+    category: 'wedding',
+    title: 'Shoreline Moments',
+    description: 'Capturing candid joy beside the waves.',
+    location: 'Sunset Beach',
+    date: '2024-10-15',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio4-010',
+    src: '/images/maternity/ASHISH & ANUJA/img9.jpg',
+    alt: 'Sarah & Michael - Seaside toast',
+    caption: 'Toasting to forever by the sea',
+    category: 'wedding',
+    title: 'Seaside Toast',
+    description: 'An intimate toast overlooking the ocean.',
+    location: 'Sunset Beach',
+    date: '2024-10-15',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio4-011',
+    src: '/images/maternity/ASHISH & ANUJA/main.jpg',
+    alt: 'Sarah & Michael - Signature moment',
+    caption: 'A defining moment from their celebration',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'The perfect encapsulation of their beach wedding.',
     location: 'Sunset Beach',
     date: '2024-10-15',
     photographer: 'SPF Photography'
@@ -573,6 +644,30 @@ export const portfolio5Images: ImageData[] = [
     location: 'Historic Manor',
     date: '2024-09-25',
     photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio5-009',
+    src: '/images/celebrity/SWATI LIMAYE/img9.JPG',
+    alt: 'Rachel & David - Farewell moment',
+    caption: 'Grand exit at the historic manor',
+    category: 'wedding',
+    title: 'Grand Exit',
+    description: 'A joyful send-off to conclude the celebration.',
+    location: 'Historic Manor',
+    date: '2024-09-25',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio5-010',
+    src: '/images/celebrity/SWATI LIMAYE/main.jpg',
+    alt: 'Rachel & David - Signature portrait',
+    caption: 'Signature portrait capturing their love',
+    category: 'wedding',
+    title: 'Signature Portrait',
+    description: 'A defining portrait that encapsulates their love story.',
+    location: 'Historic Manor',
+    date: '2024-09-25',
+    photographer: 'SPF Photography'
   }
 ];
 
@@ -677,6 +772,42 @@ export const portfolio6Images: ImageData[] = [
     category: 'wedding',
     title: 'Adventure Together',
     description: 'Beginning their adventure as husband and wife.',
+    location: 'Mountain View Resort',
+    date: '2024-08-18',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio6-009',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img9.jpg',
+    alt: 'Lisa & Ryan - Summit moment',
+    caption: 'Celebrating at the summit overlook',
+    category: 'wedding',
+    title: 'Summit Celebration',
+    description: 'A triumphant moment overlooking the peaks.',
+    location: 'Mountain View Resort',
+    date: '2024-08-18',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio6-010',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img10.jpg',
+    alt: 'Lisa & Ryan - Mountain reflections',
+    caption: 'Reflective moment by the lakeside',
+    category: 'wedding',
+    title: 'Lakeside Reflection',
+    description: 'Quiet reflections beside the mountain lake.',
+    location: 'Mountain View Resort',
+    date: '2024-08-18',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio6-011',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/main.jpg',
+    alt: 'Lisa & Ryan - Signature adventure',
+    caption: 'Signature moment of their mountain adventure',
+    category: 'wedding',
+    title: 'Signature Adventure',
+    description: 'The defining image of their mountain celebration.',
     location: 'Mountain View Resort',
     date: '2024-08-18',
     photographer: 'SPF Photography'
@@ -787,6 +918,66 @@ export const portfolio7Images: ImageData[] = [
     location: 'Downtown Loft',
     date: '2024-07-22',
     photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio7-009',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img9.jpg',
+    alt: 'Anna & Chris - Twinkling skyline',
+    caption: 'Skyline portraits under city lights',
+    category: 'wedding',
+    title: 'Skyline Sparkle',
+    description: 'Capturing romance with the illuminated skyline backdrop.',
+    location: 'Downtown Loft',
+    date: '2024-07-22',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio7-010',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img10.jpg',
+    alt: 'Anna & Chris - Evening stroll',
+    caption: 'Strolling through the evening streets',
+    category: 'wedding',
+    title: 'Evening Stroll',
+    description: 'Hand-in-hand along the softly lit city streets.',
+    location: 'Downtown Loft',
+    date: '2024-07-22',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio7-011',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img11.jpg',
+    alt: 'Anna & Chris - Rooftop embrace',
+    caption: 'Quiet embrace above the city',
+    category: 'wedding',
+    title: 'Rooftop Embrace',
+    description: 'An intimate moment overlooking the night skyline.',
+    location: 'Downtown Loft',
+    date: '2024-07-22',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio7-012',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img12.jpg',
+    alt: 'Anna & Chris - City reflections',
+    caption: 'Reflections of the city around them',
+    category: 'wedding',
+    title: 'City Reflections',
+    description: 'Captured among reflective glass and glowing lights.',
+    location: 'Downtown Loft',
+    date: '2024-07-22',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio7-013',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/main.jpg',
+    alt: 'Anna & Chris - Signature moment',
+    caption: 'Signature portrait of their urban celebration',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'The definitive portrait of their city love story.',
+    location: 'Downtown Loft',
+    date: '2024-07-22',
+    photographer: 'SPF Photography'
   }
 ];
 
@@ -891,6 +1082,30 @@ export const portfolio8Images: ImageData[] = [
     category: 'wedding',
     title: 'Country Sunset',
     description: 'Golden hour in the countryside.',
+    location: 'Countryside Barn',
+    date: '2024-06-14',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio8-009',
+    src: '/images/portrait/RATNESHA/img9.jpg',
+    alt: 'Kate & Tom - Rustic romance',
+    caption: 'Soft moments in the golden field',
+    category: 'wedding',
+    title: 'Golden Field',
+    description: 'Tender portraits surrounded by sunlit fields.',
+    location: 'Countryside Barn',
+    date: '2024-06-14',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio8-010',
+    src: '/images/portrait/RATNESHA/main.jpg',
+    alt: 'Kate & Tom - Signature rustic portrait',
+    caption: 'Signature portrait capturing rustic charm',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'The definitive portrait of their countryside celebration.',
     location: 'Countryside Barn',
     date: '2024-06-14',
     photographer: 'SPF Photography'
@@ -1001,6 +1216,30 @@ export const portfolio9Images: ImageData[] = [
     location: 'Island Resort',
     date: '2024-05-10',
     photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio9-009',
+    src: '/images/prewedding/VIDIJA & GURUNATH/img9.jpg',
+    alt: 'Sophie & Jake - Tropical escape',
+    caption: 'Joyful moments by the shore',
+    category: 'wedding',
+    title: 'Shoreline Joy',
+    description: 'Capturing laughter along the tropical shoreline.',
+    location: 'Island Resort',
+    date: '2024-05-10',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio9-010',
+    src: '/images/prewedding/VIDIJA & GURUNATH/main.jpg',
+    alt: 'Sophie & Jake - Signature island moment',
+    caption: 'Signature portrait of their island celebration',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'The defining portrait of their tropical destination wedding.',
+    location: 'Island Resort',
+    date: '2024-05-10',
+    photographer: 'SPF Photography'
   }
 ];
 
@@ -1105,6 +1344,54 @@ export const portfolio10Images: ImageData[] = [
     category: 'wedding',
     title: 'Blossom Joy',
     description: 'Joyful celebration surrounded by spring blooms.',
+    location: 'Spring Gardens',
+    date: '2024-04-20',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio10-009',
+    src: '/images/wedding/SUSHANT & RADHIKA/img9.jpg',
+    alt: 'Megan & Alex - Garden fountain',
+    caption: 'Romantic moment by the fountain',
+    category: 'wedding',
+    title: 'Fountain Romance',
+    description: 'A tender moment beside the blooming garden fountain.',
+    location: 'Spring Gardens',
+    date: '2024-04-20',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio10-010',
+    src: '/images/wedding/SUSHANT & RADHIKA/img10.jpg',
+    alt: 'Megan & Alex - Sunset garden',
+    caption: 'Sunset portraits among blossoms',
+    category: 'wedding',
+    title: 'Sunset Petals',
+    description: 'Golden hour portraits in the blooming garden.',
+    location: 'Spring Gardens',
+    date: '2024-04-20',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio10-011',
+    src: '/images/wedding/SUSHANT & RADHIKA/img11.jpg',
+    alt: 'Megan & Alex - Garden pathway',
+    caption: 'Stroll along the garden path',
+    category: 'wedding',
+    title: 'Garden Path',
+    description: 'Walking hand-in-hand through the gardens.',
+    location: 'Spring Gardens',
+    date: '2024-04-20',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio10-012',
+    src: '/images/wedding/SUSHANT & RADHIKA/main.jpg',
+    alt: 'Megan & Alex - Signature spring portrait',
+    caption: 'Signature portrait amid spring blossoms',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'The defining portrait of their spring wedding.',
     location: 'Spring Gardens',
     date: '2024-04-20',
     photographer: 'SPF Photography'
@@ -1215,6 +1502,54 @@ export const portfolio11Images: ImageData[] = [
     location: 'Mountain Lodge',
     date: '2024-02-14',
     photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio11-009',
+    src: '/images/portrait/SHRUTI/img9.jpg',
+    alt: 'Elena & Daniel - Snowy pathway',
+    caption: 'Walking through fresh snow',
+    category: 'wedding',
+    title: 'Snowy Path',
+    description: 'A peaceful walk along the snow-covered path.',
+    location: 'Mountain Lodge',
+    date: '2024-02-14',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio11-010',
+    src: '/images/portrait/SHRUTI/img10.jpg',
+    alt: 'Elena & Daniel - Winter embrace',
+    caption: 'Warm embrace in the winter chill',
+    category: 'wedding',
+    title: 'Winter Embrace',
+    description: 'Holding each other close against the winter breeze.',
+    location: 'Mountain Lodge',
+    date: '2024-02-14',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio11-011',
+    src: '/images/portrait/SHRUTI/img11.jpg',
+    alt: 'Elena & Daniel - Frosted details',
+    caption: 'Frost-kissed wedding details',
+    category: 'wedding',
+    title: 'Frosted Details',
+    description: 'Intricate winter details captured up close.',
+    location: 'Mountain Lodge',
+    date: '2024-02-14',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio11-012',
+    src: '/images/portrait/SHRUTI/main.jpg',
+    alt: 'Elena & Daniel - Signature winter portrait',
+    caption: 'Signature portrait capturing winter magic',
+    category: 'wedding',
+    title: 'Signature Moment',
+    description: 'The defining portrait of their winter wedding.',
+    location: 'Mountain Lodge',
+    date: '2024-02-14',
+    photographer: 'SPF Photography'
   }
 ];
 
@@ -1222,7 +1557,7 @@ export const portfolio11Images: ImageData[] = [
 export const portfolio12Images: ImageData[] = [
   {
     id: 'portfolio12-001',
-    src: '',
+    src: '/images/sports/img1.jpg',
     alt: 'Grace & Oliver - Classic wedding',
     caption: 'Timeless classic wedding ceremony',
     category: 'wedding',
@@ -1241,7 +1576,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-002',
-    src: '',
+    src: '/images/sports/img6.jpg',
     alt: 'Grace & Oliver - Grand reception',
     caption: 'Elegant ballroom reception',
     category: 'wedding',
@@ -1253,7 +1588,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-003',
-    src: '',
+    src: '/images/sports/img14.jpg',
     alt: 'Grace & Oliver - Cathedral ceremony',
     caption: 'Ceremony in grand cathedral',
     category: 'wedding',
@@ -1265,7 +1600,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-004',
-    src: '',
+    src: '/images/sports/img12.jpg',
     alt: 'Grace & Oliver - Classic portraits',
     caption: 'Timeless couple portraits',
     category: 'wedding',
@@ -1277,7 +1612,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-005',
-    src: '',
+    src: '/images/sports/img8.jpg',
     alt: 'Grace & Oliver - Ballroom details',
     caption: 'Elegant ballroom details',
     category: 'wedding',
@@ -1289,7 +1624,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-006',
-    src: '',
+    src: '/images/sports/img9.jpg',
     alt: 'Grace & Oliver - First dance',
     caption: 'Elegant first dance',
     category: 'wedding',
@@ -1301,7 +1636,19 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-007',
-    src: '',
+    src: '/images/sports/img10.jpg',
+    alt: 'Grace & Oliver - Elegant procession',
+    caption: 'Procession through the grand hall',
+    category: 'wedding',
+    title: 'Grand Procession',
+    description: 'An elegant march through the ornate hallways.',
+    location: 'Grand Hotel',
+    date: '2024-03-30',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio12-008',
+    src: '/images/sports/img11.jpg',
     alt: 'Grace & Oliver - Grand entrance',
     caption: 'Grand entrance to reception',
     category: 'wedding',
@@ -1312,13 +1659,25 @@ export const portfolio12Images: ImageData[] = [
     photographer: 'SPF Photography'
   },
   {
-    id: 'portfolio12-008',
-    src: '',
+    id: 'portfolio12-009',
+    src: '/images/sports/img2.jpg',
     alt: 'Grace & Oliver - Classic celebration',
     caption: 'Timeless celebration',
     category: 'wedding',
     title: 'Classic Joy',
     description: 'A celebration filled with timeless elegance.',
+    location: 'Grand Hotel',
+    date: '2024-03-30',
+    photographer: 'SPF Photography'
+  },
+  {
+    id: 'portfolio12-010',
+    src: '/images/sports/img3.jpg',
+    alt: 'Grace & Oliver - Ballroom toast',
+    caption: 'A heartfelt toast in the ballroom',
+    category: 'wedding',
+    title: 'Ballroom Toast',
+    description: 'Celebrating with friends and family.',
     location: 'Grand Hotel',
     date: '2024-03-30',
     photographer: 'SPF Photography'

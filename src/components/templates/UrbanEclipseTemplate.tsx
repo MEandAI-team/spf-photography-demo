@@ -10,7 +10,30 @@ interface UrbanEclipseTemplateProps {
   images?: ImageData[];
 }
 
+// Helper component for image tiles, simplified for this structure
+const GalleryTile = ({ index, isVertical, spanClasses = '', galleryImages, openLightbox }: { index: number, isVertical: boolean, spanClasses?: string, galleryImages: ImageData[], openLightbox: (index: number) => void }) => {
+    // Aspect Ratios: Landscape (3:2) or Vertical (2:3)
+    const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
+    
+    if (index >= galleryImages.length) return null;
+
+    return (
+      <div
+        className={`${aspectRatio} ${spanClasses} rounded-[2rem] bg-white shadow-lg overflow-hidden cursor-pointer group`}
+        onClick={() => openLightbox(index)}
+      >
+        <ImageWithFallback
+          src={galleryImages[index]?.src || ''}
+          alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+    );
+};
+
+
 export default function UrbanEclipseTemplate({ coupleNames, portfolioId, images = [] }: UrbanEclipseTemplateProps) {
+  // Determine which image array to use: passed via props or fetched via portfolioId
   const galleryImages = images.length > 0
     ? images
     : portfolioId
@@ -21,8 +44,11 @@ export default function UrbanEclipseTemplate({ coupleNames, portfolioId, images 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
+    // Check for valid index before opening lightbox
+    if (index < galleryImages.length) {
+      setCurrentImageIndex(index);
+      setLightboxOpen(true);
+    }
   };
 
   const closeLightbox = () => {
@@ -37,113 +63,66 @@ export default function UrbanEclipseTemplate({ coupleNames, portfolioId, images 
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
+  // V images span 2 columns on a 4-column grid (2 + 2 = 4)
+  // L images span 4 columns (1 image per row) or 2 columns each (2 + 2 = 4)
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#050505] via-[#111111] to-[#050505] text-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-16 py-20 space-y-16">
+    // Outer container: Sets light gradient background and default black text color
+    <div className="min-h-screen bg-gradient-to-b from-white via-neutral-100 to-white text-black">
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 pt-20 pb-20 space-y-16">
+        
+        {/* Empty Div Spacer: Pushes content down to clear a fixed navigation bar */}
+        <div className="h-20 lg:h-24" aria-hidden="true" />
+        
+        {/* Header Section: Title and couple names */}
         <motion.header
-          className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10"
+          className="flex flex-col items-center justify-center gap-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div>
-            <p className="uppercase tracking-[0.5em] text-xs text-neutral-400">{coupleNames}</p>
-            <h1 className="text-5xl lg:text-6xl tracking-[0.3em]" style={{ fontFamily: 'Cinzel, serif' }}>
-              URBAN ECLIPSE
+          <div className="text-center w-full">
+            <p className="uppercase tracking-[0.5em] text-xs text-neutral-600">.</p>
+            <h1 className="text-5xl lg:text-6xl tracking-[0.3em] text-neutral-800" style={{ fontFamily: 'Cinzel, serif' }}>
+              Shurti
             </h1>
-          </div>
-          <div className="flex gap-4 uppercase tracking-[0.5em] text-xs text-neutral-500">
-            <span>Neon</span>
-            <span>Shadow</span>
-            <span>Pulse</span>
           </div>
         </motion.header>
 
+        {/* --- IMAGE GRID (2V, 2V, 2L, 2V, 2V Structure - 10 Images Total) --- */}
         <motion.section
-          className="grid grid-cols-1 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6" // Use 4-col desktop grid for V-image pairing
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div
-            className="lg:col-span-2 lg:row-span-2 rounded-[2rem] bg-white/5 overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(0)}
-          >
-            <ImageWithFallback
-              src={galleryImages[0]?.src || ''}
-              alt={galleryImages[0]?.alt || 'Gallery image 1'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="lg:col-span-2 rounded-[2rem] bg-white/5 overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(1)}
-          >
-            <ImageWithFallback
-              src={galleryImages[1]?.src || ''}
-              alt={galleryImages[1]?.alt || 'Gallery image 2'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2rem] bg-white/5 overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(2)}
-          >
-            <ImageWithFallback
-              src={galleryImages[2]?.src || ''}
-              alt={galleryImages[2]?.alt || 'Gallery image 3'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2rem] bg-white/5 overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(3)}
-          >
-            <ImageWithFallback
-              src={galleryImages[3]?.src || ''}
-              alt={galleryImages[3]?.alt || 'Gallery image 4'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2rem] bg-white/5 overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(4)}
-          >
-            <ImageWithFallback
-              src={galleryImages[4]?.src || ''}
-              alt={galleryImages[4]?.alt || 'Gallery image 5'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        </motion.section>
+          {/* 1. START: 2 Vertical Images (Indices 0, 1) */}
+          <GalleryTile index={0} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+          <GalleryTile index={1} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+          
+          {/* 2. NEXT: 2 Vertical Images (Indices 2, 3) */}
+          <GalleryTile index={2} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+          <GalleryTile index={3} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
 
-        <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <div className="rounded-[2rem] bg-white/5 overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(5)}
-          >
-            <ImageWithFallback
-              src={galleryImages[5]?.src || ''}
-              alt={galleryImages[5]?.alt || 'Gallery image 6'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2rem] bg-white/5 p-10 space-y-6 text-neutral-300">
-            <p className="uppercase tracking-[0.4em] text-xs text-neutral-500">City heartbeat</p>
-            <p className="text-sm leading-relaxed">
-              Midnight reflections, electric skylines, and the magnetic pulse of love against metropolitan silhouettes.
-            </p>
-          </div>
-          <div className="rounded-[2rem] bg-white/5 p-10 flex flex-col items-center justify-center space-y-4 text-neutral-300">
-            <p className="uppercase tracking-[0.4em] text-xs text-neutral-500">Future brilliant</p>
-            <button
-              className="uppercase tracking-[0.4em] text-xs border border-white/40 rounded-full px-8 py-3 hover:bg-white/10 transition"
-              onClick={() => openLightbox(0)}
-            >
-              View Neon Story
-            </button>
-          </div>
+          {/* 3. MIDDLE: 2 Landscape Images (Indices 4, 5) - Full width on desktop */}
+          <GalleryTile index={4} isVertical={false} spanClasses="col-span-2 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
+          <GalleryTile index={5} isVertical={false} spanClasses="col-span-2 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
+
+          {/* 4. NEXT: 2 Vertical Images (Indices 6, 7) */}
+          <GalleryTile index={6} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+          <GalleryTile index={7} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+
+          {/* 5. END: 2 Vertical Images (Indices 8, 9) */}
+          <GalleryTile index={8} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+          <GalleryTile index={9} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+
         </motion.section>
+        
+        {/* FINAL FIX: LARGE BOTTOM SPACER DIV 
+           Guarantees padding at the bottom of the page.
+        */}
+        <div className="h-24 lg:h-32" aria-hidden="true" />
+        
       </div>
 
       <Lightbox

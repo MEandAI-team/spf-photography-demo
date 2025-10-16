@@ -21,8 +21,11 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
+    // Check for a valid index
+    if (index < galleryImages.length) {
+      setCurrentImageIndex(index);
+      setLightboxOpen(true);
+    }
   };
 
   const closeLightbox = () => {
@@ -37,9 +40,39 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
+  // Helper component for image tiles
+  const GalleryTile = ({ index, isVertical, spanClasses = '' }: { index: number, isVertical: boolean, spanClasses?: string }) => {
+    // Aspect Ratios: Landscape (3:2) or Vertical (2:3)
+    const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
+    
+    // Check if image data exists before rendering
+    if (!galleryImages[index]) return null;
+
+    return (
+      <div
+        className={`${aspectRatio} ${spanClasses} rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group`}
+        onClick={() => openLightbox(index)}
+      >
+        <ImageWithFallback
+          src={galleryImages[index]?.src || ''}
+          alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+    );
+  };
+  
+  // Array for 10 Landscape images (Indices 1 to 10)
+  const landscapeIndices = Array.from({ length: 10 }, (_, i) => i + 1);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 via-stone-100 to-rose-50 text-stone-700">
+      {/* Container reverted to py-20 and includes the empty spacer div */}
       <div className="max-w-6xl mx-auto px-6 lg:px-14 py-20 space-y-16">
+        
+        {/* SPACER DIV ADDED HERE to push content below the fixed navbar */}
+        <div className="h-20 lg:h-24" aria-hidden="true" />
+        
         <motion.header
           className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10"
           initial={{ opacity: 0, y: -20 }}
@@ -47,107 +80,57 @@ export default function RusticReverieTemplate({ coupleNames, portfolioId, images
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="uppercase tracking-[0.45em] text-xs text-amber-500">{coupleNames}</p>
+            <p className="uppercase tracking-[0.45em] text-xs text-amber-500">.</p>
             <h1 className="text-5xl lg:text-6xl tracking-[0.3em]" style={{ fontFamily: 'Cinzel, serif' }}>
-              RUSTIC REVERIE
+              Sushant and Radhika
             </h1>
           </div>
-          <div className="flex flex-col lg:flex-row gap-4 text-sm text-amber-700/80">
-            <span className="uppercase tracking-[0.3em]">Harvest love</span>
-            <span className="uppercase tracking-[0.3em]">Golden light</span>
-            <span className="uppercase tracking-[0.3em]">Warm keepsakes</span>
-          </div>
+         
         </motion.header>
 
+        {/* --- IMAGE GRID: 1 Vertical (Centered) + 10 Horizontal --- */}
         <motion.section
-          className="grid grid-cols-1 lg:grid-cols-5 gap-6"
+          // Using a 6-column grid on large screens for flexible centering
+          className="grid grid-cols-2 lg:grid-cols-6 gap-6" 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div
-            className="lg:col-span-3 lg:row-span-2 rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(0)}
-          >
-            <ImageWithFallback
-              src={galleryImages[0]?.src || ''}
-              alt={galleryImages[0]?.alt || 'Gallery image 1'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          {/* 1. Vertical Image (Index 0) - Centered on desktop */}
+          <GalleryTile 
+            index={0} 
+            isVertical={true} 
+            spanClasses="col-span-2 lg:col-span-2 lg:col-start-3" // Span 2 cols, Start at col 3 (out of 6) to center
+          /> 
+          
+          {/* 2. Horizontal Images (Indices 1 to 10) - 5 rows of 2 images (L-R) */}
+          {landscapeIndices.map((index, i) => (
+            <GalleryTile 
+              key={index}
+              index={index} 
+              isVertical={false} 
+              // Span 2 columns on mobile, 3 columns on desktop (2 per row)
+              spanClasses="col-span-2 lg:col-span-3" 
             />
-          </div>
+          ))}
 
-          <div className="lg:col-span-2 rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(1)}
-          >
-            <ImageWithFallback
-              src={galleryImages[1]?.src || ''}
-              alt={galleryImages[1]?.alt || 'Gallery image 2'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <div className="rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(2)}
-          >
-            <ImageWithFallback
-              src={galleryImages[2]?.src || ''}
-              alt={galleryImages[2]?.alt || 'Gallery image 3'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <div className="rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(3)}
-          >
-            <ImageWithFallback
-              src={galleryImages[3]?.src || ''}
-              alt={galleryImages[3]?.alt || 'Gallery image 4'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-
-          <div className="rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(4)}
-          >
-            <ImageWithFallback
-              src={galleryImages[4]?.src || ''}
-              alt={galleryImages[4]?.alt || 'Gallery image 5'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
         </motion.section>
 
+        {/* --- Text Section --- */}
         <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6" // Added pt-6 for separation from image grid
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div
-            className="rounded-[2rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(5)}
-          >
-            <ImageWithFallback
-              src={galleryImages[5]?.src || ''}
-              alt={galleryImages[5]?.alt || 'Gallery image 6'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2rem] bg-amber-100/70 shadow-xl p-10 space-y-6">
-            <p className="uppercase tracking-[0.4em] text-xs text-amber-600">Tactile memories</p>
-            <p className="text-sm text-amber-700/80 leading-relaxed">
-              Honeyed sunlight, weathered textures, and conversations carried on the breeze. Every frame wraps your love story in the warmth of familiar embrace.
-            </p>
-          </div>
-          <div className="rounded-[2rem] bg-white shadow-xl p-10 flex flex-col items-center justify-center space-y-4">
-            <p className="uppercase tracking-[0.4em] text-xs text-amber-600">Forever begins here</p>
-            <button
-              className="uppercase tracking-[0.4em] text-xs text-amber-700 border border-amber-400 rounded-full px-8 py-3 hover:bg-amber-100/60 transition"
-              onClick={() => openLightbox(0)}
-            >
-              View Storybook
-            </button>
-          </div>
+          {/* Image 11 (If we need a place for a text-based element, we can reuse index 11 as a placeholder if 11 images are expected) */}
+          <GalleryTile 
+            index={11} // Placeholder index if you have an 11th image
+            isVertical={false} 
+            spanClasses="hidden lg:block rounded-[2rem] bg-white shadow-xl"
+          />
+
+          
         </motion.section>
       </div>
 
