@@ -38,7 +38,7 @@ export default function CelestialEleganceTemplate({ coupleNames, portfolioId, im
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-slate-800 to-zinc-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-slate-800 to-zinc-900 text-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-24">
         <motion.div
           className="mb-16"
@@ -53,9 +53,9 @@ export default function CelestialEleganceTemplate({ coupleNames, portfolioId, im
             className="text-4xl lg:text-7xl font-light tracking-[0.3em]"
             style={{ fontFamily: 'Cinzel, serif' }}
           >
-            CELESTIAL
-            <span className="block text-2xl lg:text-4xl tracking-[0.6em] mt-6 text-zinc-400">
-              ELEGANCE
+            
+            <span className="block text-2xl text-black lg:text-4xl tracking-[0.6em] mt-6 text-zinc-400">
+              Passion
             </span>
           </h1>
         </motion.div>

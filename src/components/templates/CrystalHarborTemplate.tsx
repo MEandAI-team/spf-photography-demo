@@ -49,14 +49,10 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
           <div>
             <p className="uppercase tracking-[0.45em] text-xs text-[#3f7fb6]">{coupleNames}</p>
             <h1 className="text-5xl lg:text-6xl tracking-[0.3em]" style={{ fontFamily: 'Cinzel, serif' }}>
-              CRYSTAL HARBOR
+              *
             </h1>
           </div>
-          <div className="flex gap-4 uppercase tracking-[0.35em] text-xs text-[#3f7fb6]">
-            <span>Reflections</span>
-            <span>Serenity</span>
-            <span>Horizon</span>
-          </div>
+         
         </motion.header>
 
         <motion.section
@@ -129,21 +125,8 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <div className="rounded-[2.5rem] bg-[#d5edff]/70 backdrop-blur p-10 space-y-6 text-[#1d3b53]">
-            <p className="uppercase tracking-[0.4em] text-xs text-[#3f7fb6]">Harbor lights</p>
-            <p className="text-sm leading-relaxed">
-              A tranquil dance of light across rippling waters. This gallery honors promises exchanged where sea kisses sky.
-            </p>
-          </div>
-          <div className="rounded-[2.5rem] bg-white/60 backdrop-blur p-10 flex flex-col items-center justify-center space-y-4">
-            <p className="uppercase tracking-[0.4em] text-xs text-[#3f7fb6]">Boundless blue</p>
-            <button
-              className="uppercase tracking-[0.4em] text-xs border border-[#3f7fb6] rounded-full px-8 py-3 hover:bg-[#d5edff]/70 transition"
-              onClick={() => openLightbox(0)}
-            >
-              View Harbor Story
-            </button>
-          </div>
+          
+          
         </motion.section>
       </div>
 

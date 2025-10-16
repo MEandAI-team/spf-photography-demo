@@ -17,12 +17,16 @@ export default function YouTemplate({ coupleNames, portfolioId, images = [] }: Y
     : portfolioId 
       ? getPortfolioImages(portfolioId) 
       : [];
+      
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
+    // Only open if the image index is within the actual number of images available (0 to 7 for 8 images)
+    if (index < galleryImages.length) {
+      setCurrentImageIndex(index);
+      setLightboxOpen(true);
+    }
   };
 
   const closeLightbox = () => {
@@ -36,13 +40,33 @@ export default function YouTemplate({ coupleNames, portfolioId, images = [] }: Y
   const previousImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
+
+  // Helper component for repeated image divs
+  // Vertical: 2:3 ratio (2800x4200)
+  // Landscape: 16:9 ratio (4096x2304)
+  const GalleryTile = ({ index, aspectRatio, spanClasses = '' }: { index: number, aspectRatio: string, spanClasses?: string }) => (
+    <div 
+      className={`bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 ${aspectRatio} ${spanClasses}`}
+      onClick={() => openLightbox(index)}
+    >
+      <ImageWithFallback
+        src={galleryImages[index]?.src || ''}
+        alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
+        className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
+      />
+    </div>
+  );
+  
+  // Image indices mapping for 6 Vertical (V: 0-5) and 2 Landscape (L: 6-7)
+
   return (
     <div className="min-h-screen bg-white">
       {/* Content Container */}
-      <div className="max-w-4xl mx-auto px-8 py-16">
+      {/* Increased py-16 to py-24 to push the content (and header) down */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-24">
         {/* Header - YOU Text */}
         <motion.div 
-          className="text-center mb-8"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -51,81 +75,54 @@ export default function YouTemplate({ coupleNames, portfolioId, images = [] }: Y
             className="text-6xl lg:text-8xl text-gray-800 tracking-[0.1em]" 
             style={{ fontFamily: 'Cinzel, serif' }}
           >
-            YOU
+            *
           </h1>
           <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
         </motion.div>
 
-        {/* Photo Grid */}
+        {/* Photo Grid - REDESIGNED for 6 Vertical (2:3) and 2 Landscape (16:9) */}
         <motion.div 
-          className="grid grid-cols-3 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {/* First Row */}
-          <div 
-            className="aspect-square bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300"
-            onClick={() => openLightbox(0)}
-          >
-            <ImageWithFallback
-              src={galleryImages[0]?.src || ''}
-              alt={galleryImages[0]?.alt || 'Gallery image 1'}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
-            />
-          </div>
-          <div 
-            className="aspect-[3/4] bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300"
-            onClick={() => openLightbox(1)}
-          >
-            <ImageWithFallback
-              src={galleryImages[1]?.src || ''}
-              alt={galleryImages[1]?.alt || 'Gallery image 2'}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
-            />
-          </div>
-          <div 
-            className="aspect-square bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300"
-            onClick={() => openLightbox(2)}
-          >
-            <ImageWithFallback
-              src={galleryImages[2]?.src || ''}
-              alt={galleryImages[2]?.alt || 'Gallery image 3'}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
-            />
-          </div>
+          {/* Row 1: V | V | L (L spans 2 rows) */}
+          {/* 1. Vertical (Index 0) - 2:3 ratio */}
+          <GalleryTile index={0} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
 
-          {/* Second Row */}
-          <div 
-            className="aspect-[4/3] bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300"
-            onClick={() => openLightbox(3)}
-          >
-            <ImageWithFallback
-              src={galleryImages[3]?.src || ''}
-              alt={galleryImages[3]?.alt || 'Gallery image 4'}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
-            />
-          </div>
-          <div 
-            className="aspect-square bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300"
-            onClick={() => openLightbox(4)}
-          >
-            <ImageWithFallback
-              src={galleryImages[4]?.src || ''}
-              alt={galleryImages[4]?.alt || 'Gallery image 5'}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
-            />
-          </div>
-          <div 
-            className="aspect-[3/4] bg-gray-100 overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300"
-            onClick={() => openLightbox(5)}
-          >
-            <ImageWithFallback
-              src={galleryImages[5]?.src || ''}
-              alt={galleryImages[5]?.alt || 'Gallery image 6'}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
-            />
-          </div>
+          {/* 2. Vertical (Index 1) - 2:3 ratio */}
+          <GalleryTile index={1} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
+
+          {/* 3. Landscape (Index 6) - 16:9 ratio, spans 1 column but 2 rows */}
+          <GalleryTile 
+            index={6} 
+            aspectRatio="aspect-[9/16]" // Used inverse ratio for vertical space-filling 
+            spanClasses="col-span-1 row-span-2" 
+          />
+
+          {/* Row 2: V | V (L is spanning down from Row 1) */}
+          {/* 4. Vertical (Index 2) - 2:3 ratio */}
+          <GalleryTile index={2} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
+
+          {/* 5. Vertical (Index 3) - 2:3 ratio */}
+          <GalleryTile index={3} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
+
+          {/* Row 3: L | V | V (L spans 2 columns) */}
+          {/* 6. Landscape (Index 7) - 16:9 ratio, spans 2 columns */}
+          <GalleryTile 
+            index={7} 
+            aspectRatio="aspect-[16/9]" 
+            spanClasses="col-span-2" 
+          />
+          
+          {/* 7. Vertical (Index 4) - 2:3 ratio */}
+          <GalleryTile index={4} aspectRatio="aspect-[2/3]" spanClasses="col-span-1" />
+
+          {/* Row 4: V (single item for flow) */}
+          {/* 8. Vertical (Index 5) - 2:3 ratio */}
+          <GalleryTile index={5} aspectRatio="aspect-[2/3]" spanClasses="col-span-1 md:col-start-2" />
+
         </motion.div>
 
         {/* Decorative Element */}

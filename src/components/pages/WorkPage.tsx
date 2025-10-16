@@ -114,7 +114,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Every couple has a unique story. Here are some of the beautiful moments we've been privileged to capture.
+            Every moments has a unique story. Here are some of the beautiful moments we've been privileged to capture.
           </motion.p>
         </div>
       </motion.section>
@@ -228,7 +228,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Let's create beautiful memories together. Every couple has a unique story worth capturing.
+            Let's create beautiful memories together. Every moments has a unique story worth capturing.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"

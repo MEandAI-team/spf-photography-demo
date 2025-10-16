@@ -51,9 +51,9 @@ export default function EtherealBloomTemplate({ coupleNames, portfolioId, images
             className="text-5xl lg:text-6xl tracking-[0.3em] text-rose-600"
             style={{ fontFamily: 'Cinzel, serif' }}
           >
-            ETHEREAL BLOOM
+            Forever
           </h1>
-          <p className="uppercase tracking-[0.35em] text-xs text-rose-300">Botanical devotion</p>
+          <p className="uppercase tracking-[0.35em] text-xs text-rose-300">Samruddri & Rohit</p>
         </motion.header>
 
         <motion.section
@@ -109,6 +109,15 @@ export default function EtherealBloomTemplate({ coupleNames, portfolioId, images
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
+          <div className="rounded-[2.5rem] bg-white shadow-xl overflow-hidden cursor-pointer group"
+            onClick={() => openLightbox(5)}
+          >
+            <ImageWithFallback
+              src={galleryImages[5]?.src || ''}
+              alt={galleryImages[5]?.alt || 'Gallery image 6'}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
         </motion.section>
 
         <motion.section
@@ -126,21 +135,8 @@ export default function EtherealBloomTemplate({ coupleNames, portfolioId, images
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <div className="rounded-[2.5rem] bg-rose-100/60 shadow-xl p-10 space-y-6 text-rose-600">
-            <p className="uppercase tracking-[0.4em] text-xs text-rose-400">Blooming promise</p>
-            <p className="text-sm leading-relaxed">
-              Petal-soft focus, glowing botanicals, and delicate whispers of newly exchanged vows.
-            </p>
-          </div>
-          <div className="rounded-[2.5rem] bg-white shadow-xl p-10 flex flex-col items-center justify-center space-y-4 text-rose-500">
-            <p className="uppercase tracking-[0.4em] text-xs text-rose-400">Everlasting blossom</p>
-            <button
-              className="uppercase tracking-[0.4em] text-xs border border-rose-300 rounded-full px-8 py-3 hover:bg-rose-100/80 transition"
-              onClick={() => openLightbox(0)}
-            >
-              View Bloom Story
-            </button>
-          </div>
+         
+          
         </motion.section>
       </div>
 

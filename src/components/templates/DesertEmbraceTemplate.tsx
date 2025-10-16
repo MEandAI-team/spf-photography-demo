@@ -49,14 +49,10 @@ export default function DesertEmbraceTemplate({ coupleNames, portfolioId, images
           <div>
             <p className="uppercase tracking-[0.45em] text-xs text-[#b66a3f]">{coupleNames}</p>
             <h1 className="text-5xl lg:text-6xl tracking-[0.3em]" style={{ fontFamily: 'Cinzel, serif' }}>
-              DESERT EMBRACE
+              Beauty
             </h1>
           </div>
-          <div className="flex gap-4 uppercase tracking-[0.35em] text-xs text-[#b66a3f]">
-            <span>Sunset</span>
-            <span>Echoes</span>
-            <span>Forever</span>
-          </div>
+          
         </motion.header>
 
         <motion.section
@@ -112,14 +108,6 @@ export default function DesertEmbraceTemplate({ coupleNames, portfolioId, images
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-        </motion.section>
-
-        <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
           <div className="rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
             onClick={() => openLightbox(5)}
           >
@@ -129,22 +117,9 @@ export default function DesertEmbraceTemplate({ coupleNames, portfolioId, images
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <div className="rounded-[2.5rem] bg-[#f4d3af]/60 backdrop-blur p-10 space-y-6">
-            <p className="uppercase tracking-[0.4em] text-xs text-[#b66a3f]">Whispers of dune</p>
-            <p className="text-sm leading-relaxed">
-              Golden dunes, wind-swept vows, and the eternal horizon. A celebration of love etched into the endless desert sky.
-            </p>
-          </div>
-          <div className="rounded-[2.5rem] bg-white/60 backdrop-blur p-10 flex flex-col items-center justify-center space-y-4">
-            <p className="uppercase tracking-[0.4em] text-xs text-[#b66a3f]">Boundless affection</p>
-            <button
-              className="uppercase tracking-[0.4em] text-xs border border-[#b66a3f] rounded-full px-8 py-3 hover:bg-[#f4d3af]/60 transition"
-              onClick={() => openLightbox(0)}
-            >
-              View Desert Story
-            </button>
-          </div>
         </motion.section>
+
+        
       </div>
 
       <Lightbox

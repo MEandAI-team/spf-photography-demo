@@ -40,7 +40,7 @@ export default function AboutPage({ onNavigateToContact }: AboutPageProps) {
 
               <div className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  With over 8 years of experience in wedding and portrait photography, I believe that every love story deserves to be told with artistry, authenticity, and attention to detail. My journey began with a simple fascination for light and shadow, which has evolved into a deep passion for capturing the fleeting moments that matter most.
+                  With over 10+ years of experience in wedding and portrait photography, I believe that every love story deserves to be told with artistry, authenticity, and attention to detail. My journey began with a simple fascination for light and shadow, which has evolved into a deep passion for capturing the fleeting moments that matter most.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   I specialize in creating timeless imagery that reflects the unique personality and style of each couple I work with. From intimate ceremonies to grand celebrations, my goal is to preserve the genuine emotions and connections that make your day extraordinary.

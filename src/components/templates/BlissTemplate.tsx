@@ -59,13 +59,13 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
     <div className="min-h-screen bg-gray-600 relative overflow-hidden">
       {/* Large Background Image */}
       <div className="absolute inset-0">
-        <div className="w-full h-full bg-gray-400 flex items-center justify-center">
-          <span className="text-gray-600">Background Image Placeholder</span>
+        <div className="w-full h-full bg-white flex items-center justify-center">
+          <span className="text-white">Background Image Placeholder</span>
         </div>
       </div>
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-white" />
       
       {/* Content Container */}
       <div className="relative z-10 min-h-screen flex flex-col">
@@ -77,10 +77,10 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
           transition={{ duration: 0.8 }}
         >
           <h1 
-            className="text-6xl lg:text-8xl text-white tracking-[0.3em]" 
+            className="text-6xl lg:text-8xl text-black tracking-[0.3em]" 
             style={{ fontFamily: 'Cinzel, serif' }}
           >
-            BLISS
+            Perfection
           </h1>
         </motion.div>
 
@@ -129,14 +129,7 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
             />
             
             {/* Middle Row - Ewww Text Block (Index 5 placeholder) - Spans 4 columns*/}
-            <div className="col-span-2 md:col-span-4 flex items-center justify-center bg-white/10 backdrop-blur-sm h-32 lg:h-48">
-              <h2 
-                className="text-4xl lg:text-6xl text-white tracking-[0.2em]" 
-                style={{ fontFamily: 'Cinzel, serif' }}
-              >
-                Ewww
-              </h2>
-            </div>
+            
 
             {/* 6. Vertical (Index 5) - Using 2:3 ratio (768x1154) */}
             <GalleryTile 
@@ -165,10 +158,16 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
               aspectRatio="aspect-[2/3]" 
               spanClasses="col-span-1 md:col-span-1"
             />
+            {/* 9. Vertical (Index 9) - Using 2:3 ratio (768x1154) */}
+            <GalleryTile 
+              index={9} 
+              aspectRatio="aspect-[2/3]" 
+              spanClasses="col-span-1 md:col-span-1"
+            />
             
             {/* 10. Landscape (Index 9) - Using 5:4 ratio (960x768) */}
             <GalleryTile 
-              index={9} 
+              index={10} 
               aspectRatio="aspect-[5/4]" 
               spanClasses="col-span-2 md:col-span-4 lg:col-span-6" 
             />
@@ -201,3 +200,4 @@ export default function BlissTemplate({ coupleNames, portfolioId, images = [] }:
     </div>
   );
 }
+                                                                                              
