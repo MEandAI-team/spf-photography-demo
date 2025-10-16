@@ -44,22 +44,18 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
       <div className="h-32 md:h-40 lg:h-48"></div>
 
       <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-16">
-        {/* Header Section - One Word + Couple Name */}
+        {/* Header Section - BlissTemplate CSS for Name & Caption */}
         <motion.header
-          className="text-center mb-12"
+          className="text-center mb-12 bliss-template-header"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           {/* One Word Caption */}
-          <p className="text-3xl lg:text-5xl tracking-[0.4em] text-[#3f7fb6] mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
-            Nurture 🤍
-          </p>
+          <p className="bliss-template-caption mb-4">Nurture 🤍</p>
 
           {/* Couple Name */}
-          <h1 className="text-5xl lg:text-6xl tracking-[0.3em] font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
-            {coupleNames}
-          </h1>
+          <h1 className="bliss-template-name">{coupleNames}</h1>
         </motion.header>
 
         {/* Image Grid */}
@@ -137,7 +133,7 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
 
         {/* Sentence Caption Block */}
         <motion.div
-          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/30 rounded-3xl p-10 max-w-lg"
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/30 rounded-3xl p-10 max-w-lg bliss-template-caption-block"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
