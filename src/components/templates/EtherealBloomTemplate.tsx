@@ -74,17 +74,17 @@ export default function EtherealBloomTemplate({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="uppercase tracking-[0.4em] text-xs text-rose-400">{coupleNames}</p>
+          
           <h1
             className="text-6xl lg:text-8xl text-rose-600 tracking-[0.3em]"
             style={{ fontFamily: 'Cinzel, serif' }}
           >
             Forever
           </h1>
+          {/* Decorative line */}
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
           <div className="w-24 h-px bg-rose-200 mx-auto mt-4" />
-          <p className="uppercase tracking-[0.35em] text-sm text-rose-300 mt-2">
-            Samruddri & Rohit
-          </p>
+          <p className="uppercase tracking-[0.4em] text-xs text-rose-400">{coupleNames}</p>
         </motion.div>
 
         {/* ================= IMAGE GROUPS ================= */}

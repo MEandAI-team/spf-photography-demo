@@ -10,32 +10,13 @@ interface UrbanEclipseTemplateProps {
   images?: ImageData[];
 }
 
-// Helper component for image tiles
-const GalleryTile = ({ index, isVertical, spanClasses = '', galleryImages, openLightbox }: { index: number, isVertical: boolean, spanClasses?: string, galleryImages: ImageData[], openLightbox: (index: number) => void }) => {
-    const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
-    
-    if (index >= galleryImages.length) return null;
-
-    return (
-      <div
-        className={`${aspectRatio} ${spanClasses} rounded-[2rem] bg-white shadow-lg overflow-hidden cursor-pointer group`}
-        onClick={() => openLightbox(index)}
-      >
-        <ImageWithFallback
-          src={galleryImages[index]?.src || ''}
-          alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-    );
-};
-
 export default function UrbanEclipseTemplate({ coupleNames, portfolioId, images = [] }: UrbanEclipseTemplateProps) {
-  const galleryImages = images.length > 0
+  const galleryImages = (images.length > 0
     ? images
     : portfolioId
       ? getPortfolioImages(portfolioId)
-      : [];
+      : []
+  ).slice(0, 11); // Use only first 11 images
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -47,52 +28,69 @@ export default function UrbanEclipseTemplate({ coupleNames, portfolioId, images 
     }
   };
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
+  const closeLightbox = () => setLightboxOpen(false);
+  const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  const previousImage = () => setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-  };
+  // GalleryTile with smooth hover
+  const GalleryTile = ({ index, aspectRatio, spanClasses = '' }: { index: number, aspectRatio: string, spanClasses?: string }) => (
+    <div
+      className={`${aspectRatio} ${spanClasses} group overflow-hidden rounded-[2rem] cursor-pointer bg-white shadow-lg transform transition duration-300 hover:scale-105 hover:brightness-110`}
+      onClick={() => openLightbox(index)}
+    >
+      <ImageWithFallback
+        src={galleryImages[index]?.src || ''}
+        alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-neutral-100 to-white text-black">
       <div className="max-w-6xl mx-auto px-6 lg:px-16 pt-20 pb-20 space-y-16">
-        <div className="h-20 lg:h-24" aria-hidden="true" />
-
+        {/* Header */}
         <motion.header
           className="flex flex-col items-center justify-center gap-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center w-full">
-            <p className="uppercase tracking-[0.5em] text-xs text-neutral-600">.</p>
-            <h1 className="text-5xl lg:text-6xl tracking-[0.3em] text-neutral-800" style={{ fontFamily: 'Cinzel, serif' }}>
-              {coupleNames}
-            </h1>
-          </div>
+          <h1 
+            className="text-6xl lg:text-8xl text-black tracking-[0.3em]" 
+            style={{ fontFamily: 'Cinzel, serif' }}
+          >
+            Legacy
+          </h1>
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
+          <p className="uppercase tracking-[0.4em] text-sm sm:text-base md:text-lg lg:text-xl text-violet-700 mt-2">
+            {coupleNames}
+          </p>
         </motion.header>
 
-        {/* Image Grid */}
-        <motion.section
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {/* 2V, 2V, 2L, 2V, 2V Structure */}
-          {[0,1,2,3,6,7,8,9].map(i => (
-            <GalleryTile key={i} index={i} isVertical={true} spanClasses="col-span-1 lg:col-span-2" galleryImages={galleryImages} openLightbox={openLightbox} />
+        {/* Spacer to separate header and image grid */}
+        <div className="h-16 lg:h-24" aria-hidden="true" />
+
+        {/* Image Grid Rows - Only first 11 images */}
+        <div className="space-y-6">
+          {/* Row 1: 1L */}
+          <div className="grid grid-cols-1 gap-6">
+            <GalleryTile index={0} aspectRatio="aspect-[3/2]" />
+          </div>
+
+          {/* Row 2: 2L */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={1} aspectRatio="aspect-[3/2]" />
+            <GalleryTile index={2} aspectRatio="aspect-[3/2]" />
+          </div>
+
+          {/* Rows 3-7: 2V per row */}
+          {[[3, 4], [5, 6], [7, 8], [9, 10]].map((pair, idx) => (
+            <div key={idx} className="grid grid-cols-2 gap-6">
+              {pair.map((i) => galleryImages[i] && <GalleryTile key={i} index={i} aspectRatio="aspect-[2/3]" />)}
+            </div>
           ))}
-          {[4,5].map(i => (
-            <GalleryTile key={i} index={i} isVertical={false} spanClasses="col-span-2 lg:col-span-4" galleryImages={galleryImages} openLightbox={openLightbox} />
-          ))}
-        </motion.section>
+        </div>
 
         {/* Caption Section */}
         <motion.section
@@ -112,13 +110,11 @@ export default function UrbanEclipseTemplate({ coupleNames, portfolioId, images 
               <span>·</span>
               <span>Heritage 👑</span>
             </div>
-            <p className="text-2xl font-semibold tracking-wide mt-2">Legacy 🌟</p>
           </div>
         </motion.section>
-
-        <div className="h-24 lg:h-32" aria-hidden="true" />
       </div>
 
+      {/* Lightbox */}
       <Lightbox
         images={galleryImages}
         currentIndex={currentImageIndex}

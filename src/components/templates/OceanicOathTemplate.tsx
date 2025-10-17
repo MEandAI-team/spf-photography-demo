@@ -27,34 +27,27 @@ export default function OceanicOathTemplate({ coupleNames, portfolioId, images =
     }
   };
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
+  const closeLightbox = () => setLightboxOpen(false);
+  const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  const previousImage = () => setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-  };
-
-  // Helper component for image tiles
-  const GalleryTile = ({ index, isVertical, spanClasses = '' }: { index: number, isVertical: boolean, spanClasses?: string }) => {
+  // GalleryTile with smooth hover like BlissTemplate
+  const GalleryTile = ({ index, isVertical }: { index: number; isVertical: boolean }) => {
     const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
-    
     if (!galleryImages[index]) return null;
 
     return (
-      <div
-        className={`${aspectRatio} ${spanClasses} rounded-[2rem] bg-white/70 backdrop-blur-sm overflow-hidden cursor-pointer group`}
-        onClick={() => openLightbox(index)}
-      >
-        <ImageWithFallback
-          src={galleryImages[index]?.src || ''}
-          alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+      <div className="mb-6">
+        <div
+          className={`overflow-hidden cursor-pointer group rounded-[2rem] shadow-lg bg-white transform transition duration-300 hover:scale-105 hover:brightness-110 ${aspectRatio}`}
+          onClick={() => openLightbox(index)}
+        >
+          <ImageWithFallback
+            src={galleryImages[index]?.src || ''}
+            alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     );
   };
@@ -63,9 +56,9 @@ export default function OceanicOathTemplate({ coupleNames, portfolioId, images =
     <div className="min-h-screen bg-gradient-to-br from-sky-100 via-cyan-100 to-emerald-100">
 
       {/* Top Spacer */}
-      <div className="h-32 lg:h-40" aria-hidden="true" />
+      <div className="h-32 lg:h-40" />
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-16 py-20">
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-16">
 
         {/* Header */}
         <motion.header
@@ -74,59 +67,71 @@ export default function OceanicOathTemplate({ coupleNames, portfolioId, images =
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="uppercase tracking-[0.5em] text-xs text-sky-500">{coupleNames}</p>
-          <h1 className="text-5xl lg:text-6xl tracking-[0.3em] text-sky-900" style={{ fontFamily: 'Cinzel, serif' }}>
-            {coupleNames}
+          <h1 
+            className="text-6xl lg:text-8xl text-black tracking-[0.3em]" 
+            style={{ fontFamily: 'Cinzel, serif' }}
+          >
+            Together
           </h1>
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
+          <p className="uppercase tracking-[0.4em] text-sm sm:text-base md:text-lg lg:text-xl text-violet-700 mt-2">
+            {coupleNames}
+          </p>
         </motion.header>
 
-        {/* Portfolio Grid */}
-        <motion.section
-          className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {/* 3 Vertical Images */}
-          <GalleryTile index={0} isVertical={true} spanClasses="col-span-1 lg:col-span-4" /> 
-          <GalleryTile index={1} isVertical={true} spanClasses="col-span-1 lg:col-span-4" />
-          <GalleryTile index={2} isVertical={true} spanClasses="col-span-2 lg:col-span-4" />
+        {/* Image Grid: 2H - 2H - 2V - 2V - 1H - 1V */}
+        <div className="space-y-12">
 
-          {/* 2 Landscape Images */}
-          <GalleryTile index={3} isVertical={false} spanClasses="col-span-2 lg:col-span-6" /> 
-          <GalleryTile index={4} isVertical={false} spanClasses="col-span-2 lg:col-span-6" /> 
-
-          {/* 2 Landscape Images */}
-          <GalleryTile index={5} isVertical={false} spanClasses="col-span-2 lg:col-span-6" /> 
-          <GalleryTile index={6} isVertical={false} spanClasses="col-span-2 lg:col-span-6" /> 
-
-          {/* 3 Vertical Images */}
-          <GalleryTile index={7} isVertical={true} spanClasses="col-span-2 lg:col-span-4" /> 
-          <GalleryTile index={8} isVertical={true} spanClasses="col-span-1 lg:col-span-4" />
-          <GalleryTile index={9} isVertical={true} spanClasses="col-span-1 lg:col-span-4" />
-        </motion.section>
-
-        {/* Caption */}
-        <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <div className="lg:col-span-3 text-center text-sky-800 space-y-2">
-            <p className="text-lg tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
-              Finding our forever in every stolen glance and shared smile. 😊
-            </p>
-            <div className="flex justify-center items-center space-x-3 uppercase text-sm tracking-[0.4em] text-sky-700">
-              <span>Romance 💕</span>
-              <span>·</span>
-              <span>Anticipation 🥂</span>
-              <span>·</span>
-              <span>Future 🏡</span>
-            </div>
-            <p className="text-2xl font-semibold tracking-wide mt-2">Together 🫂</p>
+          {/* 1️⃣ 2H */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={0} isVertical={false} />
+            <GalleryTile index={1} isVertical={false} />
           </div>
-        </motion.section>
+
+          {/* 2️⃣ 2H */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={2} isVertical={false} />
+            <GalleryTile index={3} isVertical={false} />
+          </div>
+
+          {/* 3️⃣ 2V */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={4} isVertical={true} />
+            <GalleryTile index={5} isVertical={true} />
+          </div>
+
+          {/* 4️⃣ 2V */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={6} isVertical={true} />
+            <GalleryTile index={7} isVertical={true} />
+          </div>
+
+          {/* 5️⃣ 1H */}
+          <GalleryTile index={8} isVertical={false} />
+
+          {/* 6️⃣ 1V */}
+          <GalleryTile index={9} isVertical={true} />
+
+        </div>
+
+        {/* Footer Caption */}
+        <motion.div
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/5 rounded-3xl p-10 mt-10 mb-16 max-w-lg"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-sky-400">
+            <span>Romance 💕</span>
+            <span>•</span>
+            <span>Anticipation 🥂</span>
+            <span>•</span>
+            <span>Future 🏡</span>
+          </div>
+          <p className="text-sky-700 text-sm max-w-md">
+            Finding our forever in every stolen glance and shared smile. 😊
+          </p>
+        </motion.div>
 
       </div>
 

@@ -10,10 +10,15 @@ interface LuminousWhisperTemplateProps {
   images?: ImageData[];
 }
 
-export default function LuminousWhisperTemplate({ coupleNames, portfolioId, images = [] }: LuminousWhisperTemplateProps) {
-  const galleryImages = images.length > 0
-    ? images
-    : portfolioId
+export default function LuminousWhisperTemplate({
+  coupleNames,
+  portfolioId,
+  images = [],
+}: LuminousWhisperTemplateProps) {
+  const galleryImages =
+    images.length > 0
+      ? images
+      : portfolioId
       ? getPortfolioImages(portfolioId)
       : [];
 
@@ -22,115 +27,129 @@ export default function LuminousWhisperTemplate({ coupleNames, portfolioId, imag
 
   const openLightbox = (index: number) => {
     if (index < galleryImages.length) {
-        setCurrentImageIndex(index);
-        setLightboxOpen(true);
+      setCurrentImageIndex(index);
+      setLightboxOpen(true);
     }
   };
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
+  const closeLightbox = () => setLightboxOpen(false);
+  const nextImage = () => setCurrentImageIndex((p) => (p + 1) % galleryImages.length);
+  const previousImage = () => setCurrentImageIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-  };
-  
-  const GalleryTile = ({ index, isVertical, spanClasses = '', customClasses = '' }: { index: number, isVertical: boolean, spanClasses?: string, customClasses?: string }) => {
+  // GalleryTile with smooth hover effect
+  const GalleryTile = ({
+    index,
+    isVertical,
+  }: {
+    index: number;
+    isVertical: boolean;
+  }) => {
     const aspectRatio = isVertical ? 'aspect-[2/3]' : 'aspect-[3/2]';
     return (
-      <div
-        className={`bg-white shadow-2xl rounded-xl overflow-hidden cursor-pointer group transition-transform duration-500 hover:scale-[1.01] ${aspectRatio} ${spanClasses} ${customClasses}`}
-        onClick={() => openLightbox(index)}
-      >
-        <ImageWithFallback
-          src={galleryImages[index]?.src || ''}
-          alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+      <div className="mb-6">
+        <div
+          className={`overflow-hidden cursor-pointer group rounded-[2rem] shadow-lg bg-white transform transition duration-300 hover:scale-105 hover:brightness-110 ${aspectRatio}`}
+          onClick={() => openLightbox(index)}
+        >
+          <ImageWithFallback
+            src={galleryImages[index]?.src || ''}
+            alt={galleryImages[index]?.alt || `Gallery image ${index + 1}`}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
       </div>
     );
   };
 
-  const gridLayout = [
-    { index: 0, isVertical: true, spanClasses: "lg:col-span-1 lg:row-span-2" },
-    { index: 1, isVertical: false, spanClasses: "lg:col-span-3" },
-    { index: 2, isVertical: false, spanClasses: "lg:col-span-2" },
-    { index: 3, isVertical: false, spanClasses: "lg:col-span-1" },
-    { index: 4, isVertical: false, spanClasses: "lg:col-span-2" },
-    { index: 5, isVertical: true, spanClasses: "lg:col-span-1 lg:row-span-2" },
-    { index: 6, isVertical: false, spanClasses: "lg:col-span-1" },
-    { index: 7, isVertical: false, spanClasses: "lg:col-span-1" },
-    { index: 8, isVertical: false, spanClasses: "lg:col-span-2" },
-    { index: 9, isVertical: false, spanClasses: "lg:col-span-2" },
-    { index: 10, isVertical: false, spanClasses: "lg:col-span-1" },
-    { index: 11, isVertical: false, spanClasses: "lg:col-span-1" },
-  ];
-
   return (
-    <div className="min-h-screen bg-[#f6f0ff]">
+    <div className="min-h-screen bg-gradient-to-b from-[#f9f6ff] via-[#f3ebff] to-[#efe7ff]">
+      {/* Top spacer */}
+      <div className="h-32 md:h-40 lg:h-48" />
 
-      {/* Top Spacer */}
-      <div className="h-32 md:h-40 lg:h-48"></div>
-
-      <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-16">
-
-        {/* Header Section - One Word + Couple Name */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-24">
+        {/* Header */}
         <motion.header
-          className="text-center mb-12"
+          className="text-center mb-32" // <-- increased bottom margin for spacing
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-3xl lg:text-5xl tracking-[0.4em] text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
-            Storyline 🧡
-          </p>
-          <h1 className="text-5xl lg:text-6xl tracking-[0.3em] font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
-            {coupleNames}
+          <h1
+            className="text-6xl lg:text-8xl text-rose-600 tracking-[0.3em]"
+            style={{ fontFamily: 'Cinzel, serif' }}
+          >
+            Luminous
           </h1>
+          {/* Decorative lines */}
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
+          <div className="w-24 h-px bg-rose-200 mx-auto mt-4" />
+          <p className="uppercase tracking-[0.4em] text-sm sm:text-base md:text-lg lg:text-xl text-violet-700 mt-2">{coupleNames}</p>
         </motion.header>
 
-        {/* Image Grid */}
-        <motion.section
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {gridLayout.map((item) => (
-            <GalleryTile 
-              key={item.index}
-              index={item.index}
-              isVertical={item.isVertical}
-              spanClasses={item.spanClasses}
-            />
-          ))}
-        </motion.section>
 
-        {/* Sentence Caption Block */}
+        {/* Empty spacer div */}
+        <div className="h-16"></div> {/* <-- adds space between header and images */}
+
+        {/* Image Sections */}
+        <div className="space-y-12">
+          {/* 1H */}
+          <GalleryTile index={0} isVertical={false} />
+
+          {/* 2H */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={1} isVertical={false} />
+            <GalleryTile index={2} isVertical={false} />
+          </div>
+
+          {/* 2V */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={3} isVertical={true} />
+            <GalleryTile index={4} isVertical={true} />
+          </div>
+
+          {/* 2H */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={5} isVertical={false} />
+            <GalleryTile index={6} isVertical={false} />
+          </div>
+
+          {/* 2H */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={7} isVertical={false} />
+            <GalleryTile index={8} isVertical={false} />
+          </div>
+
+          {/* 1V */}
+          <GalleryTile index={9} isVertical={true} />
+
+          {/* 2H */}
+          <div className="grid grid-cols-2 gap-6">
+            <GalleryTile index={10} isVertical={false} />
+            <GalleryTile index={11} isVertical={false} />
+          </div>
+        </div>
+
+        {/* Footer Caption */}
         <motion.div
-          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/30 rounded-3xl p-10 max-w-lg"
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/5 rounded-3xl p-10 mt-10 mb-16 max-w-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-gray-800">
-            <span>Motion 🎬</span>
+          <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.5em] text-zinc-400">
+            <span>Love ❤️</span>
             <span>•</span>
-            <span>Emotion 💓</span>
+            <span>Laughter 😄</span>
             <span>•</span>
-            <span>Story 📖</span>
+            <span>Legacy 🌿</span>
           </div>
-          <p className="text-gray-800 text-sm max-w-md">
-            “Turning your love story 💑 into cinematic art 🎥.”
+          <p className="text-zinc-300 text-sm max-w-md">
+            Where forever begins 💍 in a single frame 📸.
           </p>
         </motion.div>
-
       </div>
 
+      {/* Lightbox */}
       <Lightbox
         images={galleryImages}
         currentIndex={currentImageIndex}

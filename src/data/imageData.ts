@@ -818,7 +818,7 @@ export const portfolio6Images: ImageData[] = [
 export const portfolio7Images: ImageData[] = [
   {
     id: 'portfolio7-001',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img1.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img5.jpg',
     alt: 'Anna & Chris - Urban wedding',
     caption: 'Modern urban wedding celebration',
     category: 'wedding',
@@ -873,7 +873,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-005',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img5.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img1.jpg',
     alt: 'Anna & Chris - Loft interior',
     caption: 'Industrial loft portraits',
     category: 'wedding',
@@ -1116,7 +1116,7 @@ export const portfolio8Images: ImageData[] = [
 export const portfolio9Images: ImageData[] = [
   {
     id: 'portfolio9-001',
-    src: '/images/prewedding/VIDIJA & GURUNATH/img1.jpg',
+    src: '/images/prewedding/VIDIJA & GURUNATH/img3.jpg',
     alt: 'Sophie & Jake - Destination wedding',
     caption: 'Exotic destination wedding',
     category: 'wedding',
@@ -1147,7 +1147,7 @@ export const portfolio9Images: ImageData[] = [
   },
   {
     id: 'portfolio9-003',
-    src: '/images/prewedding/VIDIJA & GURUNATH/img3.jpg',
+    src: '/images/prewedding/VIDIJA & GURUNATH/img1.jpg',
     alt: 'Sophie & Jake - Tropical portraits',
     caption: 'Portraits in paradise',
     category: 'wedding',
@@ -1266,7 +1266,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-002',
-    src: '/images/wedding/SUSHANT & RADHIKA/img2.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img10.jpg',
     alt: 'Megan & Alex - Floral ceremony',
     caption: 'Ceremony surrounded by spring flowers',
     category: 'wedding',
@@ -1278,7 +1278,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-003',
-    src: '/images/wedding/SUSHANT & RADHIKA/img3.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img2.jpg',
     alt: 'Megan & Alex - Garden portraits',
     caption: 'Portraits in blooming gardens',
     category: 'wedding',
@@ -1290,7 +1290,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-004',
-    src: '/images/wedding/SUSHANT & RADHIKA/img4.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img3.jpg',
     alt: 'Megan & Alex - Spring ceremony',
     caption: 'Spring garden ceremony',
     category: 'wedding',
@@ -1302,7 +1302,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-005',
-    src: '/images/wedding/SUSHANT & RADHIKA/img5.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img4.jpg',
     alt: 'Megan & Alex - Flower details',
     caption: 'Beautiful floral details',
     category: 'wedding',
@@ -1314,7 +1314,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-006',
-    src: '/images/wedding/SUSHANT & RADHIKA/img6.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img5.jpg',
     alt: 'Megan & Alex - Garden reception',
     caption: 'Reception in the gardens',
     category: 'wedding',
@@ -1362,7 +1362,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-010',
-    src: '/images/wedding/SUSHANT & RADHIKA/img10.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img6.jpg',
     alt: 'Megan & Alex - Sunset garden',
     caption: 'Sunset portraits among blossoms',
     category: 'wedding',
@@ -1402,7 +1402,7 @@ export const portfolio10Images: ImageData[] = [
 export const portfolio11Images: ImageData[] = [
   {
     id: 'portfolio11-001',
-    src: '/images/portrait/SHRUTI/img1.jpg',
+    src: '/images/portrait/SHRUTI/img6.jpg',
     alt: 'Elena & Daniel - Winter wedding',
     caption: 'Elegant winter wonderland wedding',
     category: 'wedding',
@@ -1421,7 +1421,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-002',
-    src: '/images/portrait/SHRUTI/img2.jpg',
+    src: '/images/portrait/SHRUTI/img1.jpg',
     alt: 'Elena & Daniel - Cozy reception',
     caption: 'Warm and cozy winter reception',
     category: 'wedding',
@@ -1433,7 +1433,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-003',
-    src: '/images/portrait/SHRUTI/img3.jpg',
+    src: '/images/portrait/SHRUTI/img2.jpg',
     alt: 'Elena & Daniel - Snow ceremony',
     caption: 'Ceremony in the snow',
     category: 'wedding',
@@ -1445,7 +1445,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-004',
-    src: '/images/portrait/SHRUTI/img4.jpg',
+    src: '/images/portrait/SHRUTI/img3.jpg',
     alt: 'Elena & Daniel - Winter portraits',
     caption: 'Romantic winter portraits',
     category: 'wedding',
@@ -1457,7 +1457,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-005',
-    src: '/images/portrait/SHRUTI/img5.jpg',
+    src: '/images/portrait/SHRUTI/img4.jpg',
     alt: 'Elena & Daniel - Lodge interior',
     caption: 'Cozy lodge moments',
     category: 'wedding',
@@ -1469,7 +1469,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-006',
-    src: '/images/portrait/SHRUTI/img6.jpg',
+    src: '/images/portrait/SHRUTI/img5.jpg',
     alt: 'Elena & Daniel - Winter details',
     caption: 'Winter wedding details',
     category: 'wedding',
