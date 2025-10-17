@@ -149,8 +149,8 @@ export default function Footer() {
               <Heart className="w-4 h-4 text-accent" />
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
-              <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors duration-200">
-                Website created by MEandAI.
+              <a href="meandai.vercel.app" className="text-primary-foreground/60 hover:text-accent transition-colors duration-200">
+                Website created by @MEandAI.
               </a>
               
             </div>
