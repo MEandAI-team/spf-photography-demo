@@ -10,10 +10,15 @@ interface CrystalHarborTemplateProps {
   images?: ImageData[];
 }
 
-export default function CrystalHarborTemplate({ coupleNames, portfolioId, images = [] }: CrystalHarborTemplateProps) {
-  const galleryImages = images.length > 0
-    ? images
-    : portfolioId
+export default function CrystalHarborTemplate({
+  coupleNames,
+  portfolioId,
+  images = [],
+}: CrystalHarborTemplateProps) {
+  const galleryImages =
+    images.length > 0
+      ? images
+      : portfolioId
       ? getPortfolioImages(portfolioId)
       : [];
 
@@ -21,119 +26,119 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
+    if (index < galleryImages.length) {
+      setCurrentImageIndex(index);
+      setLightboxOpen(true);
+    }
   };
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
-
-  const nextImage = () => {
+  const closeLightbox = () => setLightboxOpen(false);
+  const nextImage = () =>
     setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-  };
+  const previousImage = () =>
+    setCurrentImageIndex(
+      (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
+    );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#eaf7ff] via-[#dff1ff] to-[#c7e7ff] text-[#1d3b53]">
-
       {/* Top Spacer */}
-      <div className="h-32 md:h-40 lg:h-48"></div>
+      <div className="h-32 md:h-40 lg:h-48" />
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-16">
-        {/* Header Section - BlissTemplate CSS for Name & Caption */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 space-y-24 lg:space-y-32">
+        {/* === Header Section === */}
         <motion.header
           className="text-center mb-12 bliss-template-header"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* One Word Caption */}
-          <p className="bliss-template-caption mb-4">Nurture 🤍</p>
-
-          {/* Couple Name */}
-          <h1 className="bliss-template-name">{coupleNames}</h1>
+          <h1
+            className="text-6xl lg:text-8xl text-black tracking-[0.3em]"
+            style={{ fontFamily: 'Cinzel, serif' }}
+          >
+            Nurture
+          </h1>
+          {/* Decorative line */}
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-4" />
+          <p className="uppercase tracking-[0.4em] text-sm sm:text-base md:text-lg lg:text-xl text-violet-700 mt-2">
+            {coupleNames}
+          </p>
         </motion.header>
 
-        {/* Image Grid */}
-        <motion.section
-          className="grid grid-cols-1 lg:grid-cols-4 gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div
-            className="lg:col-span-2 lg:row-span-2 rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(0)}
-          >
-            <ImageWithFallback
-              src={galleryImages[0]?.src || ''}
-              alt={galleryImages[0]?.alt || 'Gallery image 1'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div
-            className="lg:col-span-2 rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(1)}
-          >
-            <ImageWithFallback
-              src={galleryImages[1]?.src || ''}
-              alt={galleryImages[1]?.alt || 'Gallery image 2'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(2)}
-          >
-            <ImageWithFallback
-              src={galleryImages[2]?.src || ''}
-              alt={galleryImages[2]?.alt || 'Gallery image 3'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(3)}
-          >
-            <ImageWithFallback
-              src={galleryImages[3]?.src || ''}
-              alt={galleryImages[3]?.alt || 'Gallery image 4'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(4)}
-          >
-            <ImageWithFallback
-              src={galleryImages[4]?.src || ''}
-              alt={galleryImages[4]?.alt || 'Gallery image 5'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        </motion.section>
+        {/* === Image Groups === */}
 
-        <motion.section
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <div className="rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(5)}
-          >
-            <ImageWithFallback
-              src={galleryImages[5]?.src || ''}
-              alt={galleryImages[5]?.alt || 'Gallery image 6'}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        </motion.section>
+        {/* 3 Vertical Images */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {[0, 1, 2].map((i) => (
+            <div
+              key={i}
+              className="aspect-[2/3] rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
+              onClick={() => openLightbox(i)}
+            >
+              <ImageWithFallback
+                src={galleryImages[i]?.src || ''}
+                alt={galleryImages[i]?.alt || `Gallery image ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
 
-        {/* Sentence Caption Block */}
+        {/* 2 Landscape Images */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+          {[3, 4].map((i) => (
+            <div
+              key={i}
+              className="aspect-[3/2] rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
+              onClick={() => openLightbox(i)}
+            >
+              <ImageWithFallback
+                src={galleryImages[i]?.src || ''}
+                alt={galleryImages[i]?.alt || `Gallery image ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* 3 Vertical Images */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {[5, 6, 7].map((i) => (
+            <div
+              key={i}
+              className="aspect-[2/3] rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
+              onClick={() => openLightbox(i)}
+            >
+              <ImageWithFallback
+                src={galleryImages[i]?.src || ''}
+                alt={galleryImages[i]?.alt || `Gallery image ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* 2 Vertical Images */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+          {[8, 9].map((i) => (
+            <div
+              key={i}
+              className="aspect-[2/3] rounded-[2.5rem] bg-white/60 backdrop-blur overflow-hidden cursor-pointer group"
+              onClick={() => openLightbox(i)}
+            >
+              <ImageWithFallback
+                src={galleryImages[i]?.src || ''}
+                alt={galleryImages[i]?.alt || `Gallery image ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* === Caption Block === */}
         <motion.div
-          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/30 rounded-3xl p-10 max-w-lg bliss-template-caption-block"
+          className="flex flex-col items-center justify-center text-center space-y-4 mx-auto bg-white/30 rounded-3xl p-10 max-w-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -149,8 +154,12 @@ export default function CrystalHarborTemplate({ coupleNames, portfolioId, images
             “Patience is a mother's first lesson, written in soft light. 💖”
           </p>
         </motion.div>
+
+        {/* Bottom Spacer */}
+        <div className="h-32 lg:h-48" />
       </div>
 
+      {/* === Lightbox === */}
       <Lightbox
         images={galleryImages}
         currentIndex={currentImageIndex}
