@@ -90,7 +90,7 @@ export default function DesertEmbraceTemplate({
 
         {/* Group 1: 2 Vertical images */}
         <div className="w-full py-8 mb-8">
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div className="grid grid-cols-2 gap-6">
             <RenderTile index={0} aspect="aspect-[2/3]" />
             <RenderTile index={1} aspect="aspect-[2/3]" />
           </motion.div>
@@ -98,7 +98,7 @@ export default function DesertEmbraceTemplate({
 
         {/* Group 2: 2 Vertical images */}
         <div className="w-full py-8 mb-8">
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div className="grid grid-cols-2 gap-6">
             <RenderTile index={2} aspect="aspect-[2/3]" />
             <RenderTile index={3} aspect="aspect-[2/3]" />
           </motion.div>
@@ -113,7 +113,7 @@ export default function DesertEmbraceTemplate({
 
         {/* Group 4: 2 Vertical images */}
         <div className="w-full py-8 mb-8">
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div className="grid grid-cols-2 gap-6">
             <RenderTile index={5} aspect="aspect-[2/3]" />
             <RenderTile index={6} aspect="aspect-[2/3]" />
           </motion.div>
@@ -121,7 +121,7 @@ export default function DesertEmbraceTemplate({
 
         {/* Group 5: 2 Vertical images */}
         <div className="w-full py-8 mb-12">
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div className="grid grid-cols-2 gap-6">
             <RenderTile index={7} aspect="aspect-[2/3]" />
             <RenderTile index={8} aspect="aspect-[2/3]" />
           </motion.div>
@@ -153,7 +153,7 @@ export default function DesertEmbraceTemplate({
           <p className="text-[#5c3d2e] text-sm max-w-md">
             “Where the spotlight meets timeless Indian artistry.💎”
           </p>
-      </motion.div>
+        </motion.div>
       </div>
 
       {/* Lightbox */}
