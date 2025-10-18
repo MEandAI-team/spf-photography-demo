@@ -62,13 +62,13 @@ export default function TextImageSection() {
               <h3 className="text-lg lg:text-xl font-semibold text-foreground" style={{ fontFamily: 'Cinzel, serif' }}>Our Services Include:</h3>
               <ul className="space-y-2 lg:space-y-3">
                 {[
-                  'Wedding Photography & Videography',
+                  'Wedding Photography & Films',
                   'Bride and Groom Portraits',
                   'Pre-Wedding & Engagement Sessions',
                   'Portrait & Family Photography',
                   'Maternity & Baby Photography',
                   'Special Events',
-                  'Event Documentation'
+                  'Corporate Advertising'
                 ].map((service, index) => (
                   <motion.li 
                     key={index}

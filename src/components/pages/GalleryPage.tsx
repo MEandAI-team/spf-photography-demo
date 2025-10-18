@@ -12,6 +12,7 @@ import OceanicOathTemplate from '../templates/OceanicOathTemplate';
 import RusticReverieTemplate from '../templates/RusticReverieTemplate';
 import UrbanEclipseTemplate from '../templates/UrbanEclipseTemplate';
 import VelvetVowsTemplate from '../templates/VelvetVowsTemplate';
+import adTemplate from '../templates/adTemplate';
 
 interface GalleryPageProps {
   portfolioId: number;
@@ -79,6 +80,11 @@ const portfolioItems = [
     id: 12,
     coupleNames: 'Sports',
     image: 'https://images.unsplash.com/photo-1714972383570-44ddc9738355?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBkYW5jaW5nJTIwd2VkZGluZ3xlbnwxfHx8fDE3NTYyODM5MDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+  },
+  {
+    id: 13,
+    coupleNames: 'starbucks',
+    image: '/images/starbucks/main.jpg'
   }
 ];
 
@@ -99,7 +105,8 @@ const templateComponents: Record<number, React.ComponentType<TemplateProps>> = {
   9: OceanicOathTemplate,
   10: RusticReverieTemplate,
   11: UrbanEclipseTemplate,
-  12: VelvetVowsTemplate
+  12: VelvetVowsTemplate,
+  13: adTemplate
 };
 
 export default function GalleryPage({ portfolioId, onBackToWork }: GalleryPageProps) {
