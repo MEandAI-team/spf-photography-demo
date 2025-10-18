@@ -89,7 +89,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
                 className="text-lg font-bold text-foreground sm:hidden" 
                 style={{ fontFamily: 'Cinzel, serif' }}
               >
-                SPF
+                Shree Production Films
               </h1>
             </button>
           </motion.div>
