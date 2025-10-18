@@ -28,7 +28,7 @@ const videos: Video[] = [
     description: '',
     thumbnail: '',
     duration: '4:32',
-    videoUrl: '/public/videos/starbucks.mp4'
+    videoUrl: '/videos/starbucks.mp4'
   },
   {
     id: 2,
