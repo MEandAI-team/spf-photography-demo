@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, ChevronLeft, ChevronRight, X, Pause, Volume2, Heart, Camera, Music, Users } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
@@ -24,10 +24,11 @@ interface VideographyType {
 const videos: Video[] = [
   {
     id: 1,
-    title: 'Video Background & Video Lightbox',
-    description: 'In Inspiro you can display a Vimeo or YouTube video in the background of this slideshow. Self-hosted (MP4) videos are also supported.',
+    title: 'Starbucks Kolhapur',
+    description: '',
     thumbnail: '',
-    duration: '4:32'
+    duration: '4:32',
+    videoUrl: '/public/videos/starbucks.mp4'
   },
   {
     id: 2,
@@ -114,6 +115,8 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
   const [isTypeVideoOpen, setIsTypeVideoOpen] = useState(false);
   const [selectedTypeVideo, setSelectedTypeVideo] = useState<Video | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const mainVideoRef = useRef<HTMLVideoElement | null>(null);
+  const typeVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const currentVideo = videos[currentVideoIndex];
 
@@ -126,12 +129,14 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
   };
 
   const handleMainVideoClick = () => {
+    setIsPlaying(false);
     setIsMainVideoOpen(true);
   };
 
   const handleTypeVideoClick = (videographyType: VideographyType) => {
     setSelectedTypeVideo(videographyType.video);
     setIsTypeVideoOpen(true);
+    setIsPlaying(false);
   };
 
   const closeMainVideo = () => {
@@ -145,8 +150,20 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
     setIsPlaying(false);
   };
 
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying);
+  const togglePlay = (target: 'main' | 'type') => {
+    const videoRef = target === 'main' ? mainVideoRef.current : typeVideoRef.current;
+
+    if (!videoRef) {
+      return;
+    }
+
+    if (videoRef.paused) {
+      void videoRef.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.pause();
+      setIsPlaying(false);
+    }
   };
 
   const handleNavigateToContact = () => {
@@ -161,11 +178,25 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
       <section className="relative h-screen overflow-hidden pt-16 lg:pt-20">
         {/* Video Background */}
         <div className="absolute inset-0">
-          <ImageWithFallback
-            src={currentVideo.thumbnail}
-            alt={currentVideo.title}
-            className="w-full h-full object-cover"
-          />
+          {currentVideo.videoUrl ? (
+            <video
+              key={currentVideo.id}
+              className="w-full h-full object-cover"
+              src={currentVideo.videoUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              poster={currentVideo.thumbnail || undefined}
+            />
+          ) : (
+            <ImageWithFallback
+              src={currentVideo.thumbnail}
+              alt={currentVideo.title}
+              className="w-full h-full object-cover"
+            />
+          )}
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -416,28 +447,46 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
               </motion.button>
 
               {/* Video Player Placeholder */}
-              <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <ImageWithFallback
-                  src={currentVideo.thumbnail}
-                  alt={currentVideo.title}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Play/Pause Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.button
-                    className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center text-accent-foreground"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={togglePlay}
+              <div className="relative w-full h-full bg-black flex items-center justify-center">
+                {currentVideo.videoUrl ? (
+                  <video
+                    ref={mainVideoRef}
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    poster={currentVideo.thumbnail}
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
                   >
-                    {isPlaying ? (
-                      <Pause className="w-8 h-8" fill="currentColor" />
-                    ) : (
-                      <Play className="w-8 h-8 ml-1" fill="currentColor" />
-                    )}
-                  </motion.button>
-                </div>
+                    <source src={currentVideo.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <ImageWithFallback
+                    src={currentVideo.thumbnail}
+                    alt={currentVideo.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+
+                {/* Play/Pause Button */}
+                {currentVideo.videoUrl && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <motion.button
+                      className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center text-accent-foreground pointer-events-auto"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => togglePlay('main')}
+                      type="button"
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-8 h-8" fill="currentColor" />
+                      ) : (
+                        <Play className="w-8 h-8 ml-1" fill="currentColor" />
+                      )}
+                    </motion.button>
+                  </div>
+                )}
 
                 {/* Video Info */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -488,28 +537,46 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
               </motion.button>
 
               {/* Video Player Placeholder */}
-              <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <ImageWithFallback
-                  src={selectedTypeVideo.thumbnail}
-                  alt={selectedTypeVideo.title}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Play/Pause Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.button
-                    className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center text-accent-foreground"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={togglePlay}
+              <div className="relative w-full h-full bg-black flex items-center justify-center">
+                {selectedTypeVideo.videoUrl ? (
+                  <video
+                    ref={typeVideoRef}
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    poster={selectedTypeVideo.thumbnail}
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
                   >
-                    {isPlaying ? (
-                      <Pause className="w-8 h-8" fill="currentColor" />
-                    ) : (
-                      <Play className="w-8 h-8 ml-1" fill="currentColor" />
-                    )}
-                  </motion.button>
-                </div>
+                    <source src={selectedTypeVideo.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <ImageWithFallback
+                    src={selectedTypeVideo.thumbnail}
+                    alt={selectedTypeVideo.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+
+                {/* Play/Pause Button */}
+                {selectedTypeVideo.videoUrl && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <motion.button
+                      className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center text-accent-foreground pointer-events-auto"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => togglePlay('type')}
+                      type="button"
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-8 h-8" fill="currentColor" />
+                      ) : (
+                        <Play className="w-8 h-8 ml-1" fill="currentColor" />
+                      )}
+                    </motion.button>
+                  </div>
+                )}
 
                 {/* Video Info */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">

@@ -27,14 +27,10 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
   const imgRef = useRef<HTMLImageElement | null>(null)
 
   useEffect(() => {
-    if (!lazy || isVisible) {
-      return
-    }
+    if (!lazy || isVisible) return
 
     const node = imgRef.current
-    if (!node) {
-      return
-    }
+    if (!node) return
 
     if ('loading' in HTMLImageElement.prototype) {
       node.loading = 'lazy'
@@ -58,13 +54,8 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
     return () => observer.disconnect()
   }, [lazy, isVisible])
 
-  const handleError = () => {
-    setDidError(true)
-  }
-
-  const handleLoad = () => {
-    setIsLoaded(true)
-  }
+  const handleError = () => setDidError(true)
+  const handleLoad = () => setIsLoaded(true)
 
   const placeholder = useMemo(
     () => (
@@ -84,7 +75,12 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
         style={style}
       >
         <div className="flex items-center justify-center w-full h-full">
-          <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={src} />
+          <img
+            src={ERROR_IMG_SRC}
+            alt="Error loading image"
+            {...rest}
+            data-original-url={src}
+          />
         </div>
       </div>
     )
@@ -93,17 +89,34 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
   return (
     <>
       {!isLoaded && placeholder}
+
       <img
         ref={imgRef}
         src={isVisible ? src : undefined}
         alt={alt}
-        className={`${className ?? ''} ${!isLoaded ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`.trim()}
+        className={`${className ?? ''} ${
+          !isLoaded ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'
+        }`.trim()}
         style={style}
         onError={handleError}
         onLoad={handleLoad}
         loading={lazy ? 'lazy' : loading}
         {...rest}
       />
+
+      {/* Example: If you want to show video instead of image when applicable */}
+      {/* Replace 'currentVideo' with your actual video data object */}
+      {/*
+      <video
+        className="w-full h-full object-cover"
+        controls
+        autoPlay
+        poster={currentVideo.thumbnail}
+      >
+        <source src={currentVideo.videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      */}
     </>
   )
 }

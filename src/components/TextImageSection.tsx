@@ -68,7 +68,7 @@ export default function TextImageSection() {
                   'Portrait & Family Photography',
                   'Maternity & Baby Photography',
                   'Special Events',
-                  'Corporate Advertising'
+                  'Corporate Advertising '
                 ].map((service, index) => (
                   <motion.li 
                     key={index}
