@@ -122,7 +122,8 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
   const [isMainVideoOpen, setIsMainVideoOpen] = useState(false);
   const [isTypeVideoOpen, setIsTypeVideoOpen] = useState(false);
   const [selectedTypeVideo, setSelectedTypeVideo] = useState<Video | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // Removed isPlaying state as we will rely solely on native controls for the modal
+  // const [isPlaying, setIsPlaying] = useState(false); 
   
   // NEW STATE for swipe
   const [touchStartX, setTouchStartX] = useState(0); 
@@ -164,42 +165,32 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
 
 
   const handleMainVideoClick = () => {
-    setIsPlaying(false);
     setIsMainVideoOpen(true);
   };
 
   const handleTypeVideoClick = (videographyType: VideographyType) => {
     setSelectedTypeVideo(videographyType.video);
     setIsTypeVideoOpen(true);
-    setIsPlaying(false);
   };
 
   const closeMainVideo = () => {
     setIsMainVideoOpen(false);
-    setIsPlaying(false);
+    // Pause video when closing
+    if (mainVideoRef.current) {
+        mainVideoRef.current.pause();
+    }
   };
 
   const closeTypeVideo = () => {
     setIsTypeVideoOpen(false);
     setSelectedTypeVideo(null);
-    setIsPlaying(false);
-  };
-
-  const togglePlay = (target: 'main' | 'type') => {
-    const videoRef = target === 'main' ? mainVideoRef.current : typeVideoRef.current;
-
-    if (!videoRef) {
-      return;
-    }
-
-    if (videoRef.paused) {
-      void videoRef.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.pause();
-      setIsPlaying(false);
+    // Pause video when closing
+    if (typeVideoRef.current) {
+        typeVideoRef.current.pause();
     }
   };
+  
+  // REMOVED togglePlay function as we rely on native controls
 
   const handleNavigateToContact = () => {
     if (onNavigateToContact) {
@@ -527,11 +518,12 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                   <video
                     ref={mainVideoRef}
                     className="w-full h-full object-cover"
-                    controls
-                    autoPlay
+                    controls // Essential for mobile tap initiation
+                    // FIX 1: Remove autoPlay from modal video
                     poster={currentVideo.thumbnail}
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
+                    // FIX 2: Remove redundant state updates from events
+                    onPlay={() => {}} 
+                    onPause={() => {}}
                   >
                     <source src={currentVideo.videoUrl} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -544,27 +536,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                   />
                 )}
 
-                {/* Play/Pause Button */}
-                {currentVideo.videoUrl && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <motion.button
-                      className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center text-accent-foreground pointer-events-auto"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => togglePlay('main')}
-                      type="button"
-                    >
-                      {isPlaying ? (
-                        <Pause className="w-8 h-8" fill="currentColor" />
-                      ) : (
-                        <Play className="w-8 h-8 ml-1" fill="currentColor" />
-                      )}
-                    </motion.button>
-                  </div>
-                )}
-
+                {/* FIX 3: REMOVED custom Play/Pause Button overlay */}
+                
                 {/* Video Info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
                   <h3 className="text-white text-xl lg:text-2xl font-semibold mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
                     {currentVideo.title}
                   </h3>
@@ -617,11 +592,12 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                   <video
                     ref={typeVideoRef}
                     className="w-full h-full object-cover"
-                    controls
-                    autoPlay
+                    controls // Essential for mobile tap initiation
+                    // FIX 1: Remove autoPlay from modal video
                     poster={selectedTypeVideo.thumbnail}
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
+                    // FIX 2: Remove redundant state updates from events
+                    onPlay={() => {}} 
+                    onPause={() => {}}
                   >
                     <source src={selectedTypeVideo.videoUrl} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -634,27 +610,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                   />
                 )}
 
-                {/* Play/Pause Button */}
-                {selectedTypeVideo.videoUrl && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <motion.button
-                      className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center text-accent-foreground pointer-events-auto"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => togglePlay('type')}
-                      type="button"
-                    >
-                      {isPlaying ? (
-                        <Pause className="w-8 h-8" fill="currentColor" />
-                      ) : (
-                        <Play className="w-8 h-8 ml-1" fill="currentColor" />
-                      )}
-                    </motion.button>
-                  </div>
-                )}
+                {/* FIX 3: REMOVED custom Play/Pause Button overlay */}
 
                 {/* Video Info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
                   <h3 className="text-white text-xl lg:text-2xl font-semibold mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
                     {selectedTypeVideo.title}
                   </h3>
