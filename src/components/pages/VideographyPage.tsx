@@ -24,25 +24,27 @@ interface VideographyType {
 const videos: Video[] = [
   {
     id: 1,
-    title: 'Starbucks Kolhapur',
-    description: '',
+    title: 'CINEMATIC SOULMATES',
+    description: 'In a world of fleeting moments, you are my eternal epic. Every time our eyes meet, its the most profound scene in the film of my life. 🎬❤️',
     thumbnail: '',
-    duration: '4:32',
-    videoUrl: '/videos/starbucks.mp4'
+    duration: '',
+    videoUrl: '/videos/SIDDHI & DURVANKUR.webm'
   },
   {
     id: 2,
-    title: 'Cinematic Wedding Story',
-    description: 'Experience the magic of love through our cinematic lens. Every moment captured with artistic precision and emotional depth.',
-    thumbnail: '',
-    duration: '3:15'
+    title: 'Starbucks Kolhapur',
+    description: 'A simple start, an iconic legacy. Tap to see the decades of craft, culture, and community that built Starbucks. An American classic. 🚀❤️"',
+    thumbnail: '/images/starbucks/main.jpg',
+    duration: '',
+    videoUrl: '/videos/starbucks.webm'
   },
   {
     id: 3,
-    title: 'Professional Event Coverage',
-    description: 'Dynamic videography that brings your special events to life. From corporate gatherings to intimate celebrations.',
-    thumbnail: '',
-    duration: '2:45'
+    title: 'THE PROMISE',
+    description: '"Forget the fantasy—this love is real, its cinematic, and its the most beautiful fairy tale we could have ever dreamed up. Encore, please. 🥂👑"',
+    thumbnail: '/images/wedding/RIYA & ASHISH/main.jpg',
+    duration: '',
+    videoUrl: '/videos/riya & ashish.webm'
   }
 ];
 
@@ -51,28 +53,30 @@ const videographyTypes: VideographyType[] = [
     id: 'prewedding',
     title: 'Pre-Wedding',
     description: 'Capture your love story before the big day with cinematic pre-wedding films that showcase your unique bond.',
-    thumbnail: '',
+    thumbnail: '/images/video.png',
     icon: <Heart className="w-6 h-6" />,
     video: {
       id: 101,
       title: 'Pre-Wedding Cinematic Story',
       description: 'A romantic journey capturing the essence of love before the wedding day. Shot in beautiful outdoor locations with natural lighting.',
-      thumbnail: '',
-      duration: '5:20'
+      thumbnail: '/images/video.png',
+      duration: '',
+      videoUrl: '/videos/prewedding.webm'
     }
   },
   {
     id: 'wedding',
     title: 'Wedding',
     description: 'Complete wedding day coverage from preparations to celebration, creating a timeless record of your special day.',
-    thumbnail: '',
+    thumbnail: '/images/wedding/SUSHANT & RADHIKA/main.jpg',
     icon: <Camera className="w-6 h-6" />,
     video: {
       id: 102,
       title: 'Wedding Day Highlights',
       description: 'A comprehensive coverage of the wedding ceremony and reception, capturing every precious moment from vows to the first dance.',
-      thumbnail: '',
-      duration: '8:45'
+      thumbnail: '/images/wedding/SUSHANT & RADHIKA/main.jpg',
+      duration: '',
+      videoUrl: '/videos/Sushant & Radhika.webm'
     }
   },
   {
@@ -86,11 +90,12 @@ const videographyTypes: VideographyType[] = [
       title: 'Cultural Festival Celebration',
       description: 'Dynamic videography showcasing the colors, music, and traditions of cultural festivals with multiple camera angles.',
       thumbnail: '',
-      duration: '6:15'
+      duration: '',
+      videoUrl: ''
     }
   },
   {
-    id: 'modeling',
+    id: 'Cinematic',
     title: 'Modeling',
     description: 'Professional fashion and portrait videography that showcases style, personality, and creative vision.',
     thumbnail: '',
@@ -100,7 +105,8 @@ const videographyTypes: VideographyType[] = [
       title: 'Fashion & Portrait Videography',
       description: 'Creative videography for fashion shoots and portrait sessions, emphasizing style, movement, and artistic expression.',
       thumbnail: '',
-      duration: '4:30'
+      duration: '',
+      videoUrl: ''
     }
   }
 ];
@@ -377,14 +383,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            onClick={handleNavigateToContact}
-            className="px-8 py-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Hire Me
-          </motion.button>
+          
         </motion.div>            <motion.div
                       className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       whileHover={{ scale: 1.1 }}
@@ -399,6 +398,25 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
           </div>
         </div>
 
+        {/* Contact Button */}
+        <motion.div
+          className="mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.a
+            href="YOUR_YOUTUBE_LINK_HERE" // ⬅️ Change this to your YouTube link
+            target="_blank"             // ⬅️ This opens the link in a new tab
+            rel="noopener noreferrer"   // ⬅️ Security best practice for target="_blank"
+            className="px-8 py-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+          View More
+          </motion.a>
+        </motion.div>
         <motion.div
           className="mt-12 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
