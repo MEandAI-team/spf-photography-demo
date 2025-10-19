@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, ChevronLeft, ChevronRight, X, Pause, Volume2, Heart, Camera, Music, Users } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
@@ -115,24 +115,53 @@ interface VideographyPageProps {
   onNavigateToContact?: () => void;
 }
 
+const SWIPE_THRESHOLD = 50; // Minimum distance in pixels to count as a swipe
+
 export default function VideographyPage({ onNavigateToContact }: VideographyPageProps) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isMainVideoOpen, setIsMainVideoOpen] = useState(false);
   const [isTypeVideoOpen, setIsTypeVideoOpen] = useState(false);
   const [selectedTypeVideo, setSelectedTypeVideo] = useState<Video | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  // NEW STATE for swipe
+  const [touchStartX, setTouchStartX] = useState(0); 
+
   const mainVideoRef = useRef<HTMLVideoElement | null>(null);
   const typeVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const currentVideo = videos[currentVideoIndex];
 
-  const nextVideo = () => {
+  // Modified nextVideo/prevVideo to be defined using useCallback
+  const nextVideo = useCallback(() => {
     setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
-  };
+  }, []);
 
-  const prevVideo = () => {
+  const prevVideo = useCallback(() => {
     setCurrentVideoIndex((prev) => (prev - 1 + videos.length) % videos.length);
-  };
+  }, []);
+
+  // FIX: Separate useEffect for Keyboard Navigation
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      // Ignore key presses if any video modal is open
+      if (isMainVideoOpen || isTypeVideoOpen) return;
+      
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        prevVideo();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        nextVideo();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    
+    // Cleanup function
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [prevVideo, nextVideo, isMainVideoOpen, isTypeVideoOpen]); // Dependencies ensure fresh functions are used
+
 
   const handleMainVideoClick = () => {
     setIsPlaying(false);
@@ -178,10 +207,41 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
     }
   };
 
+  // HANDLERS: Touch/Swipe functionality
+  const handleTouchStart = (e: React.TouchEvent) => {
+    // Only allow swipe actions if a video modal is NOT open
+    if (isMainVideoOpen || isTypeVideoOpen) return;
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (isMainVideoOpen || isTypeVideoOpen || touchStartX === 0) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > SWIPE_THRESHOLD) {
+      if (diff > 0) {
+        // Swipe left (next video)
+        nextVideo();
+      } else {
+        // Swipe right (previous video)
+        prevVideo();
+      }
+    }
+    setTouchStartX(0); // Reset touch start position
+  };
+  // END HANDLERS
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Video Section - Fixed header collision */}
-      <section className="relative h-screen overflow-hidden pt-16 lg:pt-20">
+      <section 
+        className="relative h-screen overflow-hidden pt-16 lg:pt-20"
+        // ADDED SWIPE HANDLERS HERE
+        onTouchStart={handleTouchStart} 
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Video Background */}
         <div className="absolute inset-0">
           {currentVideo.videoUrl ? (
@@ -267,9 +327,6 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
           >
             <Play className="w-8 h-8 lg:w-10 lg:h-10 ml-1" fill="currentColor" />
           </motion.button>
-
-
-
         </div>
 
         {/* Video Indicators */}

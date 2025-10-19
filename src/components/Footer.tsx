@@ -13,6 +13,47 @@ export default function Footer() {
   // Construct the WhatsApp link
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
+  // --- NEW: Social Media Link Configuration ---
+  const socialLinks = {
+    instagram: {
+      webUrl: "https://www.instagram.com/shree_pro",
+      appUri: "instagram://user?username=shree_pro", // Deep link for app
+    },
+    facebook: {
+      webUrl: "https://www.facebook.com/shreepro007/",
+      appUri: "fb://page/shreepro007", // Generic deep link (may require FB ID)
+    },
+    youtube: {
+      webUrl: "https://www.youtube.com/@shreeproductionfilmskolhap4145",
+      appUri: "vnd.youtube://user/shreeproductionfilmskolhap4145", // Deep link for Android/iOS
+    },
+  };
+
+  // --- NEW: Function to handle conditional opening (App vs. New Tab) ---
+  const handleSocialClick = (e: React.MouseEvent, type: keyof typeof socialLinks) => {
+    const { appUri, webUrl } = socialLinks[type];
+    
+    // Desktop behavior: Open in a new window/tab
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) { // Assuming 1024px is desktop breakpoint
+      e.preventDefault();
+      window.open(webUrl, '_blank');
+      return;
+    }
+
+    // Mobile behavior: Try opening the native app first
+    e.preventDefault();
+    
+    // Attempt to open the deep link
+    window.location.href = appUri;
+
+    // Set a timeout to redirect to the web URL if the app doesn't open
+    // This handles cases where the app is not installed or the deep link fails.
+    setTimeout(() => {
+        window.open(webUrl, '_blank');
+    }, 100); 
+  };
+  // -----------------------------------------------------------------
+
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -29,25 +70,36 @@ export default function Footer() {
               Every frame tells a story worth preserving.
             </p>
             <div className="flex space-x-4">
+              {/* INSTAGRAM LINK (Modified) */}
               <a 
-                href="https://www.instagram.com/shree_pro" 
+                href={socialLinks.instagram.webUrl} 
+                onClick={(e) => handleSocialClick(e, 'instagram')} // Use the new handler
                 className="w-10 h-10 bg-accent hover:bg-gradient-to-br hover:from-pink-500 hover:to-orange-400 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                 aria-label="Instagram"
+                target="_blank" // Keep for general desktop fallback
+                rel="noopener noreferrer"
               >
                 <Instagram className="w-5 h-5 text-accent-foreground hover:text-white transition-colors duration-300" />
               </a>
+              {/* FACEBOOK LINK (Modified) */}
               <a 
-                href="https://www.facebook.com/shreepro007/" 
+                href={socialLinks.facebook.webUrl} 
+                onClick={(e) => handleSocialClick(e, 'facebook')} // Use the new handler
                 className="w-10 h-10 bg-accent hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                 aria-label="Facebook"
+                target="_blank" // Keep for general desktop fallback
+                rel="noopener noreferrer"
               >
                 <Facebook className="w-5 h-5 text-accent-foreground hover:text-white transition-colors duration-300" />
               </a>
-              {/* --- CHANGE 2: Replaced Twitter with Youtube --- */}
+              {/* YOUTUBE LINK (Modified) */}
               <a 
-                href="https://www.youtube.com/@shreeproductionfilmskolhap4145" // Update this href to your YouTube channel link
+                href={socialLinks.youtube.webUrl} // Update this href to your YouTube channel link
+                onClick={(e) => handleSocialClick(e, 'youtube')} // Use the new handler
                 className="w-10 h-10 bg-accent hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                 aria-label="YouTube"
+                target="_blank" // Keep for general desktop fallback
+                rel="noopener noreferrer"
               >
                 <Youtube className="w-5 h-5 text-accent-foreground hover:text-white transition-colors duration-300" />
               </a>
@@ -104,7 +156,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                {/* *** CHANGE HERE: Updated href to use the WhatsApp API link with pre-filled message *** */}
+                {/* WhatsApp Link */}
                 <a 
                   href={whatsappLink} 
                   target="_blank" // Opens in a new tab
@@ -122,20 +174,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Newsletter Signup */}
-            {/* <div className="mt-8">
-              <h5 className="font-semibold mb-3" style={{ fontFamily: 'Cinzel, serif' }}>Stay Updated</h5>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="flex-1 px-4 py-3 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/60 border border-primary-foreground/20 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                />
-                <button className="px-6 py-3 bg-accent hover:bg-accent/80 text-accent-foreground rounded-r-lg transition-colors duration-200">
-                  Subscribe
-                </button>
-              </div>
-            </div> */}
+            {/* Newsletter Signup (Commented out, as in original code) */}
+            {/* <div className="mt-8">...</div> */}
           </div>
         </div>
 
@@ -144,12 +184,12 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
               <p className="text-primary-foreground/60">
-                © 2025 SPF Photography. All rights reserved.
+                © 2025 Shree Production Films. All rights reserved.
               </p>
               <Heart className="w-4 h-4 text-accent" />
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
-              <a href="meandai.vercel.app" className="text-primary-foreground/60 hover:text-accent transition-colors duration-200">
+              <a href="https://meandai.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-accent transition-colors duration-200">
                 Website created by @MEandAI.
               </a>
               

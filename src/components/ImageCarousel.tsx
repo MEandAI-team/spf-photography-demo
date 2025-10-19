@@ -57,7 +57,12 @@ const slides: SlideData[] = [
 export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  
+  // Mobile Swipe Functionality: State for swipe tracking
+  const [touchStartX, setTouchStartX] = useState(0); 
+  const SWIPE_THRESHOLD = 50; 
 
+  // Auto-Play Management: Functions DO NOT stop auto-play on manual navigation
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, []);
@@ -70,7 +75,7 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
     setCurrentSlide(index);
   }, []);
 
-  // Keyboard navigation
+  // Keyboard navigation 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === 'ArrowLeft') {
@@ -90,58 +95,101 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [nextSlide, prevSlide]);
 
-  // Auto-slide functionality
+  // Auto-slide functionality 
   useEffect(() => {
     if (!isAutoPlaying) return;
 
-    const interval = setInterval(nextSlide, 5000);
+    const autoNextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+    const interval = setInterval(autoNextSlide, 2000); 
+    
     return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
+  }, [isAutoPlaying]); 
 
-  // Pause auto-play on hover
+  // Handlers for auto-play on hover are defined but not used in JSX
   const handleMouseEnter = () => setIsAutoPlaying(false);
   const handleMouseLeave = () => setIsAutoPlaying(true);
+  
+  // Mobile Swipe Functionality: Touch Handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === 0) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > SWIPE_THRESHOLD) {
+      if (diff > 0) {
+        // Swipe left (next slide)
+        nextSlide();
+      } else {
+        // Swipe right (previous slide)
+        prevSlide();
+      }
+    }
+    setTouchStartX(0); 
+  };
 
   return (
-    <section className="relative w-full h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] bg-background overflow-hidden">
+    // Apply swipe handlers to the section
+    <section 
+      className="relative w-full h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] bg-background overflow-hidden"
+      onTouchStart={handleTouchStart} 
+      onTouchEnd={handleTouchEnd}
+    >
       <div
         className="relative w-full h-full flex items-center justify-center"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        // Auto-play on hover intentionally removed
       >
         {/* Image Container */}
-        <div className="relative w-full max-w-7xl h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div 
+          // CRITICAL FIX: Increased negative Y-translation to -translate-y-32/-40 
+          // to achieve the minimal spacing shown in your latest screenshot.
+          className="relative w-full max-w-7xl h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 transform -translate-y-32 sm:-translate-y-40 lg:translate-y-0"
+        >
           <div className="absolute inset-0 flex items-center justify-center">
             {slides.map((slide, index) => {
               const isActive = index === currentSlide;
-              const offset = index - currentSlide;
+              const halfLength = slides.length / 2;
+              
+              // Infinite Sliding Loop Fix: Circular Index Calculation
+              let circularOffset = index - currentSlide;
+              if (circularOffset > halfLength) {
+                circularOffset -= slides.length;
+              } else if (circularOffset < -halfLength) {
+                circularOffset += slides.length;
+              }
 
               let transform = '';
               let zIndex = 1;
-              let opacity = 0.4;
+              let opacity = 0;
 
+              // Infinite Sliding Loop Fix: Corrected Positioning Logic
               if (isActive) {
                 transform = 'translateX(0) scale(1)';
                 zIndex = 10;
                 opacity = 1;
-              } else if (offset === 1 || (currentSlide === slides.length - 1 && index === 0)) {
+              } else if (circularOffset === 1) { // Next
                 transform = 'translateX(50%) scale(0.85)';
                 zIndex = 5;
                 opacity = 0.6;
-              } else if (offset === -1 || (currentSlide === 0 && index === slides.length - 1)) {
+              } else if (circularOffset === -1) { // Previous
                 transform = 'translateX(-50%) scale(0.85)';
                 zIndex = 5;
                 opacity = 0.6;
-              } else if (offset === 2 || (currentSlide >= slides.length - 2 && index <= 1)) {
+              } else if (circularOffset === 2) { // Next-Next
                 transform = 'translateX(100%) scale(0.7)';
                 zIndex = 2;
                 opacity = 0.3;
-              } else if (offset === -2 || (currentSlide <= 1 && index >= slides.length - 2)) {
+              } else if (circularOffset === -2) { // Previous-Previous
                 transform = 'translateX(-100%) scale(0.7)';
                 zIndex = 2;
                 opacity = 0.3;
               } else {
-                transform = 'translateX(150%) scale(0.5)';
+                // Far away or hidden slides
+                transform = circularOffset > 0 ? 'translateX(150%) scale(0.5)' : 'translateX(-150%) scale(0.5)';
                 zIndex = 1;
                 opacity = 0;
               }
@@ -158,7 +206,8 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
                   onClick={() => goToSlide(index)}
                 >
                   <div
-                    className={`relative w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[500px] xl:w-[420px] xl:h-[540px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ${
+                    // Mobile/Tablet Image Height Increased, Desktop Kept Same
+                    className={`relative w-72 h-[500px] sm:w-80 sm:h-[600px] lg:w-96 lg:h-[500px] xl:w-[420px] xl:h-[540px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ${
                       !isActive ? 'blur-sm' : ''
                     } ${isActive ? 'hover:shadow-3xl' : ''}`}
                   >
