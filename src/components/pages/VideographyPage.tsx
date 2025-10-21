@@ -28,7 +28,7 @@ const videos: Video[] = [
     description: 'In a world of fleeting moments, you are my eternal epic. Every time our eyes meet, its the most profound scene in the film of my life. 🎬❤️',
     thumbnail: '',
     duration: '',
-    videoUrl: '/videos/SIDDHI & DURVANKUR.webm'
+    videoUrl: '/videos/SIDDHI & DURVANKUR.mp4'
   },
   {
     id: 2,
