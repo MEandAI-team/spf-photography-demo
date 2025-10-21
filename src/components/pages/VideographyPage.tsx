@@ -26,7 +26,7 @@ const videos: Video[] = [
     id: 1,
     title: 'CINEMATIC SOULMATES',
     description: 'In a world of fleeting moments, you are my eternal epic. Every time our eyes meet, its the most profound scene in the film of my life. 🎬❤️',
-    thumbnail: '',
+    thumbnail: '/images/siddhi & Durwankar.webp',
     duration: '',
     videoUrl: '/videos/SIDDHI & DURVANKUR.mp4'
   },
@@ -36,15 +36,15 @@ const videos: Video[] = [
     description: 'A simple start, an iconic legacy. Tap to see the decades of craft, culture, and community that built Starbucks. An American classic. 🚀❤️"',
     thumbnail: '/images/starbucks/main.jpg',
     duration: '',
-    videoUrl: '/videos/starbucks.webm'
+    videoUrl: '/videos/starbucks.mp4'
   },
   {
     id: 3,
     title: 'THE PROMISE',
     description: '"Forget the fantasy—this love is real, its cinematic, and its the most beautiful fairy tale we could have ever dreamed up. Encore, please. 🥂👑"',
-    thumbnail: '/images/wedding/RIYA & ASHISH/main.jpg',
+    thumbnail: '/images/wedding/SAMRUDDHI & ROHIT/img2.jpg',
     duration: '',
-    videoUrl: '/videos/riya & ashish.webm'
+    videoUrl: '/videos/wedding.mp4'
   }
 ];
 
@@ -68,15 +68,15 @@ const videographyTypes: VideographyType[] = [
     id: 'wedding',
     title: 'Wedding',
     description: 'Complete wedding day coverage from preparations to celebration, creating a timeless record of your special day.',
-    thumbnail: '/images/wedding/SUSHANT & RADHIKA/main.jpg',
+    thumbnail: '/images/wedding/RIYA & ASHISH/main.jpg',
     icon: <Camera className="w-6 h-6" />,
     video: {
       id: 102,
       title: 'Wedding Day Highlights',
       description: 'A comprehensive coverage of the wedding ceremony and reception, capturing every precious moment from vows to the first dance.',
-      thumbnail: '/images/wedding/SUSHANT & RADHIKA/main.jpg',
+      thumbnail: '/images/wedding/RIYA & ASHISH/main.jpg',
       duration: '',
-      videoUrl: '/videos/Sushant & Radhika.webm'
+      videoUrl: '/videos/RIya and Ashish.mp4'
     }
   },
   {
