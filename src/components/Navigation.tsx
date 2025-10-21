@@ -73,7 +73,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
               className="flex items-center space-x-2 lg:space-x-3 group"
             >
               <motion.div 
-                className="p-1.5 lg:p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors duration-200"
+                className="p-1.5 lg:p-2 bg-white rounded-lg group-hover:bg-accent/30 transition-colors duration-200"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >

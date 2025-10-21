@@ -115,6 +115,23 @@ interface VideographyPageProps {
   onNavigateToContact?: () => void;
 }
 
+const getVideoMimeType = (url?: string) => {
+  if (!url) return undefined;
+  const extension = url.split('.').pop()?.toLowerCase();
+
+  switch (extension) {
+    case 'mp4':
+      return 'video/mp4';
+    case 'webm':
+      return 'video/webm';
+    case 'ogg':
+    case 'ogv':
+      return 'video/ogg';
+    default:
+      return undefined;
+  }
+};
+
 const SWIPE_THRESHOLD = 50; // Minimum distance in pixels to count as a swipe
 
 export default function VideographyPage({ onNavigateToContact }: VideographyPageProps) {
@@ -525,7 +542,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                     onPlay={() => {}} 
                     onPause={() => {}}
                   >
-                    <source src={currentVideo.videoUrl} type="video/mp4" />
+                    <source
+                      src={currentVideo.videoUrl}
+                      type={getVideoMimeType(currentVideo.videoUrl) ?? undefined}
+                    />
                     Your browser does not support the video tag.
                   </video>
                 ) : (
@@ -599,7 +619,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                     onPlay={() => {}} 
                     onPause={() => {}}
                   >
-                    <source src={selectedTypeVideo.videoUrl} type="video/mp4" />
+                    <source
+                      src={selectedTypeVideo.videoUrl}
+                      type={getVideoMimeType(selectedTypeVideo.videoUrl) ?? undefined}
+                    />
                     Your browser does not support the video tag.
                   </video>
                 ) : (

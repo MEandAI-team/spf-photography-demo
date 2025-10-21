@@ -100,7 +100,7 @@ export default function ImageCarousel({ onViewMore }: ImageCarouselProps = {}) {
     if (!isAutoPlaying) return;
 
     const autoNextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-    const interval = setInterval(autoNextSlide, 2000); 
+    const interval = setInterval(autoNextSlide, 3500); 
     
     return () => clearInterval(interval);
   }, [isAutoPlaying]); 
