@@ -10,12 +10,12 @@ const SplashScreen: React.FC = () => {
     // Start fade-out after 3 seconds
     const fadeOutTimer = setTimeout(() => {
       setAnimationClass('fade-out');
-    }, 6000);
+    }, 4000);
 
     // Remove the component from the DOM after the fade-out animation completes (2s)
     const visibilityTimer = setTimeout(() => {
       setVisible(false);
-    }, 5000); // 3000ms (visible) + 2000ms (fade-out)
+    }, 4000); // 3000ms (visible) + 2000ms (fade-out)
 
     return () => {
       clearTimeout(fadeOutTimer);
