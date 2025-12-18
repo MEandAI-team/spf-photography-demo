@@ -17,7 +17,7 @@ export default function AboutPage({ onNavigateToContact }: AboutPageProps) {
             <div className="relative order-2 lg:order-1">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="/images/about/akshay-potdar.JPG"
+                  src="/images/about/akshay-potdar.webp"
                   alt="SPF - Professional Photographer"
                   className="w-full h-full object-cover"
                 />
@@ -194,22 +194,22 @@ export default function AboutPage({ onNavigateToContact }: AboutPageProps) {
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              My photography journey began during my college years when I first picked up a camera to document life around me. 
-              What started as a hobby quickly became a passion, and eventually, my calling. After graduating with a degree in 
+              My photography journey began during my college years when I first picked up a camera to document life around me.
+              What started as a hobby quickly became a passion, and eventually, my calling. After graduating with a degree in
               Fine Arts, I dedicated myself entirely to photography, specializing in weddings and portraits.
             </p>
             <p>
-              Over the years, I've been honored to capture hundreds of love stories, each unique and beautiful in its own way. 
-              From intimate backyard ceremonies to lavish destination weddings, I've learned that the most precious moments 
+              Over the years, I've been honored to capture hundreds of love stories, each unique and beautiful in its own way.
+              From intimate backyard ceremonies to lavish destination weddings, I've learned that the most precious moments
               often happen in the quiet spaces between the grand gestures.
             </p>
             <p>
-              Today, I continue to evolve my craft, always seeking new ways to tell your story with authenticity, 
-              artistry, and heart. Because at the end of the day, it's not just about taking pictures – 
+              Today, I continue to evolve my craft, always seeking new ways to tell your story with authenticity,
+              artistry, and heart. Because at the end of the day, it's not just about taking pictures –
               it's about preserving the moments that matter most to you.
             </p>
           </div>
-          
+
           <div className="mt-12">
             <button
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg transition-colors duration-200"

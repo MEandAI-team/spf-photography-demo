@@ -34,7 +34,7 @@ const videos: Video[] = [
     id: 2,
     title: 'Starbucks Kolhapur',
     description: 'A simple start, an iconic legacy. Tap to see the decades of craft, culture, and community that built Starbucks. An American classic. 🚀❤️"',
-    thumbnail: '/images/starbucks/main.jpg',
+    thumbnail: '/images/starbucks/main.webp',
     duration: '',
     videoUrl: '/videos/starbucks.mp4'
   },
@@ -42,7 +42,7 @@ const videos: Video[] = [
     id: 3,
     title: 'THE PROMISE',
     description: '"Forget the fantasy—this love is real, its cinematic, and its the most beautiful fairy tale we could have ever dreamed up. Encore, please. 🥂👑"',
-    thumbnail: '/images/wedding/SAMRUDDHI & ROHIT/img2.jpg',
+    thumbnail: '/images/wedding/SAMRUDDHI & ROHIT/img2.webp',
     duration: '',
     videoUrl: '/videos/wedding.mp4'
   }
@@ -68,13 +68,13 @@ const videographyTypes: VideographyType[] = [
     id: 'wedding',
     title: 'Wedding',
     description: 'Complete wedding day coverage from preparations to celebration, creating a timeless record of your special day.',
-    thumbnail: '/images/wedding/RIYA & ASHISH/main.jpg',
+    thumbnail: '/images/wedding/RIYA & ASHISH/main.webp',
     icon: <Camera className="w-6 h-6" />,
     video: {
       id: 102,
       title: 'Wedding Day Highlights',
       description: 'A comprehensive coverage of the wedding ceremony and reception, capturing every precious moment from vows to the first dance.',
-      thumbnail: '/images/wedding/RIYA & ASHISH/main.jpg',
+      thumbnail: '/images/wedding/RIYA & ASHISH/main.webp',
       duration: '',
       videoUrl: '/videos/RIya and Ashish.mp4'
     }
@@ -141,9 +141,9 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
   const [selectedTypeVideo, setSelectedTypeVideo] = useState<Video | null>(null);
   // Removed isPlaying state as we will rely solely on native controls for the modal
   // const [isPlaying, setIsPlaying] = useState(false); 
-  
+
   // NEW STATE for swipe
-  const [touchStartX, setTouchStartX] = useState(0); 
+  const [touchStartX, setTouchStartX] = useState(0);
 
   const mainVideoRef = useRef<HTMLVideoElement | null>(null);
   const typeVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -164,7 +164,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
     const handleKeyPress = (event: KeyboardEvent) => {
       // Ignore key presses if any video modal is open
       if (isMainVideoOpen || isTypeVideoOpen) return;
-      
+
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
         prevVideo();
@@ -175,7 +175,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
     };
 
     window.addEventListener('keydown', handleKeyPress);
-    
+
     // Cleanup function
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [prevVideo, nextVideo, isMainVideoOpen, isTypeVideoOpen]); // Dependencies ensure fresh functions are used
@@ -194,7 +194,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
     setIsMainVideoOpen(false);
     // Pause video when closing
     if (mainVideoRef.current) {
-        mainVideoRef.current.pause();
+      mainVideoRef.current.pause();
     }
   };
 
@@ -203,10 +203,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
     setSelectedTypeVideo(null);
     // Pause video when closing
     if (typeVideoRef.current) {
-        typeVideoRef.current.pause();
+      typeVideoRef.current.pause();
     }
   };
-  
+
   // REMOVED togglePlay function as we rely on native controls
 
   const handleNavigateToContact = () => {
@@ -244,10 +244,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Video Section - Fixed header collision */}
-      <section 
+      <section
         className="relative h-screen overflow-hidden pt-16 lg:pt-20"
         // ADDED SWIPE HANDLERS HERE
-        onTouchStart={handleTouchStart} 
+        onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         {/* Video Background */}
@@ -302,8 +302,8 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
-          <motion.h1 
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-tight" 
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-tight"
             style={{ fontFamily: 'Cinzel, serif' }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -313,7 +313,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
             {currentVideo.title}
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             className="text-base lg:text-xl text-white/90 max-w-4xl mb-8 lg:mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -343,11 +343,10 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
             <motion.button
               key={index}
               onClick={() => setCurrentVideoIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentVideoIndex 
-                  ? 'bg-white scale-125' 
-                  : 'bg-white/50 hover:bg-white/75'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentVideoIndex
+                ? 'bg-white scale-125'
+                : 'bg-white/50 hover:bg-white/75'
+                }`}
               whileHover={{ scale: 1.2 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: index === currentVideoIndex ? 1.25 : 1 }}
@@ -358,7 +357,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
 
         {/* Video Controls */}
         <div className="absolute bottom-8 right-8 z-20 flex items-center space-x-4">
-          <motion.div 
+          <motion.div
             className="flex items-center bg-black/20 backdrop-blur-sm rounded-full px-4 py-2 text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -371,7 +370,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
       </section>
 
       {/* Videography Types Section */}
-      <motion.section 
+      <motion.section
         className="py-16 lg:py-24 bg-background"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -380,7 +379,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <motion.div 
+          <motion.div
             className="text-center mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -439,17 +438,17 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                     </p>
 
                     {/* Play Button */}
-        
 
-        <motion.div
-          className="mt-12 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          
-        </motion.div>            <motion.div
+
+                    <motion.div
+                      className="mt-12 flex justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    >
+
+                    </motion.div>            <motion.div
                       className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
@@ -479,7 +478,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-          View More
+            View More
           </motion.a>
         </motion.div>
         <motion.div
@@ -539,8 +538,8 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                     // FIX 1: Remove autoPlay from modal video
                     poster={currentVideo.thumbnail}
                     // FIX 2: Remove redundant state updates from events
-                    onPlay={() => {}} 
-                    onPause={() => {}}
+                    onPlay={() => { }}
+                    onPause={() => { }}
                   >
                     <source
                       src={currentVideo.videoUrl}
@@ -557,7 +556,7 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                 )}
 
                 {/* FIX 3: REMOVED custom Play/Pause Button overlay */}
-                
+
                 {/* Video Info */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
                   <h3 className="text-white text-xl lg:text-2xl font-semibold mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
@@ -616,8 +615,8 @@ export default function VideographyPage({ onNavigateToContact }: VideographyPage
                     // FIX 1: Remove autoPlay from modal video
                     poster={selectedTypeVideo.thumbnail}
                     // FIX 2: Remove redundant state updates from events
-                    onPlay={() => {}} 
-                    onPause={() => {}}
+                    onPlay={() => { }}
+                    onPause={() => { }}
                   >
                     <source
                       src={selectedTypeVideo.videoUrl}

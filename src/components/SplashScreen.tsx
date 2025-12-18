@@ -29,7 +29,7 @@ const SplashScreen: React.FC = () => {
 
   return (
     <div className={`splash-screen ${animationClass}`}>
-      <ImageWithFallback src="/images/splash.png" alt="Splash Screen" className="w-full h-auto" />
+      <ImageWithFallback src="/images/splash.webp" alt="Splash Screen" className="w-full h-auto" />
     </div>
   );
 };

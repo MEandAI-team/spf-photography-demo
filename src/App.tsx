@@ -9,6 +9,7 @@ import ContactPage from './components/pages/ContactPage';
 import GalleryPage from './components/pages/GalleryPage';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -30,12 +31,12 @@ export default function App() {
       const hash = window.location.hash.slice(1); // Remove #
       const urlParams = new URLSearchParams(window.location.search);
       const galleryId = urlParams.get('gallery');
-      
+
       if (galleryId) {
         setCurrentGalleryId(parseInt(galleryId));
         return 'gallery';
       }
-      
+
       return hash || 'home';
     };
 
@@ -69,27 +70,27 @@ export default function App() {
   }, [currentPage, currentGalleryId, showSplash]);
 
   const pageVariants = {
-    initial: { 
-      opacity: 0, 
+    initial: {
+      opacity: 0,
       y: 20,
       scale: 0.98,
       transition: { duration: 0.4 }
     },
-    animate: { 
-      opacity: 1, 
+    animate: {
+      opacity: 1,
       y: 0,
       scale: 1,
-      transition: { 
+      transition: {
         duration: 0.6,
         ease: [0.4, 0, 0.2, 1],
         staggerChildren: 0.1
       }
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       y: -20,
       scale: 0.98,
-      transition: { 
+      transition: {
         duration: 0.4,
         ease: [0.4, 0, 1, 1]
       }
@@ -133,8 +134,8 @@ export default function App() {
         return <ContactPage />;
       case 'gallery':
         return currentGalleryId ? (
-          <GalleryPage 
-            portfolioId={currentGalleryId} 
+          <GalleryPage
+            portfolioId={currentGalleryId}
             onBackToWork={handleBackToWork}
           />
         ) : (
@@ -168,6 +169,7 @@ export default function App() {
         </motion.main>
       </AnimatePresence>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

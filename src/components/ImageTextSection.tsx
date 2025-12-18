@@ -8,7 +8,7 @@ interface ImageTextSectionProps {
 
 export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionProps) {
   return (
-    <motion.section 
+    <motion.section
       className="w-full min-h-screen bg-secondary/30 py-16 lg:py-24"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -18,33 +18,33 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center min-h-[600px]">
           {/* Image */}
-          <motion.div 
+          <motion.div
             className="relative order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <motion.div 
+            <motion.div
               className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               <ImageWithFallback
-                src="/images/home/spf3d3.png"
+                src="/images/home/spf3d3.webp"
                 alt="Wedding Celebration"
                 className="w-full h-full object-cover"
               />
             </motion.div>
             {/* Decorative elements */}
-            <motion.div 
+            <motion.div
               className="absolute -top-6 lg:-top-8 -right-6 lg:-right-8 w-16 lg:w-20 h-16 lg:h-20 bg-accent/30 rounded-full -z-10"
               initial={{ scale: 0, rotate: -180 }}
               whileInView={{ scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             />
-            <motion.div 
+            <motion.div
               className="absolute -bottom-3 lg:-bottom-4 -left-3 lg:-left-4 w-8 lg:w-12 h-8 lg:h-12 bg-secondary rounded-full -z-10"
               initial={{ scale: 0, rotate: 180 }}
               whileInView={{ scale: 1, rotate: 0 }}
@@ -54,7 +54,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
           </motion.div>
 
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             className="space-y-6 lg:space-y-8 order-1 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -62,8 +62,8 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
             viewport={{ once: true }}
           >
             <div className="space-y-4 lg:space-y-6">
-              <motion.h2 
-                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight text-foreground" 
+              <motion.h2
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight text-foreground"
                 style={{ fontFamily: 'Cinzel, serif' }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
               >
                 Your Story, Beautifully Told
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-base lg:text-lg xl:text-xl text-muted-foreground leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
               >
                 Photography is more than just taking pictures – it's about storytelling, emotion, and creating lasting memories. With years of experience and a keen eye for detail, we transform ordinary moments into extraordinary memories that you'll treasure forever.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-base lg:text-lg text-muted-foreground leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
               </motion.p>
             </div>
 
-            <motion.div 
+            <motion.div
               className="bg-card p-4 lg:p-6 rounded-xl shadow-lg border border-border"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +107,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
                   { title: 'Personalized Packages', desc: 'Tailored to fit your specific needs and budget' },
                   { title: '24/7 Support', desc: 'We\'re here whenever you need us' }
                 ].map((feature, index) => (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     className="flex items-start space-x-3"
                     initial={{ opacity: 0, x: -20 }}
@@ -115,7 +115,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
                     transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="w-5 lg:w-6 h-5 lg:h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1"
                       whileHover={{ scale: 1.2, rotate: 360 }}
                       transition={{ duration: 0.3 }}
@@ -131,14 +131,14 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-3 lg:gap-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.1 }}
               viewport={{ once: true }}
             >
-              <motion.button 
+              <motion.button
                 className="bg-primary text-primary-foreground px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm lg:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -147,7 +147,7 @@ export default function ImageTextSection({ onNavigateToWork }: ImageTextSectionP
                 View Portfolio
               </motion.button>
 
-              
+
 
             </motion.div>
           </motion.div>

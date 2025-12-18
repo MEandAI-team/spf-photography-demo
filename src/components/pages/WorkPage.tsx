@@ -17,42 +17,42 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     coupleNames: 'Riya & Ashish',
-    image: '/images/wedding/RIYA & ASHISH/main.jpg'
+    image: '/images/wedding/RIYA & ASHISH/main.webp'
   },
   {
     id: 2,
     coupleNames: 'Mandar & Ashwini',
-    image: '/images/prewedding/MANDAR & ASHWINI/main.jpg'
+    image: '/images/prewedding/MANDAR & ASHWINI/main.webp'
   },
   {
     id: 3,
     coupleNames: 'Rana & Anajali',
-    image: '/images/celebrity/RANA - ANJALI/main.jpg'
+    image: '/images/celebrity/RANA - ANJALI/main.webp'
   },
   {
     id: 4,
     coupleNames: 'Ashish & Anjuna',
-    image: '/images/maternity/ASHISH & ANUJA/main.jpg'
+    image: '/images/maternity/ASHISH & ANUJA/main.webp'
   },
   {
     id: 5,
     coupleNames: 'Swati Limaye',
-    image: '/images/celebrity/SWATI LIMAYE/main.jpg'
+    image: '/images/celebrity/SWATI LIMAYE/main.webp'
   },
   {
     id: 6,
     coupleNames: 'Samruddhi & Rohit',
-    image: '/images/wedding/SAMRUDDHI & ROHIT/main.jpg'
+    image: '/images/wedding/SAMRUDDHI & ROHIT/main.webp'
   },
   {
     id: 7,
     coupleNames: 'Harsh & Nishigandha',
-    image: '/images/prewedding/HARSH & NISHIGANDHA/main.jpg'
+    image: '/images/prewedding/HARSH & NISHIGANDHA/main.webp'
   },
   {
     id: 8,
     coupleNames: 'Ratnesha',
-    image: '/images/portrait/RATNESHA/main.jpg'
+    image: '/images/portrait/RATNESHA/main.webp'
   },
   {
     id: 9,
@@ -62,22 +62,22 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 10,
     coupleNames: 'Sushant & Radhika',
-    image: '/images/wedding/SUSHANT & RADHIKA/main.jpg'
+    image: '/images/wedding/SUSHANT & RADHIKA/main.webp'
   },
-  {                                                                                                                                                                                                                                                                                                                                                                                                                   
+  {
     id: 11,
     coupleNames: 'Shruti',
-    image: '/images/portrait/SHRUTI/main.jpg'
+    image: '/images/portrait/SHRUTI/main.webp'
   },
   {
     id: 12,
-    coupleNames: 'Sports',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    mes: 'Sports',
-    image: '/images/sports/main.jpg'
+    coupleNames: 'Sports', mes: 'Sports',
+    image: '/images/sports/main.webp'
   },
   {
     id: 13,
     coupleNames: 'starbucks',
-    image: '/images/starbucks/main.jpg'
+    image: '/images/starbucks/main.webp'
   }
 ];
 
@@ -97,15 +97,15 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
   return (
     <div className="min-h-screen bg-background pt-16 lg:pt-20">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="py-12 lg:py-16"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
-            className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4" 
+          <motion.h1
+            className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4"
             style={{ fontFamily: 'Cinzel, serif' }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
           >
             Our Work
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
       {/* Portfolio Grid */}
       <section className="py-8 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -141,11 +141,11 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
                 onClick={() => handleImageClick(item)}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
+                transition={{
                   duration: 0.4,
                   delay: index * 0.1
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   transition: { duration: 0.2 }
                 }}
@@ -158,10 +158,10 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   style={{ width: '427px', height: '269px' }}
                 />
-                
+
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <motion.div
@@ -170,13 +170,13 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
                     transition={{ duration: 0.3 }}
                     className="text-center"
                   >
-                    <h3 
-                      className="text-white text-xl lg:text-2xl mb-4" 
+                    <h3
+                      className="text-white text-xl lg:text-2xl mb-4"
                       style={{ fontFamily: 'Cinzel, serif' }}
                     >
                       {item.coupleNames}
                     </h3>
-                    
+
                     <motion.button
                       className="bg-transparent border-2 border-white text-white px-6 py-3 text-sm font-medium hover:bg-white hover:text-primary transition-all duration-200"
                       whileHover={{ scale: 1.05 }}
@@ -208,7 +208,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
       </section>
 
       {/* Call to Action */}
-      <motion.section 
+      <motion.section
         className="py-16 lg:py-24 bg-secondary/20"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -216,8 +216,8 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
-            className="text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4 lg:mb-6" 
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4 lg:mb-6"
             style={{ fontFamily: 'Cinzel, serif' }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,7 +226,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
           >
             Ready to Tell Your Story?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-base lg:text-lg text-muted-foreground mb-6 lg:mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -235,14 +235,14 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
           >
             Let's create beautiful memories together. Every moments has a unique story worth capturing.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <motion.button 
+            <motion.button
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 transition-colors duration-200 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -250,7 +250,7 @@ export default function WorkPage({ onGalleryOpen, onNavigateToContact }: WorkPag
             >
               Book a Session
             </motion.button>
-            <motion.button 
+            <motion.button
               className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 transition-colors duration-200 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

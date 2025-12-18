@@ -30,7 +30,7 @@ export interface ImageData {
 export const portfolio1Images: ImageData[] = [
   {
     id: 'portfolio1-001',
-    src: '/images/wedding/RIYA & ASHISH/img1.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img1.webp',
     alt: 'Srushti & Piyush - Romantic moment',
     caption: 'A tender moment between the bride and groom during their sunset photoshoot',
     category: 'wedding',
@@ -49,7 +49,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-002',
-    src: '/images/wedding/RIYA & ASHISH/img2.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img2.webp',
     alt: 'Srushti & Piyush - Wedding ceremony',
     caption: 'The sacred moment of exchanging vows, surrounded by loved ones',
     category: 'wedding',
@@ -68,7 +68,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-003',
-    src: '/images/wedding/RIYA & ASHISH/img3.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img3.webp',
     alt: 'Srushti & Piyush - Pre-wedding moment',
     caption: 'Romantic pre-wedding session capturing the anticipation of the big day',
     category: 'wedding',
@@ -87,7 +87,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-004',
-    src: '/images/wedding/RIYA & ASHISH/img4.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img4.webp',
     alt: 'Srushti & Piyush - Reception celebration',
     caption: 'Joyful celebration at the reception',
     category: 'wedding',
@@ -99,7 +99,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-005',
-    src: '/images/wedding/RIYA & ASHISH/img5.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img5.webp',
     alt: 'Srushti & Piyush - First dance',
     caption: 'The couple\'s first dance',
     category: 'wedding',
@@ -111,7 +111,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-006',
-    src: '/images/wedding/RIYA & ASHISH/img6.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img6.webp',
     alt: 'Srushti & Piyush - Couple portrait',
     caption: 'Beautiful couple portrait',
     category: 'wedding',
@@ -123,7 +123,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-007',
-    src: '/images/wedding/RIYA & ASHISH/img7.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img7.webp',
     alt: 'Srushti & Piyush - Wedding details',
     caption: 'Beautiful wedding details',
     category: 'wedding',
@@ -135,7 +135,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-008',
-    src: '/images/wedding/RIYA & ASHISH/img8.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img8.webp',
     alt: 'Srushti & Piyush - Candid moment',
     caption: 'Candid moment of joy',
     category: 'wedding',
@@ -147,7 +147,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-009',
-    src: '/images/wedding/RIYA & ASHISH/img9.jpg',
+    src: '/images/wedding/RIYA & ASHISH/img9.webp',
     alt: 'Srushti & Piyush - Family celebration',
     caption: 'Celebrating with family and friends',
     category: 'wedding',
@@ -159,7 +159,7 @@ export const portfolio1Images: ImageData[] = [
   },
   {
     id: 'portfolio1-010',
-    src: '/images/wedding/RIYA & ASHISH/main.jpg',
+    src: '/images/wedding/RIYA & ASHISH/main.webp',
     alt: 'Srushti & Piyush - Wedding highlight',
     caption: 'Signature highlight from the celebration',
     category: 'wedding',
@@ -175,7 +175,7 @@ export const portfolio1Images: ImageData[] = [
 export const portfolio2Images: ImageData[] = [
   {
     id: 'portfolio2-001',
-    src: '/images/prewedding/MANDAR & ASHWINI/img1.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img1.webp',
     alt: 'Maria & George - Wedding portrait',
     caption: 'Elegant wedding portrait in natural setting',
     category: 'wedding',
@@ -194,7 +194,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-002',
-    src: '/images/prewedding/MANDAR & ASHWINI/img2.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img2.webp',
     alt: 'Maria & George - Ceremony moment',
     caption: 'Beautiful ceremony moment with family',
     category: 'wedding',
@@ -206,7 +206,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-003',
-    src: '/images/prewedding/MANDAR & ASHWINI/img3.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img3.webp',
     alt: 'Maria & George - Reception celebration',
     caption: 'Joyful reception celebration',
     category: 'wedding',
@@ -218,7 +218,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-004',
-    src: '/images/prewedding/MANDAR & ASHWINI/img4.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img4.webp',
     alt: 'Maria & George - First dance',
     caption: 'Romantic first dance',
     category: 'wedding',
@@ -230,7 +230,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-005',
-    src: '/images/prewedding/MANDAR & ASHWINI/img5.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img5.webp',
     alt: 'Maria & George - Couple portrait',
     caption: 'Stunning couple portrait',
     category: 'wedding',
@@ -242,7 +242,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-006',
-    src: '/images/prewedding/MANDAR & ASHWINI/img6.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img6.webp',
     alt: 'Maria & George - Wedding details',
     caption: 'Beautiful wedding details',
     category: 'wedding',
@@ -254,7 +254,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-007',
-    src: '/images/prewedding/MANDAR & ASHWINI/img7.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/img7.webp',
     alt: 'Maria & George - Candid moment',
     caption: 'Candid moment of joy',
     category: 'wedding',
@@ -266,7 +266,7 @@ export const portfolio2Images: ImageData[] = [
   },
   {
     id: 'portfolio2-008',
-    src: '/images/prewedding/MANDAR & ASHWINI/main.jpg',
+    src: '/images/prewedding/MANDAR & ASHWINI/main.webp',
     alt: 'Maria & George - Signature prewedding portrait',
     caption: 'Signature portrait capturing their story',
     category: 'wedding',
@@ -282,7 +282,7 @@ export const portfolio2Images: ImageData[] = [
 export const portfolio3Images: ImageData[] = [
   {
     id: 'portfolio3-001',
-    src: '/images/celebrity/RANA - ANJALI/img1.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img1.webp',
     alt: 'Emma & James - Outdoor wedding',
     caption: 'Stunning outdoor wedding ceremony',
     category: 'wedding',
@@ -301,7 +301,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-002',
-    src: '/images/celebrity/RANA - ANJALI/img2.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img2.webp',
     alt: 'Emma & James - Reception dance',
     caption: 'First dance under the stars',
     category: 'wedding',
@@ -313,7 +313,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-003',
-    src: '/images/celebrity/RANA - ANJALI/img3.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img3.webp',
     alt: 'Emma & James - Ceremony vows',
     caption: 'Exchanging heartfelt vows',
     category: 'wedding',
@@ -325,7 +325,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-004',
-    src: '/images/celebrity/RANA - ANJALI/img4.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img4.webp',
     alt: 'Emma & James - Garden portrait',
     caption: 'Romantic garden portrait',
     category: 'wedding',
@@ -337,7 +337,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-005',
-    src: '/images/celebrity/RANA - ANJALI/img5.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img5.webp',
     alt: 'Emma & James - Wedding party',
     caption: 'Celebrating with loved ones',
     category: 'wedding',
@@ -349,7 +349,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-006',
-    src: '/images/celebrity/RANA - ANJALI/img6.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img6.webp',
     alt: 'Emma & James - Floral details',
     caption: 'Beautiful floral arrangements',
     category: 'wedding',
@@ -361,7 +361,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-007',
-    src: '/images/celebrity/RANA - ANJALI/img7.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img7.webp',
     alt: 'Emma & James - Candid laughter',
     caption: 'Moments of pure joy',
     category: 'wedding',
@@ -373,7 +373,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-008',
-    src: '/images/celebrity/RANA - ANJALI/img8.jpg',
+    src: '/images/celebrity/RANA - ANJALI/img8.webp',
     alt: 'Emma & James - Evening celebration',
     caption: 'Evening celebration under lights',
     category: 'wedding',
@@ -385,7 +385,7 @@ export const portfolio3Images: ImageData[] = [
   },
   {
     id: 'portfolio3-009',
-    src: '/images/celebrity/RANA - ANJALI/main.jpg',
+    src: '/images/celebrity/RANA - ANJALI/main.webp',
     alt: 'Emma & James - Signature moment',
     caption: 'Highlight of their grand celebration',
     category: 'wedding',
@@ -401,7 +401,7 @@ export const portfolio3Images: ImageData[] = [
 export const portfolio4Images: ImageData[] = [
   {
     id: 'portfolio4-001',
-    src: '/images/maternity/ASHISH & ANUJA/img1.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img1.webp',
     alt: 'Sarah & Michael - Beach wedding',
     caption: 'Romantic beach wedding ceremony',
     category: 'wedding',
@@ -420,7 +420,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-002',
-    src: '/images/maternity/ASHISH & ANUJA/img5.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img5.webp',
     alt: 'Sarah & Michael - Sunset portrait',
     caption: 'Golden hour beach portrait',
     category: 'wedding',
@@ -432,7 +432,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-003',
-    src: '/images/maternity/ASHISH & ANUJA/img6.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img6.webp',
     alt: 'Sarah & Michael - Beach ceremony',
     caption: 'Ceremony by the ocean',
     category: 'wedding',
@@ -444,7 +444,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-004',
-    src: '/images/maternity/ASHISH & ANUJA/img4.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img4.webp',
     alt: 'Sarah & Michael - Walking on beach',
     caption: 'Romantic beach walk',
     category: 'wedding',
@@ -456,7 +456,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-005',
-    src: '/images/maternity/ASHISH & ANUJA/img10.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img10.webp',
     alt: 'Sarah & Michael - Beach reception',
     caption: 'Beachside celebration',
     category: 'wedding',
@@ -468,7 +468,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-006',
-    src: '/images/maternity/ASHISH & ANUJA/img3.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img3.webp',
     alt: 'Sarah & Michael - Couple embrace',
     caption: 'Tender beach embrace',
     category: 'wedding',
@@ -480,7 +480,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-007',
-    src: '/images/maternity/ASHISH & ANUJA/img2.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img2.webp',
     alt: 'Sarah & Michael - Beach details',
     caption: 'Beautiful beach wedding details',
     category: 'wedding',
@@ -492,7 +492,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-008',
-    src: '/images/maternity/ASHISH & ANUJA/img7.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img7.webp',
     alt: 'Sarah & Michael - Sunset celebration',
     caption: 'Celebrating at sunset',
     category: 'wedding',
@@ -504,7 +504,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-009',
-    src: '/images/maternity/ASHISH & ANUJA/img8.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img8.webp',
     alt: 'Sarah & Michael - Beach portraits',
     caption: 'Playful portraits along the shoreline',
     category: 'wedding',
@@ -516,7 +516,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-010',
-    src: '/images/maternity/ASHISH & ANUJA/img9.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/img9.webp',
     alt: 'Sarah & Michael - Seaside toast',
     caption: 'Toasting to forever by the sea',
     category: 'wedding',
@@ -528,7 +528,7 @@ export const portfolio4Images: ImageData[] = [
   },
   {
     id: 'portfolio4-011',
-    src: '/images/maternity/ASHISH & ANUJA/main.jpg',
+    src: '/images/maternity/ASHISH & ANUJA/main.webp',
     alt: 'Sarah & Michael - Signature moment',
     caption: 'A defining moment from their celebration',
     category: 'wedding',
@@ -659,7 +659,7 @@ export const portfolio5Images: ImageData[] = [
   },
   {
     id: 'portfolio5-010',
-    src: '/images/celebrity/SWATI LIMAYE/main.jpg',
+    src: '/images/celebrity/SWATI LIMAYE/main.webp',
     alt: 'Rachel & David - Signature portrait',
     caption: 'Signature portrait capturing their love',
     category: 'wedding',
@@ -675,7 +675,7 @@ export const portfolio5Images: ImageData[] = [
 export const portfolio6Images: ImageData[] = [
   {
     id: 'portfolio6-001',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img3.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img3.webp',
     alt: 'Lisa & Ryan - Mountain wedding',
     caption: 'Breathtaking mountain wedding',
     category: 'wedding',
@@ -694,7 +694,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-002',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img1.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img1.webp',
     alt: 'Lisa & Ryan - Adventure portraits',
     caption: 'Adventurous couple portraits',
     category: 'wedding',
@@ -706,7 +706,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-003',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img1.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img1.webp',
     alt: 'Lisa & Ryan - Mountain ceremony',
     caption: 'Ceremony with mountain views',
     category: 'wedding',
@@ -718,7 +718,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-004',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img4.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img4.webp',
     alt: 'Lisa & Ryan - Hiking portraits',
     caption: 'Adventurous hiking portraits',
     category: 'wedding',
@@ -730,7 +730,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-005',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img5.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img5.webp',
     alt: 'Lisa & Ryan - Scenic overlook',
     caption: 'Portrait at scenic overlook',
     category: 'wedding',
@@ -742,7 +742,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-006',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img6.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img6.webp',
     alt: 'Lisa & Ryan - Mountain reception',
     caption: 'Mountain resort reception',
     category: 'wedding',
@@ -754,7 +754,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-007',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img7.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img7.webp',
     alt: 'Lisa & Ryan - Sunset mountains',
     caption: 'Sunset in the mountains',
     category: 'wedding',
@@ -766,7 +766,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-008',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img8.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img8.webp',
     alt: 'Lisa & Ryan - Adventure celebration',
     caption: 'Celebrating their adventure',
     category: 'wedding',
@@ -778,7 +778,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-009',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img9.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img9.webp',
     alt: 'Lisa & Ryan - Summit moment',
     caption: 'Celebrating at the summit overlook',
     category: 'wedding',
@@ -790,7 +790,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-010',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/img10.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/img10.webp',
     alt: 'Lisa & Ryan - Mountain reflections',
     caption: 'Reflective moment by the lakeside',
     category: 'wedding',
@@ -802,7 +802,7 @@ export const portfolio6Images: ImageData[] = [
   },
   {
     id: 'portfolio6-011',
-    src: '/images/wedding/SAMRUDDHI & ROHIT/main.jpg',
+    src: '/images/wedding/SAMRUDDHI & ROHIT/main.webp',
     alt: 'Lisa & Ryan - Signature adventure',
     caption: 'Signature moment of their mountain adventure',
     category: 'wedding',
@@ -818,7 +818,7 @@ export const portfolio6Images: ImageData[] = [
 export const portfolio7Images: ImageData[] = [
   {
     id: 'portfolio7-001',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img5.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img5.webp',
     alt: 'Anna & Chris - Urban wedding',
     caption: 'Modern urban wedding celebration',
     category: 'wedding',
@@ -837,7 +837,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-002',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img2.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img2.webp',
     alt: 'Anna & Chris - Rooftop reception',
     caption: 'Rooftop reception with city views',
     category: 'wedding',
@@ -849,7 +849,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-003',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img3.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img3.webp',
     alt: 'Anna & Chris - City ceremony',
     caption: 'Modern city ceremony',
     category: 'wedding',
@@ -861,7 +861,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-004',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img4.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img4.webp',
     alt: 'Anna & Chris - Street portraits',
     caption: 'Urban street portraits',
     category: 'wedding',
@@ -873,7 +873,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-005',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img1.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img1.webp',
     alt: 'Anna & Chris - Loft interior',
     caption: 'Industrial loft portraits',
     category: 'wedding',
@@ -885,7 +885,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-006',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img6.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img6.webp',
     alt: 'Anna & Chris - City lights',
     caption: 'Evening city lights',
     category: 'wedding',
@@ -897,7 +897,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-007',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img7.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img7.webp',
     alt: 'Anna & Chris - Rooftop dance',
     caption: 'Dancing under the stars',
     category: 'wedding',
@@ -909,7 +909,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-008',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img8.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img8.webp',
     alt: 'Anna & Chris - Urban celebration',
     caption: 'Modern urban celebration',
     category: 'wedding',
@@ -921,7 +921,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-009',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img9.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img9.webp',
     alt: 'Anna & Chris - Twinkling skyline',
     caption: 'Skyline portraits under city lights',
     category: 'wedding',
@@ -933,7 +933,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-010',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img10.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img10.webp',
     alt: 'Anna & Chris - Evening stroll',
     caption: 'Strolling through the evening streets',
     category: 'wedding',
@@ -945,7 +945,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-011',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img11.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img11.webp',
     alt: 'Anna & Chris - Rooftop embrace',
     caption: 'Quiet embrace above the city',
     category: 'wedding',
@@ -957,7 +957,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-012',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/img12.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/img12.webp',
     alt: 'Anna & Chris - City reflections',
     caption: 'Reflections of the city around them',
     category: 'wedding',
@@ -969,7 +969,7 @@ export const portfolio7Images: ImageData[] = [
   },
   {
     id: 'portfolio7-013',
-    src: '/images/prewedding/HARSH & NISHIGANDHA/main.jpg',
+    src: '/images/prewedding/HARSH & NISHIGANDHA/main.webp',
     alt: 'Anna & Chris - Signature moment',
     caption: 'Signature portrait of their urban celebration',
     category: 'wedding',
@@ -985,7 +985,7 @@ export const portfolio7Images: ImageData[] = [
 export const portfolio8Images: ImageData[] = [
   {
     id: 'portfolio8-001',
-    src: '/images/portrait/RATNESHA/img1.jpg',
+    src: '/images/portrait/RATNESHA/img1.webp',
     alt: 'Kate & Tom - Rustic wedding',
     caption: 'Charming rustic barn wedding',
     category: 'wedding',
@@ -1004,7 +1004,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-002',
-    src: '/images/portrait/RATNESHA/img2.jpg',
+    src: '/images/portrait/RATNESHA/img2.webp',
     alt: 'Kate & Tom - Country reception',
     caption: 'Festive country-style reception',
     category: 'wedding',
@@ -1016,7 +1016,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-003',
-    src: '/images/portrait/RATNESHA/img3.jpg',
+    src: '/images/portrait/RATNESHA/img3.webp',
     alt: 'Kate & Tom - Barn ceremony',
     caption: 'Ceremony in the barn',
     category: 'wedding',
@@ -1028,7 +1028,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-004',
-    src: '/images/portrait/RATNESHA/img4.jpg',
+    src: '/images/portrait/RATNESHA/img4.webp',
     alt: 'Kate & Tom - Country portraits',
     caption: 'Countryside couple portraits',
     category: 'wedding',
@@ -1040,7 +1040,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-005',
-    src: '/images/portrait/RATNESHA/img5.jpg',
+    src: '/images/portrait/RATNESHA/img5.webp',
     alt: 'Kate & Tom - Rustic details',
     caption: 'Rustic wedding details',
     category: 'wedding',
@@ -1052,7 +1052,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-006',
-    src: '/images/portrait/RATNESHA/img6.jpg',
+    src: '/images/portrait/RATNESHA/img6.webp',
     alt: 'Kate & Tom - Field portraits',
     caption: 'Portraits in the field',
     category: 'wedding',
@@ -1064,7 +1064,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-007',
-    src: '/images/portrait/RATNESHA/img7.jpg',
+    src: '/images/portrait/RATNESHA/img7.webp',
     alt: 'Kate & Tom - Barn dance',
     caption: 'Dancing in the barn',
     category: 'wedding',
@@ -1076,7 +1076,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-008',
-    src: '/images/portrait/RATNESHA/img8.jpg',
+    src: '/images/portrait/RATNESHA/img8.webp',
     alt: 'Kate & Tom - Sunset countryside',
     caption: 'Sunset in the countryside',
     category: 'wedding',
@@ -1088,7 +1088,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-009',
-    src: '/images/portrait/RATNESHA/img9.jpg',
+    src: '/images/portrait/RATNESHA/img9.webp',
     alt: 'Kate & Tom - Rustic romance',
     caption: 'Soft moments in the golden field',
     category: 'wedding',
@@ -1100,7 +1100,7 @@ export const portfolio8Images: ImageData[] = [
   },
   {
     id: 'portfolio8-010',
-    src: '/images/portrait/RATNESHA/main.jpg',
+    src: '/images/portrait/RATNESHA/main.webp',
     alt: 'Kate & Tom - Signature rustic portrait',
     caption: 'Signature portrait capturing rustic charm',
     category: 'wedding',
@@ -1135,7 +1135,7 @@ export const portfolio9Images: ImageData[] = [
   },
   {
     id: 'portfolio9-002',
-    src: '/images/prewedding/VIDIJA & GURUNATH/img2.jpg',
+    src: '/images/prewedding/VIDIJA & GURUNATH/img8.jpg',
     alt: 'Sophie & Jake - Beach ceremony',
     caption: 'Intimate beach ceremony',
     category: 'wedding',
@@ -1147,7 +1147,7 @@ export const portfolio9Images: ImageData[] = [
   },
   {
     id: 'portfolio9-003',
-    src: '/images/prewedding/VIDIJA & GURUNATH/img1.jpg',
+    src: '/images/prewedding/VIDIJA & GURUNATH/img1.webp',
     alt: 'Sophie & Jake - Tropical portraits',
     caption: 'Portraits in paradise',
     category: 'wedding',
@@ -1247,7 +1247,7 @@ export const portfolio9Images: ImageData[] = [
 export const portfolio10Images: ImageData[] = [
   {
     id: 'portfolio10-001',
-    src: '/images/wedding/SUSHANT & RADHIKA/img1.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img1.webp',
     alt: 'Megan & Alex - Spring wedding',
     caption: 'Beautiful spring garden wedding',
     category: 'wedding',
@@ -1266,7 +1266,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-002',
-    src: '/images/wedding/SUSHANT & RADHIKA/img10.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img10.webp',
     alt: 'Megan & Alex - Floral ceremony',
     caption: 'Ceremony surrounded by spring flowers',
     category: 'wedding',
@@ -1278,7 +1278,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-003',
-    src: '/images/wedding/SUSHANT & RADHIKA/img2.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img2.webp',
     alt: 'Megan & Alex - Garden portraits',
     caption: 'Portraits in blooming gardens',
     category: 'wedding',
@@ -1290,7 +1290,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-004',
-    src: '/images/wedding/SUSHANT & RADHIKA/img3.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img3.webp',
     alt: 'Megan & Alex - Spring ceremony',
     caption: 'Spring garden ceremony',
     category: 'wedding',
@@ -1302,7 +1302,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-005',
-    src: '/images/wedding/SUSHANT & RADHIKA/img4.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img4.webp',
     alt: 'Megan & Alex - Flower details',
     caption: 'Beautiful floral details',
     category: 'wedding',
@@ -1314,7 +1314,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-006',
-    src: '/images/wedding/SUSHANT & RADHIKA/img5.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img5.webp',
     alt: 'Megan & Alex - Garden reception',
     caption: 'Reception in the gardens',
     category: 'wedding',
@@ -1326,7 +1326,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-007',
-    src: '/images/wedding/SUSHANT & RADHIKA/img7.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img7.webp',
     alt: 'Megan & Alex - Spring romance',
     caption: 'Romantic spring moments',
     category: 'wedding',
@@ -1338,7 +1338,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-008',
-    src: '/images/wedding/SUSHANT & RADHIKA/img8.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img8.webp',
     alt: 'Megan & Alex - Blossom celebration',
     caption: 'Celebrating among blossoms',
     category: 'wedding',
@@ -1350,7 +1350,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-009',
-    src: '/images/wedding/SUSHANT & RADHIKA/img9.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img9.webp',
     alt: 'Megan & Alex - Garden fountain',
     caption: 'Romantic moment by the fountain',
     category: 'wedding',
@@ -1362,7 +1362,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-010',
-    src: '/images/wedding/SUSHANT & RADHIKA/img6.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img6.webp',
     alt: 'Megan & Alex - Sunset garden',
     caption: 'Sunset portraits among blossoms',
     category: 'wedding',
@@ -1374,7 +1374,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-011',
-    src: '/images/wedding/SUSHANT & RADHIKA/img11.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/img11.webp',
     alt: 'Megan & Alex - Garden pathway',
     caption: 'Stroll along the garden path',
     category: 'wedding',
@@ -1386,7 +1386,7 @@ export const portfolio10Images: ImageData[] = [
   },
   {
     id: 'portfolio10-012',
-    src: '/images/wedding/SUSHANT & RADHIKA/main.jpg',
+    src: '/images/wedding/SUSHANT & RADHIKA/main.webp',
     alt: 'Megan & Alex - Signature spring portrait',
     caption: 'Signature portrait amid spring blossoms',
     category: 'wedding',
@@ -1402,7 +1402,7 @@ export const portfolio10Images: ImageData[] = [
 export const portfolio11Images: ImageData[] = [
   {
     id: 'portfolio11-001',
-    src: '/images/portrait/SHRUTI/img6.jpg',
+    src: '/images/portrait/SHRUTI/img6.webp',
     alt: 'Elena & Daniel - Winter wedding',
     caption: 'Elegant winter wonderland wedding',
     category: 'wedding',
@@ -1421,7 +1421,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-002',
-    src: '/images/portrait/SHRUTI/img1.jpg',
+    src: '/images/portrait/SHRUTI/img1.webp',
     alt: 'Elena & Daniel - Cozy reception',
     caption: 'Warm and cozy winter reception',
     category: 'wedding',
@@ -1433,7 +1433,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-003',
-    src: '/images/portrait/SHRUTI/img2.jpg',
+    src: '/images/portrait/SHRUTI/img2.webp',
     alt: 'Elena & Daniel - Snow ceremony',
     caption: 'Ceremony in the snow',
     category: 'wedding',
@@ -1445,7 +1445,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-004',
-    src: '/images/portrait/SHRUTI/img3.jpg',
+    src: '/images/portrait/SHRUTI/img3.webp',
     alt: 'Elena & Daniel - Winter portraits',
     caption: 'Romantic winter portraits',
     category: 'wedding',
@@ -1457,7 +1457,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-005',
-    src: '/images/portrait/SHRUTI/img4.jpg',
+    src: '/images/portrait/SHRUTI/img4.webp',
     alt: 'Elena & Daniel - Lodge interior',
     caption: 'Cozy lodge moments',
     category: 'wedding',
@@ -1469,7 +1469,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-006',
-    src: '/images/portrait/SHRUTI/img5.jpg',
+    src: '/images/portrait/SHRUTI/img5.webp',
     alt: 'Elena & Daniel - Winter details',
     caption: 'Winter wedding details',
     category: 'wedding',
@@ -1481,7 +1481,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-007',
-    src: '/images/portrait/SHRUTI/img7.jpg',
+    src: '/images/portrait/SHRUTI/img7.webp',
     alt: 'Elena & Daniel - Fireplace dance',
     caption: 'First dance by the fireplace',
     category: 'wedding',
@@ -1493,7 +1493,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-008',
-    src: '/images/portrait/SHRUTI/img8.jpg',
+    src: '/images/portrait/SHRUTI/img8.webp',
     alt: 'Elena & Daniel - Snowy evening',
     caption: 'Evening in the snow',
     category: 'wedding',
@@ -1505,7 +1505,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-009',
-    src: '/images/portrait/SHRUTI/img9.jpg',
+    src: '/images/portrait/SHRUTI/img9.webp',
     alt: 'Elena & Daniel - Snowy pathway',
     caption: 'Walking through fresh snow',
     category: 'wedding',
@@ -1517,7 +1517,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-010',
-    src: '/images/portrait/SHRUTI/img10.jpg',
+    src: '/images/portrait/SHRUTI/img10.webp',
     alt: 'Elena & Daniel - Winter embrace',
     caption: 'Warm embrace in the winter chill',
     category: 'wedding',
@@ -1529,7 +1529,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-011',
-    src: '/images/portrait/SHRUTI/img11.jpg',
+    src: '/images/portrait/SHRUTI/img11.webp',
     alt: 'Elena & Daniel - Frosted details',
     caption: 'Frost-kissed wedding details',
     category: 'wedding',
@@ -1541,7 +1541,7 @@ export const portfolio11Images: ImageData[] = [
   },
   {
     id: 'portfolio11-012',
-    src: '/images/portrait/SHRUTI/main.jpg',
+    src: '/images/portrait/SHRUTI/main.webp',
     alt: 'Elena & Daniel - Signature winter portrait',
     caption: 'Signature portrait capturing winter magic',
     category: 'wedding',
@@ -1557,7 +1557,7 @@ export const portfolio11Images: ImageData[] = [
 export const portfolio12Images: ImageData[] = [
   {
     id: 'portfolio12-001',
-    src: '/images/sports/img1.jpg',
+    src: '/images/sports/img1.webp',
     alt: 'Grace & Oliver - Classic wedding',
     caption: 'Timeless classic wedding ceremony',
     category: 'wedding',
@@ -1576,7 +1576,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-002',
-    src: '/images/sports/img6.jpg',
+    src: '/images/sports/img6.webp',
     alt: 'Grace & Oliver - Grand reception',
     caption: 'Elegant ballroom reception',
     category: 'wedding',
@@ -1588,7 +1588,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-003',
-    src: '/images/sports/img14.jpg',
+    src: '/images/sports/img14.webp',
     alt: 'Grace & Oliver - Cathedral ceremony',
     caption: 'Ceremony in grand cathedral',
     category: 'wedding',
@@ -1600,7 +1600,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-004',
-    src: '/images/sports/img12.jpg',
+    src: '/images/sports/img12.webp',
     alt: 'Grace & Oliver - Classic portraits',
     caption: 'Timeless couple portraits',
     category: 'wedding',
@@ -1612,7 +1612,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-005',
-    src: '/images/sports/img8.jpg',
+    src: '/images/sports/img8.webp',
     alt: 'Grace & Oliver - Ballroom details',
     caption: 'Elegant ballroom details',
     category: 'wedding',
@@ -1624,7 +1624,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-006',
-    src: '/images/sports/img9.jpg',
+    src: '/images/sports/img9.webp',
     alt: 'Grace & Oliver - First dance',
     caption: 'Elegant first dance',
     category: 'wedding',
@@ -1636,7 +1636,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-007',
-    src: '/images/sports/img10.jpg',
+    src: '/images/sports/img10.webp',
     alt: 'Grace & Oliver - Elegant procession',
     caption: 'Procession through the grand hall',
     category: 'wedding',
@@ -1648,7 +1648,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-008',
-    src: '/images/sports/img11.jpg',
+    src: '/images/sports/img11.webp',
     alt: 'Grace & Oliver - Grand entrance',
     caption: 'Grand entrance to reception',
     category: 'wedding',
@@ -1660,7 +1660,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-009',
-    src: '/images/sports/img2.jpg',
+    src: '/images/sports/img2.webp',
     alt: 'Grace & Oliver - Classic celebration',
     caption: 'Timeless celebration',
     category: 'wedding',
@@ -1672,7 +1672,7 @@ export const portfolio12Images: ImageData[] = [
   },
   {
     id: 'portfolio12-010',
-    src: '/images/sports/img3.jpg',
+    src: '/images/sports/img3.webp',
     alt: 'Grace & Oliver - Ballroom toast',
     caption: 'A heartfelt toast in the ballroom',
     category: 'wedding',
@@ -1687,7 +1687,7 @@ export const portfolio12Images: ImageData[] = [
 export const portfolio13Images: ImageData[] = [
   {
     id: 'portfolio12-001',
-    src: '/images/starbucks/img1.jpg',
+    src: '/images/starbucks/img1.webp',
     alt: 'Grace & Oliver - Classic wedding',
     caption: 'Timeless classic wedding ceremony',
     category: 'wedding',
@@ -1706,7 +1706,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-002',
-    src: '/images/starbucks/main.jpg',
+    src: '/images/starbucks/main.webp',
     alt: 'Grace & Oliver - Grand reception',
     caption: 'Elegant ballroom reception',
     category: 'wedding',
@@ -1718,7 +1718,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-003',
-    src: '/images/starbucks/img2.jpg',
+    src: '/images/starbucks/img2.webp',
     alt: 'Grace & Oliver - Cathedral ceremony',
     caption: 'Ceremony in grand cathedral',
     category: 'wedding',
@@ -1730,7 +1730,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-004',
-    src: '/images/starbucks/img3.jpg',
+    src: '/images/starbucks/img3.webp',
     alt: 'Grace & Oliver - Classic portraits',
     caption: 'Timeless couple portraits',
     category: 'wedding',
@@ -1742,7 +1742,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-005',
-    src: '/images/starbucks/img4.jpg',
+    src: '/images/starbucks/img4.webp',
     alt: 'Grace & Oliver - Ballroom details',
     caption: 'Elegant ballroom details',
     category: 'wedding',
@@ -1754,7 +1754,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-006',
-    src: '/images/starbucks/img5.jpg',
+    src: '/images/starbucks/img5.webp',
     alt: 'Grace & Oliver - First dance',
     caption: 'Elegant first dance',
     category: 'wedding',
@@ -1766,7 +1766,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-007',
-    src: '/images/starbucks/img6.jpg',
+    src: '/images/starbucks/img6.webp',
     alt: 'Grace & Oliver - Elegant procession',
     caption: 'Procession through the grand hall',
     category: 'wedding',
@@ -1778,7 +1778,7 @@ export const portfolio13Images: ImageData[] = [
   },
   {
     id: 'portfolio12-008',
-    src: '/images/starbucks/img7.jpg',
+    src: '/images/starbucks/img7.webp',
     alt: 'Grace & Oliver - Grand entrance',
     caption: 'Grand entrance to reception',
     category: 'wedding',
@@ -1971,7 +1971,7 @@ export const getPortfolioImages = (portfolioId: number): ImageData[] => {
 export const getRandomPortfolioImages = (portfolioId: number, count: number): ImageData[] => {
   const portfolioImages = getPortfolioImages(portfolioId);
   if (portfolioImages.length === 0) return [];
-  
+
   const shuffled = [...portfolioImages].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, Math.min(count, portfolioImages.length));
 };                                                                                                                                                                                                                                                         

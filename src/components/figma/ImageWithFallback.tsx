@@ -90,19 +90,24 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
     <>
       {!isLoaded && placeholder}
 
-      <img
-        ref={imgRef}
-        src={isVisible ? src : undefined}
-        alt={alt}
-        className={`${className ?? ''} ${
-          !isLoaded ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'
-        }`.trim()}
-        style={style}
-        onError={handleError}
-        onLoad={handleLoad}
-        loading={lazy ? 'lazy' : loading}
-        {...rest}
-      />
+      <picture>
+        <source
+          srcSet={src?.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+          type="image/webp"
+        />
+        <img
+          ref={imgRef}
+          src={isVisible ? src : undefined}
+          alt={alt}
+          className={`${className ?? ''} ${!isLoaded ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'
+            }`.trim()}
+          style={style}
+          onError={handleError}
+          onLoad={handleLoad}
+          loading={lazy ? 'lazy' : loading}
+          {...rest}
+        />
+      </picture>
 
       {/* Example: If you want to show video instead of image when applicable */}
       {/* Replace 'currentVideo' with your actual video data object */}
