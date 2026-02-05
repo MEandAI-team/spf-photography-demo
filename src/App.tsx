@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Navigation from './components/Navigation';
 import HomePage from './components/pages/HomePage';
 import AboutPage from './components/pages/AboutPage';
 import WorkPage from './components/pages/WorkPage';
-import VideographyPage from './components/pages/VideographyPage';
 import ContactPage from './components/pages/ContactPage';
-import GalleryPage from './components/pages/GalleryPage';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
 import ScrollToTopButton from './components/ScrollToTopButton';
+
+const VideographyPage = lazy(() => import('./components/pages/VideographyPage'));
+const GalleryPage = lazy(() => import('./components/pages/GalleryPage'));
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -129,15 +130,21 @@ export default function App() {
           />
         );
       case 'videography':
-        return <VideographyPage onNavigateToContact={handleNavigateToContact} />;
+        return (
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen text-foreground">Loading...</div>}>
+            <VideographyPage onNavigateToContact={handleNavigateToContact} />
+          </Suspense>
+        );
       case 'contact':
         return <ContactPage />;
       case 'gallery':
         return currentGalleryId ? (
-          <GalleryPage
-            portfolioId={currentGalleryId}
-            onBackToWork={handleBackToWork}
-          />
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen text-foreground">Loading...</div>}>
+            <GalleryPage
+              portfolioId={currentGalleryId}
+              onBackToWork={handleBackToWork}
+            />
+          </Suspense>
         ) : (
           <WorkPage
             onGalleryOpen={handleGalleryOpen}
