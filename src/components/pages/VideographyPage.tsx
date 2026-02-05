@@ -26,9 +26,9 @@ const videos: Video[] = [
     id: 1,
     title: 'CINEMATIC SOULMATES',
     description: 'In a world of fleeting moments, you are my eternal epic. Every time our eyes meet, its the most profound scene in the film of my life. 🎬❤️',
-    thumbnail: '/images/siddhi & Durwankar.webp',
+    thumbnail: '',
     duration: '',
-    videoUrl: '/videos/SIDDHI & DURVANKUR.mp4'
+    videoUrl: '/videos/main-wedding.mp4'
   },
   {
     id: 2,
@@ -42,9 +42,9 @@ const videos: Video[] = [
     id: 3,
     title: 'THE PROMISE',
     description: '"Forget the fantasy—this love is real, its cinematic, and its the most beautiful fairy tale we could have ever dreamed up. Encore, please. 🥂👑"',
-    thumbnail: '/images/wedding/SAMRUDDHI & ROHIT/img2.webp',
+    thumbnail: '',
     duration: '',
-    videoUrl: '/videos/wedding.mp4'
+    videoUrl: '/videos/main-prewedding.mp4'
   }
 ];
 
@@ -53,13 +53,13 @@ const videographyTypes: VideographyType[] = [
     id: 'prewedding',
     title: 'Pre-Wedding',
     description: 'Capture your love story before the big day with cinematic pre-wedding films that showcase your unique bond.',
-    thumbnail: '/images/video.png',
+    thumbnail: '',
     icon: <Heart className="w-6 h-6" />,
     video: {
       id: 101,
       title: 'Pre-Wedding Cinematic Story',
       description: 'A romantic journey capturing the essence of love before the wedding day. Shot in beautiful outdoor locations with natural lighting.',
-      thumbnail: '/images/video.png',
+      thumbnail: '',
       duration: '',
       videoUrl: '/videos/prewedding.webm'
     }
@@ -68,7 +68,7 @@ const videographyTypes: VideographyType[] = [
     id: 'wedding',
     title: 'Wedding',
     description: 'Complete wedding day coverage from preparations to celebration, creating a timeless record of your special day.',
-    thumbnail: '/images/wedding/RIYA & ASHISH/main.webp',
+    thumbnail: '',
     icon: <Camera className="w-6 h-6" />,
     video: {
       id: 102,
@@ -91,7 +91,7 @@ const videographyTypes: VideographyType[] = [
       description: 'Dynamic videography showcasing the colors, music, and traditions of cultural festivals with multiple camera angles.',
       thumbnail: '',
       duration: '',
-      videoUrl: ''
+      videoUrl: '/videos/neel-haldi.mp4'
     }
   },
   {
