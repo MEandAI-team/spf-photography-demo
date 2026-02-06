@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Camera, Heart, Star, Users, Zap } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { TestimonialsSection } from '../TestimonialsSection';
 
 interface AboutPageProps {
   onNavigateToContact?: () => void;
@@ -185,6 +186,9 @@ export default function AboutPage({ onNavigateToContact }: AboutPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Personal Story Section */}
       <section className="py-16 lg:py-24 bg-secondary/20">
